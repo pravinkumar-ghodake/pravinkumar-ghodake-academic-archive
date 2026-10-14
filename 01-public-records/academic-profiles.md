@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎓 Pravinkumar Ramchandra Ghodake
+# Pravinkumar Ramchandra Ghodake
 
 ### Academic & Research Profiles
 
