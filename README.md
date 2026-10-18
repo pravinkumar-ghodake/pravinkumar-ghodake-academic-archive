@@ -9,10 +9,16 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--6755--4003-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-6755-4003)
 [![Figshare](https://img.shields.io/badge/Figshare-Author_Profile-blue?style=for-the-badge)](https://figshare.com/authors/Pravinkumar_Ghodake/3701242)
 [![Google Sites](https://img.shields.io/badge/Google_Sites-Portfolio-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://sites.google.com/view/pravinkumarghodake/home)
+[![Academic Hub](https://img.shields.io/badge/Academic_Hub-GitHub_Pages-181717?style=for-the-badge&logo=github&logoColor=white)](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/)
 [![Scopus](https://img.shields.io/badge/Scopus-Indexed-orange?style=for-the-badge)](https://www.scopus.com/pages/publications/85117472334)
 [![NASA ADS](https://img.shields.io/badge/NASA_ADS-Indexed-blue?style=for-the-badge)](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6755-4003&sort=date+desc)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
 
+</div>
+
+---
+<div align="center">
+🔗 <strong>Official Academic Hub:</strong> <a href="https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/">https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/</a>
 </div>
 
 ---
@@ -391,7 +397,7 @@ Under the following terms:
 
 <div align="center">
 
-### 🌟 Thank You for Visiting
+### Thank You for Visiting
 
 **Pravinkumar Ramchandra Ghodake**  
 Research Scholar · Department of Mechanical Engineering · IIT Bombay
