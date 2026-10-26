@@ -15,16 +15,14 @@
 ---
 
 > ### 📖 About This Page
-> 
-> <div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-> This page provides an exhaustive, detailed narrative of the research outputs, conference presentations, independent figures, and experimental datasets produced by <strong>Pravinkumar Ramchandra Ghodake</strong>. It expands upon the official Google Sites Research Hub, meticulously documenting the scientific contributions, the peer-review milestones, the specific insights shared with world-leading professors, and the exact Figshare DOIs minted for archival priority and intellectual property protection.
-> </div>
+>
+> This page provides an exhaustive, detailed narrative of the research outputs, conference presentations, independent figures, and experimental datasets produced by **Pravinkumar Ramchandra Ghodake**. It expands upon the official Google Sites Research Hub, meticulously documenting the scientific contributions, the peer-review milestones, the specific insights shared with world-leading professors, and the exact Figshare DOIs minted for archival priority and intellectual property protection.
 
 ---
 
 ## 🧭 Jump To
 
-**[🎙️ Invited Keynotes (GRS/GRC)](#-invited-keynotes-grsgrc-2024)** · **[🧪 Metamaterials & Inverse Design](#-metamaterials--inverse-design)** · **[🌊 Harmonic Scattering & Wave Propagation](#-harmonic-scattering--wave-propagation-acoustics-2023-sydney)** · **[📊 Independent Figures](#-independent-research-figures)** · **[🎓 PhD Thesis Record](#-phd-thesis-record)** · **[🔨 Impact Mechanics](#-impact-mechanics)** · **[🔊 Nonlinear Ultrasonics](#-nonlinear-ultrasonics)** · **[🧩 Fracture Mechanics](#-fracture-mechanics)**
+**[🎙️ Invited Keynotes (GRS/GRC)](#-invited-keynotes-grsgrc-2024)** · **[🧪 Metamaterials & Inverse Design](#-metamaterials--inverse-design)** · **[🌊 Harmonic Scattering (Sydney)](#-harmonic-scattering--wave-propagation-acoustics-2023-sydney)** · **[📊 Independent Figures](#-independent-research-figures)** · **[🎓 PhD Thesis Record](#-phd-thesis-record)** · **[🔨 Impact Mechanics](#-impact-mechanics)** · **[🌊 Nonlinear Ultrasonics](#-nonlinear-ultrasonics)** · **[🔬 Fracture Mechanics](#-fracture-mechanics)**
 
 ---
 
@@ -38,25 +36,28 @@
 **Format:** Invited Oral Presentation (Solo Author)  
 **Session:** Design and Fabrication of Functional Materials (Saturday, Jan 27, 9:10 PM)
 
-**Scientific Contribution:** 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-This talk introduced an inverse design framework for manipulating elastic waves through multi-material, multi-functional metamaterials. Moving beyond conventional eigenvalue sweeps and transfer matrix limits, the methodology combines a level-set shape optimization routine with gradient-free algorithms and transient finite element models. The framework concurrently optimizes individual layer widths and material stacking sequences under realistic boundary conditions, enabling directional, mode-selective, and harmonic-suppressing wave control. 
+**Scientific Contribution:**
+
+<div align="justify">
+
+This talk introduced an inverse design framework for manipulating elastic waves through multi-material, multi-functional metamaterials. Moving beyond conventional eigenvalue sweeps and transfer matrix limits, the methodology combines a level-set shape optimization routine with gradient-free algorithms and transient finite element models. The framework concurrently optimizes individual layer widths and material stacking sequences under realistic boundary conditions, enabling directional, mode-selective, and harmonic-suppressing wave control.
+
 </div>
 
-**Context & Milestone:** 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-Selection to present at the GRS is highly competitive. Being accepted as a solo author — without co-author backing — was a privilege, given that the community includes researchers from the world's leading institutions. 
-</div>
+**Context & Milestone:**
 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-The presentation opened with a quote from <strong>Prof. Zhigang Suo</strong>: <em>"Waves: Yet another play of two actors — inertia and elasticity."</em> The closing slide acknowledged the conference leadership — GRC Chairs <strong>Prof. Chiara Daraio</strong> and <strong>Prof. Ioannis Chasiotis</strong>, GRC Vice Chairs <strong>Dr. Gregory Reich</strong> and <strong>Prof. H. Jerry Qi</strong>, and GRS Chairs <strong>Dr. Israel Kellersztein</strong> and <strong>Luis Rodríguez Koett</strong> — and presented four panels of time-domain and frequency-domain responses from the inversely designed configurations.
-</div>
+<div align="justify">
 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+Selection to present at the GRS is highly competitive. Being accepted as a solo author — without co-author backing — was a privilege, given that the community includes researchers from the world's leading institutions.
+
+The presentation opened with a quote from **Prof. Zhigang Suo**: *"Waves: Yet another play of two actors — inertia and elasticity."* The closing slide acknowledged the conference leadership — GRC Chairs **Prof. Chiara Daraio** and **Prof. Ioannis Chasiotis**, GRC Vice Chairs **Dr. Gregory Reich** and **Prof. H. Jerry Qi**, and GRS Chairs **Dr. Israel Kellersztein** and **Luis Rodríguez Koett** — and presented four panels of time-domain and frequency-domain responses from the inversely designed configurations.
+
 The session gathered an exceptional cohort of early-career researchers from leading institutions worldwide, presenting frontier work on counter-snapping instabilities, self-healing reconfigurable structures for soft robotics, polycatenated metamaterials, multistable self-folding knit architectures, and architected poly(ionic liquid) composites. The Gordon Research Conferences provided full funding support (travel, accommodation, registration).
+
 </div>
 
 **Details:**
+
 - **GRS Theme:** "The Role of Morphology and Hierarchy in Multifunctional Materials Design"
 - **Figshare DOI (Title Slide):** [10.6084/m9.figshare.34157106](https://doi.org/10.6084/m9.figshare.34157106)
 - **Figshare DOI (Thank You Slide):** [10.6084/m9.figshare.34158024](https://doi.org/10.6084/m9.figshare.34158024)
@@ -74,33 +75,34 @@ The session gathered an exceptional cohort of early-career researchers from lead
 **Vice Chairs:** Dr. Gregory W. Reich (AFRL), Prof. H. Jerry Qi (Georgia Tech)
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-The poster presents an inverse design framework for manipulating elastic waves through multi-material and multi-functional metamaterials. The methodology combines a level-set shape optimization routine with gradient-free algorithms and transient finite element analysis in COMSOL Multiphysics, integrated with MATLAB through the Nelder-Mead optimization algorithm. 
-</div>
 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+<div align="justify">
+
+The poster presents an inverse design framework for manipulating elastic waves through multi-material and multi-functional metamaterials. The methodology combines a level-set shape optimization routine with gradient-free algorithms and transient finite element analysis in COMSOL Multiphysics, integrated with MATLAB through the Nelder-Mead optimization algorithm.
+
 The framework is applied to four problem classes:
-</div>
 
-1. <div style="text-align: justify; line-height: 1.6;"><strong>Harmonic suppression:</strong> Designing layered metamaterials to stop second harmonic waves (2f) while preserving the fundamental (f), thereby isolating pure damage-induced responses from instrument-generated harmonics.</div>
-2. <div style="text-align: justify; line-height: 1.6;"><strong>Direction-dependent metamaterials:</strong> Structures that transmit longitudinal waves in one direction and transverse waves in the opposite direction, independently and simultaneously.</div>
-3. <div style="text-align: justify; line-height: 1.6;"><strong>Direction-independent metamaterials:</strong> Structures that control both longitudinal and transverse waves symmetrically.</div>
-4. <div style="text-align: justify; line-height: 1.6;"><strong>Nonlinear cloaking:</strong> Using concealed hyperelastic inclusions to render damaged regions elastically invisible to diagnostic waves.</div>
+1. **Harmonic suppression:** Designing layered metamaterials to stop second harmonic waves (2f) while preserving the fundamental (f), thereby isolating pure damage-induced responses from instrument-generated harmonics.
+2. **Direction-dependent metamaterials:** Structures that transmit longitudinal waves in one direction and transverse waves in the opposite direction, independently and simultaneously.
+3. **Direction-independent metamaterials:** Structures that control both longitudinal and transverse waves symmetrically.
+4. **Nonlinear cloaking:** Using concealed hyperelastic inclusions to render damaged regions elastically invisible to diagnostic waves.
 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px; margin-top: 15px;">
 The poster opens with a direct analogy between harmonic generation in nonlinear optics (ω → 2ω frequency doubling in a nonlinear crystal) and nonlinear ultrasonics, where the acoustic nonlinearity parameter governs the generation of higher harmonics sensitive to early-stage microstructural damage.
+
 </div>
 
 **Context & Milestone:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-The GRC on Multifunctional Materials and Structures is a premier international scientific conference focused on advancing the frontiers of science through cutting-edge, unpublished research. It brings together leading scientists and engineers from physics, mechanics, engineering science, chemistry, materials science, biology, mathematics, and computational science. 
-</div>
 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-Acceptance to the GRC is highly competitive — even for established faculty from leading institutions such as MIT, Harvard, and Caltech. Being selected as a solo student presenter for both the GRS and the GRC, with full funding from the organizers, is a strong validation of the quality and originality of the work. 
+<div align="justify">
+
+The GRC on Multifunctional Materials and Structures is a premier international scientific conference focused on advancing the frontiers of science through cutting-edge, unpublished research. It brings together leading scientists and engineers from physics, mechanics, engineering science, chemistry, materials science, biology, mathematics, and computational science.
+
+Acceptance to the GRC is highly competitive — even for established faculty from leading institutions such as MIT, Harvard, and Caltech. Being selected as a solo student presenter for both the GRS and the GRC, with full funding from the organizers, is a strong validation of the quality and originality of the work.
+
 </div>
 
 **Details:**
+
 - **GRC Theme:** "Discovery of Dynamically Reconfigurable, Hybrid, and Sustainable Materials"
 - **Figshare DOI (Poster):** [10.6084/m9.figshare.34159053](https://doi.org/10.6084/m9.figshare.34159053)
 - **Figshare DOI (Attendees Group Photograph):** [10.6084/m9.figshare.34159992](https://doi.org/10.6084/m9.figshare.34159992)
@@ -117,11 +119,15 @@ Acceptance to the GRC is highly competitive — even for established faculty fro
 **Presenter:** Pravinkumar Ghodake
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 The talk presents a novel unit cell configuration utilizing three nonlinear layers of equal widths to act as a tunable nonlinear metamaterial. By varying the central layer intensity and total unit cell width, the study demonstrates precise control over the amplitudes of harmonically back-scattered and forward-scattered waves (2f), drawing direct parallels between acoustic harmonic scattering and Raman scattering in nonlinear optics. Viewers can explore the structured breakdown covering problem formulation, systematic parametric results across widths from 300 to 2100 microns, and final conclusions.
+
 </div>
 
 **Details:**
+
 - **Published Abstract:** [JASA 153(3_supplement), A166](https://pubs.aip.org/asa/jasa/article/153/3_supplement/A166/2885960/Unit-cell-of-three-nonlinear-layers-for-the-design)
 - **YouTube Video:** [Watch Here](https://www.youtube.com/watch?v=_BKjFGHdBps)
 - **Figshare DOI:** [10.6084/m9.figshare.34004184](https://doi.org/10.6084/m9.figshare.34004184)
@@ -136,20 +142,25 @@ The talk presents a novel unit cell configuration utilizing three nonlinear laye
 **Format:** In-person Oral Presentation (Solo); Companion Poster
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This study demonstrates that linear time-dependent elastic metamaterials can generate nonlinear effects. Traditional nonlinear metamaterials rely on nonlinear constitutive behavior. In contrast, this work shows that dynamic temporal modulation of otherwise linear material properties can induce harmonic generation and enable control over frequency combinations under monochromatic wave and two-wave mixing. This represents a fundamentally different design paradigm with implications for tunable wave control, acoustic filtering, and advanced ultrasonic diagnostics.
+
 </div>
 
 **Personal Milestone & Distinguished Interactions:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-META 2023 was the first in-person international conference, attended on merit with complete funding and scholarship support. The conference featured plenary and keynote lectures by distinguished researchers including <strong>Prof. Jeremy Baumberg</strong> (University of Cambridge), <strong>Prof. Päivi Törmä</strong> (Aalto University), <strong>Prof. Harry Atwater</strong> (California Institute of Technology), <strong>Prof. Nikolay Zheludev</strong> (University of Southampton), <strong>Prof. Marin Soljačić</strong> (MIT), <strong>Prof. Jelena Vuckovic</strong> (Stanford University), and <strong>Prof. Federico Capasso</strong> (Harvard University). 
-</div>
 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-A highlight was an extended research discussion with <strong>Prof. Sir John Pendry</strong> (Imperial College London), widely regarded as the father of metamaterials and recipient of the 2024 Kyoto Prize. The discussion lasted around 20–30 minutes and was so engaging that both missed a planned session. Similar discussions took place with other leading researchers present at the conference.
+<div align="justify">
+
+META 2023 was the first in-person international conference, attended on merit with complete funding and scholarship support. The conference featured plenary and keynote lectures by distinguished researchers including **Prof. Jeremy Baumberg** (University of Cambridge), **Prof. Päivi Törmä** (Aalto University), **Prof. Harry Atwater** (California Institute of Technology), **Prof. Nikolay Zheludev** (University of Southampton), **Prof. Marin Soljačić** (MIT), **Prof. Jelena Vuckovic** (Stanford University), and **Prof. Federico Capasso** (Harvard University).
+
+A highlight was an extended research discussion with **Prof. Sir John Pendry** (Imperial College London), widely regarded as the father of metamaterials and recipient of the 2024 Kyoto Prize. The discussion lasted around 20–30 minutes and was so engaging that both missed a planned session. Similar discussions took place with other leading researchers present at the conference.
+
 </div>
 
 **Details:**
+
 - **ResearchGate:** [Nonlinear Effects of Linear Time-Dependent Metamaterials](https://www.researchgate.net/publication/372317065_Nonlinear_Effects_of_Linear_Time-Dependent_Metamaterials)
 - **META Proceedings:** ISSN 2429-1390, indexed in Scopus
 - **Figshare DOI (Title Slide):** [10.6084/m9.figshare.34066416](https://doi.org/10.6084/m9.figshare.34066416)
@@ -167,16 +178,23 @@ A highlight was an extended research discussion with <strong>Prof. Sir John Pend
 **Session:** S1 T1 — Track: Topology Optimization (Dec 17, 11:00 AM – 11:15 AM)
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 Presents an advanced inverse design framework to achieve nonlinear wave cloaking and acoustic invisibility in heterogeneous solid media. The framework models multi-scaled elliptical inclusions using a Murnaghan hyperelastic formulation matched in linear impedance. By running gradient-free inverse optimization algorithms on transient finite element models, it dynamically coordinates inclusion dimensions, rotation angles, and relative spatial positions to suppress parasitic transmitted harmonics.
+
 </div>
 
-**Context & Peer Cohort:** 
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-Presented in the flagship venue. The session brought together leading international researchers in optimization and metamaterials, including <strong>Prof. Kalyanmoy Deb</strong> (Michigan State University), <strong>Prof. Ole Sigmund</strong> (Denmark Technical University), <strong>Prof. Krishnan Suresh</strong> (University of Wisconsin, Madison), <strong>Prof. Wei Chen</strong> (Northwestern University), <strong>Prof. Faez Ahmed</strong> (MIT), <strong>Prof. Sankaran Mahadevan</strong> (Vanderbilt University), <strong>Prof. Gil Ho Yoon</strong> (Hanyang University), <strong>Prof. Prabhat Hajela</strong> (Rensselaer Polytechnic Institute), <strong>Prof. Roger A. Sauer</strong> (Ruhr-Universität Bochum), <strong>Prof. Mathias Huesing</strong> (RWTH-Aachen), <strong>Prof. Burkhard Corves</strong> (RWTH-Aachen), and <strong>Prof. Izabella Lubowiecka</strong> (Gdańsk University of Technology). The presentation generated discussion and questions from senior researchers in the topology optimization community.
+**Context & Peer Cohort:**
+
+<div align="justify">
+
+Presented in the flagship venue. The session brought together leading international researchers in optimization and metamaterials, including **Prof. Kalyanmoy Deb** (Michigan State University), **Prof. Ole Sigmund** (Denmark Technical University), **Prof. Krishnan Suresh** (University of Wisconsin, Madison), **Prof. Wei Chen** (Northwestern University), **Prof. Faez Ahmed** (MIT), **Prof. Sankaran Mahadevan** (Vanderbilt University), **Prof. Gil Ho Yoon** (Hanyang University), **Prof. Prabhat Hajela** (Rensselaer Polytechnic Institute), **Prof. Roger A. Sauer** (Ruhr-Universität Bochum), **Prof. Mathias Huesing** (RWTH-Aachen), **Prof. Burkhard Corves** (RWTH-Aachen), and **Prof. Izabella Lubowiecka** (Gdańsk University of Technology). The presentation generated discussion and questions from senior researchers in the topology optimization community.
+
 </div>
 
 **Details:**
+
 - **Funding:** Acoustical Society of America (ASA)
 - **Conference Website:** [incmdao2024.iisc.ac.in](https://incmdao2024.iisc.ac.in)
 - **Figshare DOI:** [10.6084/m9.figshare.34037976](https://doi.org/10.6084/m9.figshare.34037976)
@@ -192,16 +210,23 @@ Presented in the flagship venue. The session brought together leading internatio
 **Session:** S4 T1 — Track: Topology Optimization (Dec 18, 15:00 PM – 15:15 PM)
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 Establishes a robust time-domain inverse design framework to sculpt high-frequency (MHz) linear and nonlinear elastic waves. Moving beyond conventional eigenvalue sweeps and transfer matrix limits, the methodology implements a level-set shape optimization routine guided by gradient-free algorithms. The platform concurrently optimizes individual layer widths and multi-material stacking sequences for finite-length periodic arrays under realistic boundary conditions.
+
 </div>
 
 **Context:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-The title slide included a quote attributed to <strong>Prof. Zhigang Suo</strong>: <em>"Waves: Yet another play of two actors — inertia and elasticity."</em> — a concise statement of the physical duality that underlies the entire study. The photograph preserves not only the moment of presentation but also the conceptual lineage of the study.
+
+<div align="justify">
+
+The title slide included a quote attributed to **Prof. Zhigang Suo**: *"Waves: Yet another play of two actors — inertia and elasticity."* — a concise statement of the physical duality that underlies the entire study. The photograph preserves not only the moment of presentation but also the conceptual lineage of the study.
+
 </div>
 
 **Details:**
+
 - **Funding:** Acoustical Society of America (ASA)
 - **Conference Website:** [incmdao2024.iisc.ac.in](https://incmdao2024.iisc.ac.in)
 - **Figshare DOI:** [10.6084/m9.figshare.34037958](https://doi.org/10.6084/m9.figshare.34037958)
@@ -214,11 +239,15 @@ The title slide included a quote attributed to <strong>Prof. Zhigang Suo</strong
 **Format:** Research Presentation
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 Details an advanced optimization-driven inverse design framework utilizing Finite Element Analysis (FEA) in COMSOL to systematically tune input parameters and suppress unwanted second-order harmonic waves in nonlinear ultrasonic media. Viewers can explore the structured breakdown covering nonlinear ultrasonics and harmonic distortion, limitations of trial-and-error approaches, COMSOL finite element formulation, inverse design problem setup, numerical solution frameworks, input-output mapping, and harmonic suppression performance evaluations.
+
 </div>
 
 **Details:**
+
 - **YouTube Video:** [Watch Here](https://www.youtube.com/watch?v=uuK8Dcauc60)
 - **Figshare DOI:** [10.6084/m9.figshare.34007676](https://doi.org/10.6084/m9.figshare.34007676)
 
@@ -235,11 +264,15 @@ Details an advanced optimization-driven inverse design framework utilizing Finit
 **Format:** Oral Presentation (Solo)
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-The study numerically investigates harmonic scattering of elastic waves from highly localized functionally graded nonlinear inclusions and proposes a novel building block for nonlinear metamaterials. A simple spatial distribution of nonlinear parameters is proposed such that the area under the distribution remains constant for a fixed inclusion size. The key finding is an <strong>area-invariance principle</strong>: despite different spatial distributions, the harmonic responses of both forward- and backscattered waves remain identical during monochromatic wave interaction and one-way two-wave mixing — as long as the area under the spatial nonlinear parameter curve is constant. Reducing the area produces a corresponding decrease in harmonic amplitudes.
+
+<div align="justify">
+
+The study numerically investigates harmonic scattering of elastic waves from highly localized functionally graded nonlinear inclusions and proposes a novel building block for nonlinear metamaterials. A simple spatial distribution of nonlinear parameters is proposed such that the area under the distribution remains constant for a fixed inclusion size. The key finding is an **area-invariance principle**: despite different spatial distributions, the harmonic responses of both forward- and backscattered waves remain identical during monochromatic wave interaction and one-way two-wave mixing — as long as the area under the spatial nonlinear parameter curve is constant. Reducing the area produces a corresponding decrease in harmonic amplitudes.
+
 </div>
 
 **Details:**
+
 - **Published Abstract:** [JASA 154(4_supplement), A58](https://pubs.aip.org/asa/jasa/article/154/4_supplement/A58/2923798/Interesting-effects-of-harmonically-scattered)
 - **Figshare DOI:** [10.6084/m9.figshare.34064223](https://doi.org/10.6084/m9.figshare.34064223)
 
@@ -253,11 +286,15 @@ The study numerically investigates harmonic scattering of elastic waves from hig
 **Format:** Oral Presentation (Solo)
 
 **Scientific Contribution:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This study proposes a unique geometric model solved via the finite element method, capturing harmonic scattering from triangular, circular, and rectangular corner shapes under free and fixed boundary conditions. The interaction of nonlinear ultrasonic waves with these edges reveals a complex interplay between harmonic generation, linear scattering, bulk wave mode conversion, and harmonic energy redistribution across all harmonics. These effects extend to one-way and two-way two-wave mixing, revealing non-intuitive sensitivities that depend on the phase difference introduced during harmonic scattering. It extends the analytical work of Tang et al. (2012), Kube (2017–18), and Achenbach & Wang (2017–18) to realistic 2-D geometries.
+
 </div>
 
 **Details:**
+
 - **Published Abstract:** [JASA 154(4_supplement), A262](https://pubs.aip.org/asa/jasa/article/154/4_supplement/A262/2924505/The-complexity-of-harmonically-scattered-nonlinear)
 - **Figshare DOI:** [10.6084/m9.figshare.34064229](https://doi.org/10.6084/m9.figshare.34064229)
 
@@ -270,8 +307,11 @@ This study proposes a unique geometric model solved via the finite element metho
 **Status:** Independent, unpublished research figure (not associated with a conference or proceedings).
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This figure presents the time-domain and frequency-domain responses of nonlinear waves scattered from a nonlinear inclusion in a 1D medium, as the characteristic length of the inclusion is varied relative to the fundamental wavelength λ. Three cases are shown: λ/π (sub-wavelength), λ (resonant), and πλ (super-wavelength). The wave packet undergoes a time-stretching effect — the envelope broadens, and the oscillatory structure within the packet changes. The right panel shows harmonic selectivity — the ability to tune which harmonics are generated or suppressed by simply changing the spatial scale of the nonlinear inclusion. This has direct implications for the design of wavelength-selective nonlinear metamaterials.
+
 </div>
 
 **Figshare DOI:** [10.6084/m9.figshare.34063992](https://doi.org/10.6084/m9.figshare.34063992)
@@ -283,8 +323,11 @@ This figure presents the time-domain and frequency-domain responses of nonlinear
 **Status:** Co-authored with Saurabh Biswas; presented at the 25th International Congress of Theoretical and Applied Mechanics (ICTAM 2021), Milan, Italy.
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This figure presents the frequency response and hysteretic loop evolution for one-way two-wave mixing in a Two-State friction-based hysteretic material. Two mixing cases are shown, with input frequencies f₁ = 0.06 MHz and f₂ = 0.1 MHz (Case 1), and f₁ = 0.1 MHz and f₂ = 0.15 MHz (Case 2). The figure demonstrates the minor-loop tracking paths uniquely captured by the Two-State model — paths that the classical Bouc-Wen model cannot resolve due to its scalar formulation. These inner loops arise from partial reversals at frictional micro-crack contacts and are essential for accurate characterization of microstructural damage in fatigued metals.
+
 </div>
 
 **Figshare DOI:** [10.6084/m9.figshare.34063902](https://doi.org/10.6084/m9.figshare.34063902)
@@ -296,8 +339,11 @@ This figure presents the frequency response and hysteretic loop evolution for on
 **Status:** Independent, unpublished research figure.
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This figure presents a novel visualization of the progressive evolution of hysteretic loops under nonlinear wave loading in a hysteretic medium. Reading left-to-right, the sequence shows the transformation from smooth, repeated, near-circular loops to fully horizontal and elongated loops — reflecting internal energy redistribution driven by the accumulated state of micro-crack contact. The evolution demonstrates the sensitivity of the hysteretic response to the material's memory-dependent nonlinear state, a hallmark of contact acoustic nonlinearity (CAN) in fatigued metals.
+
 </div>
 
 **Figshare DOI:** [10.6084/m9.figshare.34063929](https://doi.org/10.6084/m9.figshare.34063929)
@@ -309,8 +355,11 @@ This figure presents a novel visualization of the progressive evolution of hyste
 **Status:** Independent, unpublished research figure.
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This figure presents the time-domain response of a wave propagating and reflecting in a hysteretic medium. The input pulse (black) is exactly overlapping across all analysis cases, demonstrating the reproducibility of the source excitation. The reflected output — the superposition of the reflected nonlinear wave and the incident input — diverges into distinct waveforms (shown in multiple colours), each corresponding to a different material state. This provides direct visual proof that in a hysteretic medium, the reflected field, not the incident field, is the carrier of state-dependent information. This observation is directly relevant to nonlinear ultrasonic pulse-echo diagnostics.
+
 </div>
 
 **Figshare DOI:** [10.6084/m9.figshare.34063944](https://doi.org/10.6084/m9.figshare.34063944)
@@ -325,28 +374,39 @@ This figure presents the time-domain response of a wave propagating and reflecti
 **Completion:** June 2024  
 **Total Pages:** 828  
 **Authorship Type:** Single-author, independent research  
-**Turnitin Similarity:** 2% overall (approx. 1% attributable to the author's own previously published work)  
+**Turnitin Similarity:** 2% overall (approx. 1% attributable to the author's own previously published work)
 
 **Public Record of Authorship and Completion:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This page constitutes a public record, dated and retained for evidentiary purposes, of the completion, authorship, and ownership of the doctoral thesis. The thesis was completed in June 2024 at the Indian Institute of Technology Bombay and comprises 828 pages of original single-author research in nonlinear ultrasonics, inverse design, and mechanical metamaterials. The thesis was written, structured, and completed independently, with all theoretical, computational, and experimental contributions being the author's own.
+
 </div>
 
 **Declaration of Authorship (Page 751):**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 The declaration page of the thesis states that the written submission represents the author's own ideas in their own words, with all external sources adequately cited and referenced. It confirms adherence to principles of academic honesty and integrity, and states that for the most significant part of the PhD program, the author functioned as an independent PhD student. It retains sole ownership of the intellectual property rights pertaining to the research documented in the thesis. Formal permission must be obtained from the author prior to the dissemination of any details thereof.
+
 </div>
 
 **Why Only Three Pages Are Shown:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 The thesis contains research that has not yet been fully published, and several results remain at the frontier of what is publicly disclosed. To preserve novelty, protect intellectual property, and guard against the possibility of the work being reproduced without attribution, only the front-matter and declaration pages are posted publicly. The full thesis is available on request, subject to permission.
+
 </div>
 
 **The Two Guiding Quotes:**
+
 - The thesis opens with a quote from **Prof. Zhigang Suo** (Harvard University): *"Waves: Yet another play of two actors — inertia and elasticity."*
 - The thesis closes with: *"All linear systems are alike, but every nonlinear system is nonlinear in its own way."*
 
 **Figshare DOIs for Disclosed Pages:**
+
 - [10.6084/m9.figshare.34174368](https://doi.org/10.6084/m9.figshare.34174368)
 - [10.6084/m9.figshare.34175961](https://doi.org/10.6084/m9.figshare.34175961)
 - [10.6084/m9.figshare.34177155](https://doi.org/10.6084/m9.figshare.34177155)
@@ -358,41 +418,53 @@ The thesis contains research that has not yet been fully published, and several 
 ### Impact Response of Glass-Fiber Composites
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+
+<div align="justify">
+
 This research poster presents an experimental study on the impact response of epoxy-glass fiber composite laminates under three loading regimes: low-velocity drop weight impact, dynamic Hopkinson Pressure Bar (HPB) impact, and high-velocity bullet impact. Laminates of 100 mm × 100 mm with a [0/90/+45/−45] sequence were prepared using hand layup and vacuum bagging. Drop weight tests were conducted on an INSTRON CEAST 9340 with a 3.13 kg impactor at 10 J, 20 J, and 30 J. Hopkinson bar tests were performed with a 20 mm bar and 16 mm indenter. Back-face displacement profiles were captured from 0 to 3800 µs at 40 µs intervals. Key findings: damage patterns were identified via image processing; significant changes in damage modes appeared as impact energy increased; accumulation of displacement profiles during loading indicated local fiber breakage, while accumulation during unloading indicated fiber mixing and overlapping within the layer.
+
 </div>
 
 **Details:**
+
 - **Funding:** MHRD
 - **Figshare DOI:** [10.6084/m9.figshare.4595281](https://doi.org/10.6084/m9.figshare.4595281)
 
 ---
 
-## 🔊 Nonlinear Ultrasonics
+## 🌊 Nonlinear Ultrasonics
 
 ### Experimental Setup for Nonlinear Ultrasonic Measurements
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-This documents a bespoke experimental setup developed from scratch for investigating nonlinear wave phenomena — harmonic generation and wave mixing — in metallic materials, with the aim of quantifying early-stage micro-meso scale damage. The system integrates a RITEC GA-2500A Gated RF Amplifier for high-power RF burst excitation, Olympus V-109 and V-110 broadband piezoelectric transducers (5 MHz), a custom precision alignment stage with manual X-Y-Z micrometer translation and gimbal mount, and Tektronix MDO3024 / TDS 3014B oscilloscopes with sampling up to 2.5 GS/s and 10M-point memory. The dataset includes photographic documentation of the setup. This setup enables precise measurement of the acoustic nonlinearity parameter β, which is highly sensitive to early-stage damage such as dislocation substructures and micro-voids.
+
+<div align="justify">
+
+This documents a bespoke experimental setup developed from scratch for investigating nonlinear wave phenomena — harmonic generation and wave mixing — in metallic materials, with the aim of quantifying early-stage micro-meso scale damage. The system integrates a RITEC GA-2500A Gated RF Amplifier for high-power RF burst excitation, Olympus V-109 and V-110 broadband piezoelectric transducers (5 MHz), a custom precision alignment stage with manual X-Y-Z micrometer translation and gimbal mount, and Tektronix MDO3024 / TDS 3014B oscilloscopes with sampling up to 2.5 GS/s and 10M-point memory. The dataset includes photographic documentation of the setup. This setup enables precise measurement of the acoustic nonlinearity parameter β.
+
 </div>
 
 **Details:**
+
 - **Funding:** Acoustical Society of America
 - **Figshare DOI:** [10.6084/m9.figshare.34014798](https://doi.org/10.6084/m9.figshare.34014798)
 
 ---
 
-## 🧩 Fracture Mechanics
+## 🔬 Fracture Mechanics
 
 ### Dynamic Mode I Crack Propagation in Epoxy Material: Unpatched vs. Symmetrically Patched Configurations
 
 **Description:**
-<div style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
-This dataset presents high-speed dynamic photoelasticity images capturing Dynamic Mode I crack propagation in epoxy resin specimens, conducted at IIT Kanpur to investigate the influence of symmetric patching on dynamic fracture behavior. Dynamic fracture was initiated using a modified Split Hopkinson Pressure Bar (SHPB) apparatus, with the dynamic stress field around the propagating crack tip visualized using the dynamic photoelasticity technique. Photoelastic fringe patterns were recorded at 100,000 fps with a 1 µs exposure time, at 192 × 192 pixel resolution. The dataset contains three configurations — unpatched, Symmetric Patch I, and Symmetric Patch II — each represented by a sequence of 9 frames spanning ~210–250 µs after crack initiation. The isochromatic fringe patterns reveal how the patch alters local stiffness and wave impedance, producing visible distortions in the crack tip stress field.
+
+<div align="justify">
+
+This dataset presents high-speed dynamic photoelasticity images capturing Dynamic Mode I crack propagation in epoxy resin specimens, conducted at IIT Kanpur to investigate the influence of symmetric patching on dynamic fracture behavior. Dynamic fracture was initiated using a modified Split Hopkinson Pressure Bar (SHPB) apparatus, with the dynamic stress field around the propagating crack tip visualized using the dynamic photoelasticity technique. Photoelastic fringe patterns were recorded at 100,000 fps with a 1 µs exposure time, at 192 × 192 pixel resolution. The dataset contains three configurations — unpatched, Symmetric Patch I, and Symmetric Patch II — each represented by a sequence of 9 frames spanning ~210–250 µs after crack initiation.
+
 </div>
 
 **Details:**
+
 - **Funding:** MHRD
 - **Figshare DOI:** [10.6084/m9.figshare.34014693](https://doi.org/10.6084/m9.figshare.34014693)
 
@@ -400,7 +472,7 @@ This dataset presents high-speed dynamic photoelasticity images capturing Dynami
 
 ## 🔗 Related Sections
 
-- [Academic & Research Profiles](./academic-profiles.md)
+- [Academic & Research Profiles](./academic-prof‌iles.md)
 - [Research Records](./research-records.md)
 - [Publisher & Repository Directory](./publisher-directory.md)
 - [Institutional Records](./institutional-records.md)
