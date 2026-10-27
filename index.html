@@ -66,6 +66,23 @@
         "Metamaterials", "Nonlinear Ultrasonics", "Inverse Problems", "Solid Mechanics", 
         "Structural Health Monitoring", "Wave Propagation", "Computational Mechanics", "Acoustics"
       ],
+        "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Acoustical Society of America",
+          "url": "https://acousticalsociety.org/"
+        },
+        {
+          "@type": "Organization",
+          "name": "American Physical Society",
+          "url": "https://www.aps.org/"
+        },
+        {
+          "@type": "Organization",
+          "name": "SPIE",
+          "url": "https://spie.org/"
+        }
+      ],
       "identifier": {
         "@type": "PropertyValue",
         "propertyID": "ORCID",
@@ -211,6 +228,27 @@
         }
         .footer a { color: var(--primary); text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
+        
+        /* ===== New summary blocks (stats, tables) ===== */
+        .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:25px}
+        .stat{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+        .stat b{display:block;font-size:1.5rem;color:var(--primary)}
+        .stat span{font-size:.8rem;color:var(--text-muted)}
+        .table-wrap{overflow-x:auto;margin-bottom:20px}
+        .data-table{width:100%;border-collapse:collapse;font-size:.9rem;background:var(--card-bg)}
+        .data-table th,.data-table td{border:1px solid var(--border);padding:10px;text-align:left;vertical-align:top}
+        .data-table th{background:var(--bg)}
+        .data-table a{color:var(--primary);text-decoration:none}
+        .data-table a:hover{text-decoration:underline}
+
+        /* ===== Styling for expandable link categories ===== */
+        .link-category{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;margin-bottom:12px;overflow:hidden}
+        .link-category summary{cursor:pointer;padding:14px 15px;font-weight:600}
+        .link-category summary:hover{color:var(--primary)}
+        .link-list{margin:0;padding:0 15px 15px 35px}
+        .link-list li{margin-bottom:6px;font-size:.92rem;line-height:1.5}
+        .link-list a{color:var(--primary);text-decoration:none;word-break:break-word}
+        .link-list a:hover{text-decoration:underline}
     </style>
 </head>
 <body>
@@ -545,6 +583,14 @@
                     <p><strong>Publication & Conference:</strong> Journal of the Acoustical Society of America (JASA) • Acoustical Society of America (ASA) • ASA Meetings • International Congress on Sound and Vibration (ICSV) • International Workshop on Structural Health Monitoring (IWSHM) • Stanford University • Quantitative Nondestructive Evaluation (QNDE) • ASME IDETC/CIE • IEEE International Ultrasonics Symposium (IUS) • International Congress of Theoretical and Applied Mechanics (ICTAM) • International Conference on Inverse Problems (IPMS) • International Symposium on Nonlinear Acoustics (ISNA) • META Conference • NODYCON • APS March Meeting • APS Global Physics Summit • SPIE • UKACM • USNCCM • NCMDAO • iNCMDAO • ISTAM • IMPLAST • INTER-NOISE • ICINDE • GRC/GRS • Gordon Research Conference • Gordon Research Seminar • Acoustics 2023 Sydney • WESPAC • PRUAC • 185th Meeting of the ASA • AAS Conference • ICC Sydney</p>
 
                     <p><strong>Institutional Records, Awards & Leadership:</strong> ASA CIRE Student Grant • Young Scientist Award • ISTAM Young Scientist Award • ASA Technical Committee Member • Computational Acoustics Technical Committee • Engineering Acoustics Technical Committee • Physical Acoustics Technical Committee • Structural Acoustics and Vibration Technical Committee • Education in Acoustics Committee • ASA Student Council Representative • Session Chair • APS March Meeting Presider • Conference Minisymposium Organizer • Peer Review • Academic Governance • Scientific Appointments • Institute Scholarship • IIT Bombay Research Fellowship • Ghent University • University of Malta • University of Oxford • Loughborough University • IISc Bangalore • Isaac Newton Institute • University of Cambridge</p>
+
+                    <p><strong>Additional Research Terms:</strong> Nonlinear Acoustics • Nonlinear Elasticity • Higher Harmonics • Phononic Bandgap • Elastic Metamaterials • Inverse Problems • Ultrasonic Testing • Mode Conversion • Mode-Independent Wave Control • Elastically Invisible Inclusions • Multi-Material Multi-Functional Metamaterials • Rate-Independent Hysteresis • Pinched Hysteresis • Quadratic Nonlinearity • Cubic Nonlinearity • System-Generated Harmonics • Instrument-Induced Harmonics • Time-Dependent Metamaterials • Phononic Time Crystals • Pulse-Echo Inspection • Solid and Elastically Hollow Inclusions • Time-Stretching of Nonlinear Waves • Super-Resolution Imaging • Mechanical Filter Design • Size Optimization • Time-Domain Analysis • Third-Order Elastic Constants • Python • AI/ML for Structural Health Monitoring • Dynamic Fracture • Impact Mechanics • Fracture Mechanics • Composite Materials</p>
+
+                    <p><strong>Related Fields &amp; Applications:</strong> Physical Acoustics • Structural Acoustics and Vibration • Engineering Acoustics • Computational Acoustics • Wave Control • Acoustic Filtering • Vibration Control • NDE 4.0 • Industry 4.0 • Internet of Things (IoT) • 3D Printing • Additive Manufacturing • Biomedical Health Monitoring • Medical Ultrasound Imaging • Power Plant Pressure Vessels • Early Fatigue Detection</p>
+
+                    <p><strong>More Conferences &amp; Venues:</strong> 184th ASA Meeting • 187th Meeting of the ASA • SHM 2021 Stanford • META 2022 • META 2023 • Metamaterials 2022 • CILAMCE • PANACM • MDAO • NDE 2021 • NDE 2023 • NDE 2024 • ISNDT • eJNDT • Multifunctional Materials and Structures • Canonical Scattering Summit • Walchand College of Engineering Sangli</p>
+
+                    <p><strong>More Repositories:</strong> Semantic Scholar • Loughborough University Repository • Morressier</p>
                 </div>
                 
             </div>
@@ -1034,6 +1080,102 @@
                 <li><a href="https://www.lboro.ac.uk/" target="_blank">Loughborough University</a></li>
             </ul>
         </details>
+
+        
+        <!-- ===== RESEARCH AT A GLANCE & METRICS ===== -->
+        <div class="section-title" style="margin-top: 50px;">📊 Research at a Glance & Citation Metrics</div>
+        <div class="stats-grid">
+            <div class="stat"><b>16</b><span>Journal / Abstract Articles</span></div>
+            <div class="stat"><b>32+</b><span>Conference Papers</span></div>
+            <div class="stat"><b>30+</b><span>Talks</span></div>
+            <div class="stat"><b>5</b><span>Posters</span></div>
+            <div class="stat"><b>100+</b><span>Archive Videos</span></div>
+            <div class="stat"><b>8+</b><span>Scopus-Indexed</span></div>
+        </div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <tr><th>Paper</th><th>Venue</th><th>FWCI</th><th>Record</th></tr>
+            <tr><td>Wave Propagation in a Media with Asymmetric Rate-Independent Hysteretic Nonlinearity</td><td>ICSV 2021</td><td>1.51</td><td><a href="https://www.scopus.com/pages/publications/85117472334" target="_blank" rel="noopener">Scopus</a></td></tr>
+            <tr><td>1D Nonlinear Wave Propagation in a Rate-Independent Pinched Hysteretic Material</td><td>QNDE 2021 (ASME)</td><td>1.04</td><td><a href="https://doi.org/10.1115/qnde2021-74515" target="_blank" rel="noopener">DOI</a> · <a href="https://www.scopus.com/pages/publications/85124142075" target="_blank" rel="noopener">Scopus</a></td></tr>
+        </table>
+        </div>
+        <p style="font-size:.8rem;color:var(--text-muted);">FWCI = Field-Weighted Citation Impact (Elsevier Scopus). A value of 1.00 equals the global average for similar papers. Values change over time.</p>
+
+
+        <!-- ===== SOCIETY APPOINTMENTS ===== -->
+        <div class="section-title" style="margin-top: 40px;">🏛️ Professional Society Service & Appointments</div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <tr><th>Society</th><th>Role</th><th>Term</th></tr>
+            <tr><td>Acoustical Society of America</td><td>Computational Acoustics Technical Committee</td><td>To 2025</td></tr>
+            <tr><td>Acoustical Society of America</td><td>Engineering Acoustics Technical Committee</td><td>To 2025</td></tr>
+            <tr><td>Acoustical Society of America</td><td>Physical Acoustics Technical Committee</td><td>To 2026</td></tr>
+            <tr><td>Acoustical Society of America</td><td>Structural Acoustics and Vibration Technical Committee</td><td>To 2026</td></tr>
+            <tr><td>Acoustical Society of America</td><td>Education in Acoustics Committee</td><td>To 2025</td></tr>
+            <tr><td>Acoustical Society of America</td><td>Student Council Representative, Computational Acoustics</td><td>Through Spring 2024</td></tr>
+            <tr><td>American Physical Society</td><td><a href="https://meetings-archive.aps.org/mar/2023/aaa08/" target="_blank" rel="noopener">Session Chair, March Meeting 2023 (AAA08, Matter under Extreme Conditions)</a></td><td>2023</td></tr>
+            <tr><td>SPIE</td><td><a href="https://spie.org/profile/Pravinkumar.Ghodake-4330088" target="_blank" rel="noopener">Member</a></td><td>Ongoing</td></tr>
+        </table>
+        </div>
+        <p style="font-size:.85rem;">Source: <a href="https://pubs.aip.org/asa/jasa/article/152/3/1970/2839575/Acoustical-News" target="_blank" rel="noopener">JASA Acoustical News</a> · <a href="https://doi.org/10.1121/10.0020860" target="_blank" rel="noopener">DOI 10.1121/10.0020860</a> · <a href="https://pubs.aip.org/asa/jasa/article/156/4/2132/3315436/Acoustical-News" target="_blank" rel="noopener">2024–2025 Technical Committees Report</a></p>
+
+
+        <!-- ===== GRANTS & AWARDS ===== -->
+        <div class="section-title" style="margin-top: 40px;">🏅 Grants, Fellowships & Recognitions</div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <tr><th>Recognition</th><th>Body</th><th>Supported / Related Work</th></tr>
+            <tr><td>International Student Grant</td><td>ASA CIRE</td><td><a href="https://www.scopus.com/pages/publications/85124142075" target="_blank" rel="noopener">QNDE 2021</a> · <a href="https://www.scopus.com/pages/publications/85139252220" target="_blank" rel="noopener">IWSHM (SH waves)</a> · <a href="https://www.scopus.com/pages/publications/85139263071" target="_blank" rel="noopener">IWSHM (hysteresis)</a> · <a href="https://meetings-archive.aps.org/mar/2024/qq05/3/" target="_blank" rel="noopener">APS March Meeting 2024</a></td></tr>
+            <tr><td>Institute Scholarship</td><td>IIT Bombay</td><td><a href="https://doi.org/10.3397/in_2022_0667" target="_blank" rel="noopener">Inter-Noise 2022</a> · <a href="https://www.scopus.com/pages/publications/85179871283" target="_blank" rel="noopener">META 2022</a> · APS March Meeting 2024</td></tr>
+            <tr><td>Research Fellowship</td><td>IIT Bombay</td><td><a href="https://www.scopus.com/pages/publications/85139252220" target="_blank" rel="noopener">IWSHM 2021/22, Stanford</a></td></tr>
+            <tr><td>Young Scientist Award Session (selected presenter)</td><td>ISTAM, 66th Congress, IIT Kharagpur</td><td><a href="https://istam.iitkgp.ac.in/resources/2021/proceedings/Award_session/Abstract/SM/138abstract.pdf" target="_blank" rel="noopener">Harmonic Scattering of S0 Lamb Wave</a></td></tr>
+            <tr><td>Selected workshop participant</td><td>Isaac Newton Institute, University of Cambridge</td><td><a href="https://www.newton.ac.uk/event/mwsw01/" target="_blank" rel="noopener">Canonical Scattering Summit</a></td></tr>
+            <tr><td>Peer-review selection (withdrawn due to travel funding constraints)</td><td>Metamaterials 2022</td><td><a href="https://congress2022.metamorphose-vi.org/index.php/component/svisor/?task=showScheduleSvisor&amp;Itemid=156" target="_blank" rel="noopener">Schedule record</a></td></tr>
+            <tr><td>Invited speaker, minisymposium M8</td><td>IPMS 2022 (Ghent University &amp; University of Malta)</td><td><a href="https://www.ipms-conference.org/ipms2022/index.php/m8" target="_blank" rel="noopener">Programme</a></td></tr>
+        </table>
+        </div>
+        <p style="font-size:.85rem;">Grant and scholarship acknowledgements are as stated in the linked publication records.</p>
+
+        
+        <!-- ===== CONFERENCE QUICK INDEX ===== -->
+        <div class="section-title" style="margin-top: 40px;">🎤 Conference Presentations Quick Index</div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <tr><th>Year</th><th>Conference</th><th>Venue</th><th>Record</th></tr>
+            <tr><td>2025</td><td>APS Global Physics Summit (2 talks)</td><td>USA</td><td><a href="https://meetings-archive.aps.org/smt/2025/mar-t63/9/" target="_blank" rel="noopener">Talk 1</a> · <a href="https://meetings-archive.aps.org/smt/2025/mar-r00/164/" target="_blank" rel="noopener">Talk 2</a></td></tr>
+            <tr><td>2024</td><td>GRS / GRC, Multifunctional Materials &amp; Structures</td><td>Ventura, CA</td><td><a href="https://www.researchgate.net/publication/378145055_Manipulating_Elastic_Waves_A_Novel_Approach_via_Inverse_Design_of_Multi-Material_Multi-Functional_Metamaterials" target="_blank" rel="noopener">GRS talk</a> · <a href="https://www.researchgate.net/publication/378145129_Elastic_wave_manipulation_through_h_inverse_design_of_multi-material_and_multi-functional_metamaterials" target="_blank" rel="noopener">GRC poster</a></td></tr>
+            <tr><td>2024</td><td>iNCMDAO (2 papers)</td><td>IISc Bangalore</td><td><a href="https://www.researchgate.net/publication/387666302_Inverse_Design_of_Nonlinear_Phononic_Metamaterials_for_Nonlinear_Wave_Cloaking" target="_blank" rel="noopener">Cloaking</a> · <a href="https://www.researchgate.net/publication/387666456_Sculpting_Linear_and_Nonlinear_Elastic_Waves_Exploring_Inverse_Design_Potentials" target="_blank" rel="noopener">Sculpting</a></td></tr>
+            <tr><td>2024</td><td>APS March Meeting (2 talks)</td><td>USA</td><td><a href="https://meetings-archive.aps.org/mar/2024/qq05/3/" target="_blank" rel="noopener">SH waves</a> · <a href="https://ui.adsabs.harvard.edu/abs/2024APS..MARNN00003/abstract" target="_blank" rel="noopener">Time-modulated cells (ADS)</a></td></tr>
+            <tr><td>2024</td><td>ISNDT NDE 2024</td><td>Chennai</td><td><a href="https://www.researchgate.net/publication/387314130_Wave_Scattering_Dynamics_in_Clusters_of_Nonlinear_Solid_and_Elastically_Hollow_Inclusions" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2024</td><td>ASA 187th Meeting</td><td>USA</td><td><a href="https://pubs.aip.org/asa/jasa/article/156/4_supplement/A22/3331196/Exploring-interesting-effects-of-symmetric" target="_blank" rel="noopener">JASA abstract</a></td></tr>
+            <tr><td>2023</td><td>Acoustics 2023 (ASA 185 / AAS / WESPAC / PRUAC)</td><td>ICC Sydney</td><td><a href="https://pubs.aip.org/asa/jasa/article/154/4_supplement/A58/2923798/Interesting-effects-of-harmonically-scattered" target="_blank" rel="noopener">Abstract 1</a> · <a href="https://pubs.aip.org/asa/jasa/article/154/4_supplement/A262/2924505/The-complexity-of-harmonically-scattered-nonlinear" target="_blank" rel="noopener">Abstract 2</a></td></tr>
+            <tr><td>2023</td><td>META 2023 (2 papers)</td><td>Paris</td><td><a href="https://www.scopus.com/pages/publications/85174567581" target="_blank" rel="noopener">FG unit cell</a> · <a href="https://www.scopus.com/pages/publications/85174568088" target="_blank" rel="noopener">Time-dependent</a></td></tr>
+            <tr><td>2023</td><td>NODYCON 2023 (2 papers)</td><td>Rome</td><td><a href="https://nodycon.org/2023/papers/190/abstract_submissions/569/view_abstract" target="_blank" rel="noopener">Paper 190</a> · <a href="https://nodycon.org/2023/papers/337/abstract_submissions/581/view_abstract" target="_blank" rel="noopener">Paper 337</a></td></tr>
+            <tr><td>2023</td><td>APS March Meeting (2 talks)</td><td>USA</td><td><a href="https://ui.adsabs.harvard.edu/abs/2023APS..MARJJ8009G/abstract" target="_blank" rel="noopener">Invisible inclusions</a> · <a href="https://ui.adsabs.harvard.edu/abs/2023APS..MARVV1042G/abstract" target="_blank" rel="noopener">Additive manufacturing NDE</a></td></tr>
+            <tr><td>2023</td><td>ISNDT NDE 2023</td><td>Pune</td><td><a href="https://www.researchgate.net/publication/380348069_Numerical_Analysis_of_Asymmetrical_Functionally_Graded_SmallScale_1D_Inclusions_for_Harmonic_Scattering" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2022</td><td>Inter-Noise 2022</td><td>Glasgow</td><td><a href="https://doi.org/10.3397/in_2022_0667" target="_blank" rel="noopener">DOI</a> · <a href="https://www.scopus.com/pages/publications/85147449847" target="_blank" rel="noopener">Scopus</a></td></tr>
+            <tr><td>2022</td><td>META 2022</td><td>Torremolinos, Spain</td><td><a href="https://www.scopus.com/pages/publications/85179871283" target="_blank" rel="noopener">Scopus</a></td></tr>
+            <tr><td>2022</td><td>IPMS 2022</td><td>Malta</td><td><a href="https://www.researchgate.net/publication/363257701_Inverse_problem_for_quantification_of_localized_damage_using_1D_nonlinear_elastic_two-wave_mixing" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2022</td><td>ISNA 2022</td><td>University of Oxford</td><td><a href="https://www.researchgate.net/publication/363257744_Do_Periodic_arrangement_of_Nonlinear_Local_Damages_act_as_Nonlinear_Metamaterials" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2022</td><td>IMPLAST 2022 (2 papers)</td><td>IIT Madras</td><td><a href="https://www.researchgate.net/publication/380348060_Nonlinear_Waves_in_Discontinuous_Functionally_Graded_Nonlinear_Materials" target="_blank" rel="noopener">FG materials</a> · <a href="https://www.researchgate.net/publication/380348225_Inverse_Design_of_Linear_Mechanical_Metamaterial_to_Control_Wave_Propagation_in_Elastic_Rod" target="_blank" rel="noopener">Elastic rod</a></td></tr>
+            <tr><td>2022</td><td>ICINDE 2022</td><td>Imaging NDE</td><td><a href="https://www.researchgate.net/publication/365295228_Presence_and_Absence_of_Fractional_Harmonics_in_Scattered_Waves_from_Multiple_Nonlinear_Inclusions" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2021/22</td><td>IWSHM (2 papers)</td><td>Stanford</td><td><a href="https://www.scopus.com/pages/publications/85139252220" target="_blank" rel="noopener">SH waves</a> · <a href="https://www.scopus.com/pages/publications/85139263071" target="_blank" rel="noopener">Hysteresis</a></td></tr>
+            <tr><td>2021</td><td>ICSV 2021</td><td>27th ICSV</td><td><a href="https://www.scopus.com/pages/publications/85117472334" target="_blank" rel="noopener">Scopus</a></td></tr>
+            <tr><td>2021</td><td>QNDE 2021</td><td>ASME</td><td><a href="https://doi.org/10.1115/qnde2021-74515" target="_blank" rel="noopener">DOI</a></td></tr>
+            <tr><td>2021</td><td>UKACM 2021</td><td>Loughborough University</td><td><a href="https://doi.org/10.17028/RD.LBORO.14588388.V1" target="_blank" rel="noopener">DOI</a></td></tr>
+            <tr><td>2021</td><td>USNCCM 2021</td><td>USA</td><td><a href="https://www.researchgate.net/publication/356264617_One_Dimensional_Nonlinear_Elastic_Wave_Propagation_in_a_Reid's_Rateindependent_Pinched_Hysteretic_Material" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2021</td><td>ICTAM 2021</td><td>Milan</td><td><a href="https://www.researchgate.net/publication/354423054_Nonlinear_one-way_two-wave_mixing_in_a_media_with_rate_independent_hysteresis" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2021</td><td>ASME IDETC/CIE</td><td>USA</td><td><a href="https://www.researchgate.net/publication/356264396_Harmonic_Scattering_Of_Elastic_Wave_From_Nonlinear_Contact_Interfaces_Separated_by_a_Linear_Material" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2021</td><td>IEEE IUS 2021</td><td>Ultrasonics Symposium</td><td><a href="https://www.researchgate.net/publication/356264334_Harmonic_Scattering_of_an_Ultrasonic_Wave_from_a_Localized_Layered_Hysteretic_Damage" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2021</td><td>SHM 2021</td><td>Stanford</td><td><a href="https://doi.org/10.12783/shm2021/36362" target="_blank" rel="noopener">DEStech DOI</a></td></tr>
+            <tr><td>2021</td><td>CILAMCE / PANACM</td><td>Rio de Janeiro</td><td><a href="https://www.researchgate.net/publication/356264251" target="_blank" rel="noopener">Paper</a></td></tr>
+            <tr><td>2021</td><td>ISTAM 2021 (Award Session)</td><td>IIT Kharagpur</td><td><a href="https://istam.iitkgp.ac.in/resources/2021/proceedings/Award_session/Abstract/SM/138abstract.pdf" target="_blank" rel="noopener">Abstract</a></td></tr>
+            <tr><td>2021</td><td>NDE 2021 (eJNDT 27(4))</td><td>Virtual, ISNDT</td><td><a href="https://www.ndt.net/search/docs.php?id=26801" target="_blank" rel="noopener">NDT.net</a> · <a href="https://www.youtube.com/watch?v=PyJpewnetOQ" target="_blank" rel="noopener">Video</a></td></tr>
+            <tr><td>2021</td><td>NCMDAO 2021 (2 papers)</td><td>IIT Madras</td><td><a href="https://www.youtube.com/watch?v=uuK8Dcauc60" target="_blank" rel="noopener">Video</a> · <a href="https://www.researchgate.net/publication/356264050_Early-Stage_Local_Damage_Size_Quantification_using_Nonlinear_Wave_Mixing" target="_blank" rel="noopener">Paper 2</a></td></tr>
+            <tr><td>2021</td><td>ASA 184th Meeting</td><td>Acoustic Metamaterials</td><td><a href="https://www.youtube.com/watch?v=_BKjFGHdBps" target="_blank" rel="noopener">Video</a> · <a href="https://pubs.aip.org/asa/jasa/article/153/3_supplement/A166/2885960/Unit-cell-of-three-nonlinear-layers-for-the-design" target="_blank" rel="noopener">JASA</a></td></tr>
+            <tr><td>2019</td><td>MDAO 2019</td><td>Bangalore</td><td><a href="https://www.researchgate.net/publication/357015228_Design_of_a_Mechanical_Filter_for_Nonlinear_Ultrasonic_Measurements" target="_blank" rel="noopener">Paper</a></td></tr>
+        </table>
+        </div>
 
         
         <!-- Footer -->
