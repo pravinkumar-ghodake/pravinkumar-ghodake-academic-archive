@@ -73,6 +73,18 @@ The unified record of every research contribution — tagged by type (📄 journ
 
 ---
 
+### 🔬 Additional Research Outputs, Presentations & Milestones
+
+<div align="justify">
+
+A narrative archive of research contributions, presentations, thesis material, and milestones. Use this alongside the chronological Research Records.
+
+</div>
+
+🔗 **[Read research-outputs.md →](./research-outputs.md)**
+
+---
+
 ### 🏛️ 3. Publisher & Repository Directory
 
 <div align="justify">
