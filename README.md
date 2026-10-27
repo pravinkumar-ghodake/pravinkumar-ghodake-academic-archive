@@ -14,16 +14,21 @@
 [![NASA ADS](https://img.shields.io/badge/NASA_ADS-Indexed-blue?style=for-the-badge)](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6755-4003&sort=date+desc)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
 
+<sub><strong>🔄 Last synced with website:</strong> October 2026 · The interactive web version is always more current.</sub>
+
 </div>
 
 ---
 <div align="center">
 🔗 <strong>Official Academic Hub:</strong> <a href="https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/">https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/</a>
+<br><sub><em>The web version is the primary reading experience. This repository is the source of truth.</em></sub>
 </div>
 
 ---
 
 > ## 📖 About This Archive
+>
+> <div align="justify">
 >
 > This is the **official academic and research archive** of **Pravinkumar Ramchandra Ghodake** — a living, machine-readable, continuously updated repository containing verified public records, publications, conference presentations, institutional appointments, awards, media archives, and creative documentation.
 >
@@ -37,12 +42,29 @@
 > - 🌍 **Open access** — CC BY 4.0 licensed
 > - 🤖 **AI-optimized** — structured for machine reading
 > - 🔍 **Search-optimized** — rich keyword coverage across all pages
+>
+> </div>
+
+---
+
+## 🌐 Two Ways to Browse
+
+This archive is available in **two complementary formats**, each designed for a different purpose:
+
+| Format | Purpose | Best for |
+|---|---|---|
+| **🌐 Interactive Website** (GitHub Pages) | Polished, visual experience with expandable sections, metrics dashboard, research profile, and full conference index | Reading, sharing, discovery |
+| **📁 Markdown Source** (this repository) | Machine-readable, versioned, citable, diffable | AI tools, archivers, citation, source of truth |
+
+**→ View the full interactive version:** [https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/)
+
+The website and this repository are kept in sync. The website adds the reading experience; this repository provides the structured, versioned source content.
 
 ---
 
 ## 🧭 Jump To
 
-**[📚 Full Archive Index](#-full-archive-index)** · **[🔗 Primary Platforms](#-primary-platforms)** · **[📊 Research Coverage](#-research-coverage)** · **[🏆 Highlights](#-highlights)** · **[🧩 Repository Structure](#-repository-structure)** · **[📖 Citation](#-citation)** · **[📜 License](#-license)** · **[🏷️ Keywords](#-keywords)**
+**[🌐 Live Website](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/)** · **[📚 Full Archive Index](#-full-archive-index)** · **[🔗 Primary Platforms](#-primary-platforms)** · **[📊 Research Coverage](#-research-coverage)** · **[🏆 Highlights](#-highlights)** · **[🧩 Repository Structure](#-repository-structure)** · **[📖 Citation](#-citation)** · **[📜 License](#-license)** · **[🏷️ Keywords](#keywords)**
 
 ---
 
@@ -172,7 +194,8 @@ Pravinkumar Ramchandra Ghodake maintains presence across multiple platforms, eac
 | Platform | Purpose | Link |
 |---|---|---|
 | **Google Sites** | Primary human-facing academic portfolio | [sites.google.com/view/pravinkumarghodake](https://sites.google.com/view/pravinkumarghodake/home) |
-| **GitHub** | Machine-readable archive (this repository) | [github.com/pravinkumar-ghodake](https://github.com/pravinkumar-ghodake/pravinkumar-ghodake-academic-archive) |
+| **GitHub Pages** | Interactive archive with research profile & metrics | [pravinkumar-ghodake.github.io](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/) |
+| **GitHub (this repo)** | Machine-readable source of truth | [github.com/pravinkumar-ghodake](https://github.com/pravinkumar-ghodake/pravinkumar-ghodake-academic-archive) |
 
 ---
 
@@ -238,6 +261,17 @@ An at-a-glance overview of the archive's contents.
 | 🌐 **Portfolio Pages (Google Sites)** | 33+ | [google-sites-directory.md](./01-public-records/google-sites-directory.md) |
 | 📱 **Social Channels** | 5+ | [social-media-anchors.md](./01-public-records/social-media-anchors.md) |
 | 📇 **DOIs Assigned** | 20+ | [publisher-directory.md](./01-public-records/publisher-directory.md) |
+
+---
+
+### 📈 Citation Impact (FWCI)
+
+*Field-Weighted Citation Impact from Elsevier Scopus. A value of 1.00 equals the global average for similar papers. Values change over time.*
+
+| Paper | Venue | FWCI | Record |
+|---|---|---|---|
+| Wave Propagation in a Media with Asymmetric Rate-Independent Hysteretic Nonlinearity | ICSV 2021 | **1.51** | [Scopus](https://www.scopus.com/pages/publications/85117472334) |
+| 1D Nonlinear Wave Propagation in a Rate-Independent Pinched Hysteretic Material | QNDE 2021 (ASME) | **1.04** | [DOI](https://doi.org/10.1115/qnde2021-74515) · [Scopus](https://www.scopus.com/pages/publications/85124142075) |
 
 ---
 
@@ -324,6 +358,7 @@ pravinkumar-ghodake-academic-archive/
 └── 07-media/                                    ⏳ Coming soon
 ```
 
+
 ## 🚀 Why This Archive Exists
 
 Traditional academic publishing produces **static PDFs** that AI tools can't read and search engines index poorly.
@@ -364,10 +399,14 @@ This is a personal academic archive. However, corrections, additional references
 
 ---
 
+<a id="keywords"></a>
 ## 🏷️ Keywords
+
+<div align="justify">
 
 Pravinkumar Ghodake · Pravinkumar Ramchandra Ghodake · ORCID 0000-0002-6755-4003 · academic archive · research archive · public records · verified records · digital footprint · research chronology · research scholar · independent researcher · IIT Bombay · IIT Kanpur · IIT Madras · IIT Kharagpur · IISc Bengaluru · Department of Mechanical Engineering · applied mechanics · solid mechanics · computational mechanics · theoretical mechanics · experimental mechanics · nonlinear ultrasonics · nonlinear elastic waves · harmonic scattering · harmonic generation · wave mixing · two-wave mixing · one-way two-wave mixing · metamaterials · mechanical metamaterials · nonlinear metamaterials · acoustic metamaterials · phononic crystals · functionally graded materials · inverse design · computational inverse design · structural health monitoring · SHM · non-destructive evaluation · NDE · non-destructive testing · NDT · damage quantification · early-stage damage detection · micro-meso scale damage · elastodynamics · wave propagation · guided waves · Lamb waves · S0 Lamb wave · A0 Lamb wave · shear horizontal waves · SH waves · bulk waves · nonlinear wave cloaking · acoustic invisibility · elastic invisibility · direction-independent metamaterials · direction-dependent metamaterials · cylindrical metamaterial rods · periodic and quasi-periodic metamaterials · non-periodic nonlinear metamaterials · localized hysteretic damage · asymmetric hysteretic nonlinearity · randomly distributed hysteretic nonlinearity · contact acoustic nonlinearity · CAN · micro-crack detection · plastic slip bands · dislocation networks · micro-voids · fatigue damage · 2f suppression · 3f suppression · fractional harmonics · Raman scattering analogy · compensatory waves · elastodynamic reciprocity · time-varying metamaterials · time-modulated phononic crystals · 4D metamaterials · additive manufacturing NDE · layered material harmonic scattering · functionally graded inclusions · symmetric functionally graded unit cells · 2D domain corner scattering · crossed-thin-rectangular inclusions · elliptical hyperelastic inclusions · finite element method · FEM · FEA · COMSOL Multiphysics · MATLAB · transient finite element analysis · numerical simulation · computational mechanics · gradient-free optimization · Nelder-Mead algorithm · coordinate search · shape optimization · topology optimization · multi-objective optimization · min-max optimization · uncertainty quantification · Bayesian inverse methods · RBDO · quantile Monte Carlo · QMC · support vector machine regression · SVR · polynomial chaos expansion · PCE · kriging · machine learning in mechanics · spring-mass chain model · Bouc-Wen · generalized Bouc-Wen · Reid's pinched hysteresis · two-state hysteresis model · Murnaghan hyperelastic model · hyperelastic inclusions · level-set shape optimization · CFL condition · JASA · Journal of the Acoustical Society of America · AIP Publishing · ASA · Acoustical Society of America · APS · American Physical Society · ASME · American Society of Mechanical Engineers · IEEE · IUS · ICSV · IWSHM · Stanford University · QNDE · IDETC · CIE · ICTAM · IPMS · ISNA · META Conference · NODYCON · SPIE · UKACM · USNCCM · NCMDAO · iNCMDAO · ISTAM · IMPLAST · INTER-NOISE · ICINDE · GRC · GRS · Gordon Research Conference · Gordon Research Seminar · Acoustics 2023 Sydney · WESPAC · PRUAC · 185th ASA Meeting · AAS · ICC Sydney · ASA CIRE Student Grant · Young Scientist Award · ISTAM Young Scientist Award · session chair · APS March Meeting presider · ASA Technical Committee · Computational Acoustics · Engineering Acoustics · Physical Acoustics · Structural Acoustics and Vibration · Education in Acoustics · Ghent University · University of Malta · University of Oxford · Loughborough University · Isaac Newton Institute · University of Cambridge · WCE Sangli · Figshare · ResearchGate · Google Scholar · Semantic Scholar · Scopus · NASA ADS · LinkedIn · X · Twitter · YouTube · Instagram · Facebook · Google Sites · GitHub · FWCI · Field-Weighted Citation Impact · CC BY 4.0 · open access · academic archive · digital footprint · verified records
 
+</div>
 ---
 
 ## 📖 Citation
