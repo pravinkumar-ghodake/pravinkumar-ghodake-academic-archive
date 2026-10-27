@@ -12,20 +12,27 @@
 
 </div>
 
+
 ---
 
 > ### 📖 About This Page
->
-> This page provides an exhaustive, detailed narrative of the research outputs, conference presentations, independent figures, and experimental datasets produced by **Pravinkumar Ramchandra Ghodake**. It expands upon the official Google Sites Research Hub, meticulously documenting the scientific contributions, the peer-review milestones, the specific insights shared with world-leading professors, and the exact Figshare DOIs minted for archival priority and intellectual property protection.
+
+<div align="justify">
+
+This page provides an exhaustive, detailed narrative of the research outputs, conference presentations, independent figures, and experimental datasets produced by **Pravinkumar Ramchandra Ghodake**. It expands upon the official Google Sites Research Hub, meticulously documenting the scientific contributions, the peer-review milestones, the specific insights shared with world-leading professors, and the exact Figshare DOIs minted for archival priority and intellectual property protection.
+
+</div>
 
 ---
 
 ## 🧭 Jump To
 
-**[🎙️ Invited Keynotes (GRS/GRC)](#-invited-keynotes-grsgrc-2024)** · **[🧪 Metamaterials & Inverse Design](#-metamaterials--inverse-design)** · **[🌊 Harmonic Scattering (Sydney)](#-harmonic-scattering--wave-propagation-acoustics-2023-sydney)** · **[📊 Independent Figures](#-independent-research-figures)** · **[🎓 PhD Thesis Record](#-phd-thesis-record)** · **[🔨 Impact Mechanics](#-impact-mechanics)** · **[🌊 Nonlinear Ultrasonics](#-nonlinear-ultrasonics)** · **[🔬 Fracture Mechanics](#-fracture-mechanics)**
+**[🎙️ Invited Keynotes (GRS/GRC)](#invited-keynotes)** · **[🧪 Metamaterials & Inverse Design](#metamaterials-inverse-design)** · **[🌊 Harmonic Scattering (Sydney)](#harmonic-scattering)** · **[📊 Independent Figures](#independent-figures)** · **[🎓 PhD Thesis Record](#phd-thesis-record)** · **[🔨 Impact Mechanics](#impact-mechanics)** · **[🌊 Nonlinear Ultrasonics](#nonlinear-ultrasonics)** · **[🔬 Fracture Mechanics](#fracture-mechanics)**
+
 
 ---
 
+<a id="invited-keynotes"></a>
 ## 🎙️ Invited Keynotes (GRS/GRC 2024)
 
 ### GRS 2024 — Manipulating Elastic Waves: A Novel Approach via Inverse Design of Multi-Material, Multi-Functional Metamaterials
@@ -110,6 +117,7 @@ Acceptance to the GRC is highly competitive — even for established faculty fro
 
 ---
 
+<a id="metamaterials-inverse-design"></a>
 ## 🧪 Metamaterials & Inverse Design
 
 ### Unit Cell of Three Nonlinear Layers for the Design of Tunable Nonlinear Metamaterials (184th ASA Meeting)
@@ -253,6 +261,7 @@ Details an advanced optimization-driven inverse design framework utilizing Finit
 
 ---
 
+<a id="harmonic-scattering"></a>
 ## 🌊 Harmonic Scattering & Wave Propagation (Acoustics 2023 Sydney)
 
 ### Interesting Effects of Harmonically Scattered Waves from 1D Functionally Graded Nonlinear Inclusions
@@ -300,6 +309,7 @@ This study proposes a unique geometric model solved via the finite element metho
 
 ---
 
+<a id="independent-figures"></a>
 ## 📊 Independent Research Figures
 
 ### Time-Stretching of Nonlinear Waves
@@ -366,6 +376,7 @@ This figure presents the time-domain response of a wave propagating and reflecti
 
 ---
 
+<a id="phd-thesis-record"></a>
 ## 🎓 PhD Thesis Record
 
 ### 828 Pages. Single Author. 2% Turnitin Similarity. One Thesis — June 2024.
@@ -413,6 +424,7 @@ The thesis contains research that has not yet been fully published, and several 
 
 ---
 
+<a id="impact-mechanics"></a>
 ## 🔨 Impact Mechanics
 
 ### Impact Response of Glass-Fiber Composites
@@ -432,6 +444,7 @@ This research poster presents an experimental study on the impact response of ep
 
 ---
 
+<a id="nonlinear-ultrasonics"></a>
 ## 🌊 Nonlinear Ultrasonics
 
 ### Experimental Setup for Nonlinear Ultrasonic Measurements
@@ -451,6 +464,7 @@ This documents a bespoke experimental setup developed from scratch for investiga
 
 ---
 
+<a id="fracture-mechanics"></a>
 ## 🔬 Fracture Mechanics
 
 ### Dynamic Mode I Crack Propagation in Epoxy Material: Unpatched vs. Symmetrically Patched Configurations
@@ -485,7 +499,11 @@ This dataset presents high-speed dynamic photoelasticity images capturing Dynami
 
 ## 🏷️ Keywords
 
+<div align="justify">
+
 GRS 2024, Gordon Research Seminar, GRC 2024, Gordon Research Conference, Multifunctional Materials and Structures, Ventura Beach Marriott, California, inverse design, multi-material metamaterials, elastic wave manipulation, Zhigang Suo, Chiara Daraio, Ioannis Chasiotis, Gregory Reich, H. Jerry Qi, Israel Kellersztein, Luis Rodríguez Koett, harmonic suppression, direction-dependent metamaterials, nonlinear cloaking, Nelder-Mead, COMSOL Multiphysics, MATLAB, time-dependent metamaterials, META 2023, Paris, Jeremy Baumberg, Päivi Törmä, Harry Atwater, Nikolay Zheludev, Marin Soljačić, Jelena Vuckovic, Federico Capasso, John Pendry, iNCMDAO 2024, IISc Bangalore, J.N. Tata Auditorium, Topology Optimization, Kalyanmoy Deb, Ole Sigmund, Krishnan Suresh, Wei Chen, Faez Ahmed, Sankaran Mahadevan, Gil Ho Yoon, Prabhat Hajela, Roger A. Sauer, Mathias Huesing, Burkhard Corves, Izabella Lubowiecka, Acoustics 2023 Sydney, ICC Sydney, harmonic scattering, 1D functionally graded inclusions, area-invariance principle, 2D domain corner scattering, time-stretching of nonlinear waves, Two-State friction-based hysteresis, Bouc-Wen model, contact acoustic nonlinearity, CAN, PhD thesis, 828 pages, single-author, Turnitin 2%, Impact Response of Glass-Fiber Composites, Hopkinson Pressure Bar, 3D DIC, INSTRON CEAST 9340, MHRD, experimental setup, nonlinear ultrasonic measurements, RITEC GA-2500A, Olympus V-109, Tektronix MDO3024, acoustic nonlinearity parameter beta, dynamic fracture, Mode I crack propagation, photoelasticity, SHPB, Figshare DOIs
+
+</div>
 
 ---
 
