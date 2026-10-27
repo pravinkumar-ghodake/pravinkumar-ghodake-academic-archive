@@ -16,14 +16,14 @@
 ---
 
 > ### 📖 About This File
->
+><div align="justify">
 > This directory serves as a **centralized, unedited map of the official Google Sites pages** maintained by Pravinkumar Ramchandra Ghodake. It provides a structured index of his academic records, research outputs, personal timelines, and creative archives — designed to ensure accurate indexing across global search engines and AI tools.
 >
 > The Google Sites portfolio is the **primary human-facing platform** — the narrative, personal-voice counterpart to the machine-readable GitHub archive, the DOI-backed Figshare repository, and the ORCID identity anchor.
 >
 > **Portal base URL:** [sites.google.com/view/pravinkumarghodake](https://sites.google.com/view/pravinkumarghodake/home)
-
 ---
+</div>
 
 ## 🧭 Jump To
 
@@ -37,13 +37,17 @@ Primary navigation pages forming the backbone of the Google Sites research portf
 
 ---
 
-### 🔹 Official Homepage
+### Official Homepage
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/home](https://sites.google.com/view/pravinkumarghodake/home)
+
+<div align="justify">
 
 **Description:**
 
 Central landing page mapping research in **metamaterials**, **nonlinear waves**, and **inverse design problems**. Serves as the entry point to all sub-pages and provides a high-level overview of the research portfolio.
+
+</div>
 
 **Role in Portfolio:** Primary landing page for search engines and visitors.
 
@@ -56,13 +60,17 @@ Central landing page mapping research in **metamaterials**, **nonlinear waves**,
 
 ---
 
-### 🔹 Research Biography
+### Research Biography
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/biography](https://sites.google.com/view/pravinkumarghodake/biography)
+
+<div align="justify">
 
 **Description:**
 
 Detailed independent background in **computational, theoretical, and experimental solid mechanics**. Provides a narrative account of the researcher's academic journey, research philosophy, and evolving research trajectory.
+
+</div>
 
 **Role in Portfolio:** Identity and narrative anchor.
 
@@ -75,13 +83,17 @@ Detailed independent background in **computational, theoretical, and experimenta
 
 ---
 
-### 🔹 Research Interests
+### Research Interests
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/research-interests](https://sites.google.com/view/pravinkumarghodake/research-interests)
+
+<div align="justify">
 
 **Description:**
 
 Comprehensive breakdown of research fields including:
+
+</div>
 
 - **Guided waves** — Lamb, SH, and bulk wave propagation
 - **Nonlinear ultrasonics** — harmonic scattering, wave mixing, harmonic generation
@@ -95,13 +107,17 @@ Comprehensive breakdown of research fields including:
 
 ---
 
-### 🔹 Research Outputs
+### Research Outputs
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/research](https://sites.google.com/view/pravinkumarghodake/research)
+
+<div align="justify">
 
 **Description:**
 
 Archive of academic publications, unit cell proposals, invited conference talks, and experimental media. Central hub for all peer-reviewed outputs and research dissemination.
+
+</div>
 
 **Role in Portfolio:** Primary research outputs repository.
 
@@ -121,13 +137,17 @@ Records documenting teaching, coursework, awards, and communication channels.
 
 ---
 
-### 🔹 Teaching Record
+### Teaching Record
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/teaching](https://sites.google.com/view/pravinkumarghodake/teaching)
+
+<div align="justify">
 
 **Description:**
 
 Teaching profile documenting instructional activities and responsibilities across multiple institutions:
+
+</div>
 
 - **WCE Sangli** — Walchand College of Engineering
 - **IIT Kanpur** — Indian Institute of Technology Kanpur
@@ -144,13 +164,17 @@ Teaching profile documenting instructional activities and responsibilities acros
 
 ---
 
-### 🔹 Completed Courses
+### Completed Courses
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/courses](https://sites.google.com/view/pravinkumarghodake/courses)
+
+<div align="justify">
 
 **Description:**
 
 Coursework registry documenting completed coursework in advanced areas including:
+
+</div>
 
 - **Continuum mechanics** — foundational theory of continuous media
 - **Machine learning** — computational intelligence applications
@@ -162,13 +186,17 @@ Coursework registry documenting completed coursework in advanced areas including
 
 ---
 
-### 🔹 Awards & Distinctions
+### Awards & Distinctions
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/awards](https://sites.google.com/view/pravinkumarghodake/awards)
+
+<div align="justify">
 
 **Description:**
 
 *Awards & Legacy* — acknowledgments, honors, and core personal philosophy.
+
+</div>
 
 **Role in Portfolio:** Recognition and legacy documentation.
 
@@ -187,13 +215,17 @@ Coursework registry documenting completed coursework in advanced areas including
 
 ---
 
-### 🔹 Direct Connect
+### Direct Connect
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/connect](https://sites.google.com/view/pravinkumarghodake/connect)
+
+<div align="justify">
 
 **Description:**
 
 Contact directory containing professional contact information and related communication channels.
+
+</div>
 
 **Role in Portfolio:** Contact and networking hub.
 
@@ -206,13 +238,17 @@ Contact directory containing professional contact information and related commun
 
 ---
 
-### 🔹 Miscellaneous Hub
+### Miscellaneous Hub
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous](https://sites.google.com/view/pravinkumarghodake/miscellaneous)
+
+<div align="justify">
 
 **Description:**
 
 *Miscellaneous Index* — Gateway directory tracking numerical code bases, public commentary, and external presentations. Serves as a parent index for the Creative Archive Logs below.
+
+</div>
 
 **Role in Portfolio:** Secondary content hub and gateway to creative archives.
 
@@ -229,13 +265,17 @@ Contact directory containing professional contact information and related commun
 
 ---
 
-### 🔹 Snapshots Blog
+### Snapshots Blog
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/snapshots](https://sites.google.com/view/pravinkumarghodake/snapshots)
+
+<div align="justify">
 
 **Description:**
 
 *Snapshots Blog* — A public timeline detailing personal experiences, short blogs, and independent researcher insights. Provides a personal-voice counterpoint to the formal academic portfolio.
+
+</div>
 
 **Role in Portfolio:** Personal narrative and reflective writing.
 
@@ -250,239 +290,335 @@ Contact directory containing professional contact information and related commun
 
 ## 🎨 Creative Archive Logs
 
+<div align="justify">
+
 A rolling series of **23 personal archive pages** tracking creative entries, milestones, hobbies, and independent narrative logging. Each log captures a distinct phase or theme of personal creative activity — from initial side projects to ongoing reflective journals.
 
 All logs live under the `miscellaneous/` sub-path.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive 0 — Initial Entries
+### Creative Archive 0 — Initial Entries
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-0](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-0)
+
+<div align="justify">
 
 **Description:**
 
 Initial creative entries, personal milestones, and side projects. Serves as the starting point of the Creative Archive series.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive I
+### Creative Archive I
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-i](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-i)
+
+<div align="justify">
 
 **Description:**
 
 Hobbies journal and reflective personal entry tracking.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive II
+### Creative Archive II
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-ii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-ii)
+
+<div align="justify">
 
 **Description:**
 
 Multi-domain interest tracking and personal commentary log.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive III
+### Creative Archive III
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-iii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-iii)
+
+<div align="justify">
 
 **Description:**
 
 Ongoing personal development log and independent journey archive.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive IV
+### Creative Archive IV
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-iv](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-iv)
+
+<div align="justify">
 
 **Description:**
 
 Media tracking and creative independent writing entry.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive V
+### Creative Archive V
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-v](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-v)
+
+<div align="justify">
 
 **Description:**
 
 Independent thought logging and personal creative outlet log.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive VI
+### Creative Archive VI
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-vi](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-vi)
+
+<div align="justify">
 
 **Description:**
 
 Ongoing milestone tracking log and personal journey notes.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive VII
+### Creative Archive VII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-vii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-vii)
+
+<div align="justify">
 
 **Description:**
 
 Independent personal expression index and analytical logging.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive VIII
+### Creative Archive VIII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-viii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-viii)
+
+<div align="justify">
 
 **Description:**
 
 Creative tracking module and independent researcher personal timeline.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive IX
+### Creative Archive IX
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-ix](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-ix)
+
+<div align="justify">
 
 **Description:**
 
 Continuous creative narrative mapping personal observations.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive X
+### Creative Archive X
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-x](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-x)
+
+<div align="justify">
 
 **Description:**
 
 Milestone diary tracking creative pursuits and independent observations.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XI
+### Creative Archive XI
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xi](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xi)
+
+<div align="justify">
 
 **Description:**
 
 Reflective thoughts, philosophical framework, and independent logs.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XII
+### Creative Archive XII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xii)
+
+<div align="justify">
 
 **Description:**
 
 Creative milestone logger and multi-disciplinary activity tracker.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XIII
+### Creative Archive XIII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xiii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xiii)
+
+<div align="justify">
 
 **Description:**
 
 Deep observation diary and personal milestone logging.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XIV
+### Creative Archive XIV
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xiv](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xiv)
+
+<div align="justify">
 
 **Description:**
 
 Strategic thought archive, creative pieces, and personal data.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XV
+### Creative Archive XV
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xv](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xv)
+
+<div align="justify">
 
 **Description:**
 
 Core timeline check-in, creative logging, and independent milestones.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XVI
+### Creative Archive XVI
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xvi](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xvi)
+
+<div align="justify">
 
 **Description:**
 
 Personal repository for narrative prose and individual insights.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XVII
+### Creative Archive XVII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xvii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xvii)
+
+<div align="justify">
 
 **Description:**
 
 Independent progress tracker and narrative logging data.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XVIII
+### Creative Archive XVIII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xviii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xviii)
+
+<div align="justify">
 
 **Description:**
 
 Analytical creative log charting continuous personal growth.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XIX
+### Creative Archive XIX
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xix](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xix)
+
+<div align="justify">
 
 **Description:**
 
 Creative reflections module and individual milestone verification.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XX
+### Creative Archive XX
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xx](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xx)
+
+<div align="justify">
 
 **Description:**
 
 Strategic creative outlet tracking independent research journeys.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XXI
+### Creative Archive XXI
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xxi](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xxi)
+
+<div align="justify">
 
 **Description:**
 
 Narrative logs, life observations, and secondary interests checklist.
 
+</div>
+
 ---
 
-### 🔹 Creative Archive XXII
+### Creative Archive XXII
 
 **Page URL:** [sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xxii](https://sites.google.com/view/pravinkumarghodake/miscellaneous/hobbies-xxii)
+
+<div align="justify">
 
 **Description:**
 
 Creative archive containing personal entries and milestone records.
+
+</div>
 
 ---
 
@@ -500,7 +636,11 @@ Creative archive containing personal entries and milestone records.
 
 ## 🔗 Cross-Links to Other Platforms
 
+<div align="justify">
+
 The Google Sites portfolio cross-links to the following platforms, and vice versa:
+
+</div>
 
 | Platform | Purpose | Link |
 |---|---|---|
@@ -533,8 +673,11 @@ The Google Sites portfolio cross-links to the following platforms, and vice vers
 
 ## 🏷️ Keywords
 
+<div align="justify">
+  
 Google Sites · official portfolio · academic portfolio · research portfolio · Pravinkumar Ghodake portfolio · research biography · research interests · research outputs · teaching record · completed courses · awards and distinctions · direct connect · miscellaneous hub · snapshots blog · creative archive logs · hobbies log · personal timeline · independent researcher · computational solid mechanics · theoretical solid mechanics · experimental solid mechanics · applied mechanics · solid mechanics · computational mechanics · guided waves · nonlinear ultrasonics · nonlinear elastic waves · harmonic scattering · harmonic generation · wave mixing · metamaterials · mechanical metamaterials · nonlinear metamaterials · acoustic metamaterials · phononic crystals · functionally graded materials · inverse design · computational inverse design · structural health monitoring · SHM · non-destructive evaluation · NDE · non-destructive testing · NDT · damage quantification · early-stage damage detection · micro-meso scale damage · elastodynamics · wave propagation · Lamb waves · shear horizontal waves · SH waves · bulk waves · nonlinear wave cloaking · acoustic invisibility · elastic invisibility · direction-independent metamaterials · direction-dependent metamaterials · cylindrical metamaterial rods · periodic and quasi-periodic metamaterials · non-periodic nonlinear metamaterials · localized hysteretic damage · asymmetric hysteretic nonlinearity · randomly distributed hysteretic nonlinearity · contact acoustic nonlinearity · CAN · micro-crack detection · plastic slip bands · dislocation networks · micro-voids · fatigue damage · 2f suppression · 3f suppression · fractional harmonics · Raman scattering analogy · compensatory waves · elastodynamic reciprocity · time-varying metamaterials · time-modulated phononic crystals · 4D metamaterials · additive manufacturing NDE · layered material harmonic scattering · functionally graded inclusions · symmetric functionally graded unit cells · 2D domain corner scattering · crossed-thin-rectangular inclusions · elliptical hyperelastic inclusions · finite element method · FEM · FEA · COMSOL Multiphysics · MATLAB · transient finite element analysis · numerical simulation · computational mechanics · gradient-free optimization · Nelder-Mead algorithm · coordinate search · shape optimization · topology optimization · multi-objective optimization · min-max optimization · uncertainty quantification · Bayesian inverse methods · RBDO · quantile Monte Carlo · QMC · support vector machine regression · SVR · polynomial chaos expansion · PCE · kriging · machine learning in mechanics · spring-mass chain model · Bouc-Wen · generalized Bouc-Wen · Reid's pinched hysteresis · two-state hysteresis model · Murnaghan hyperelastic model · hyperelastic inclusions · level-set shape optimization · CFL condition · JASA · Journal of the Acoustical Society of America · ASA · Acoustical Society of America · APS · American Physical Society · ASME · IEEE · IUS · ICSV · IWSHM · Stanford · QNDE · IDETC · CIE · ICTAM · IPMS · ISNA · META Conference · NODYCON · SPIE · UKACM · USNCCM · NCMDAO · iNCMDAO · ISTAM · IMPLAST · INTER-NOISE · ICINDE · GRC · GRS · Gordon Research Conference · Gordon Research Seminar · Acoustics 2023 Sydney · WESPAC · PRUAC · 185th ASA Meeting · AAS · ICC Sydney · ASA CIRE Student Grant · Young Scientist Award · ISTAM Young Scientist Award · session chair · APS March Meeting presider · ASA Technical Committee · Computational Acoustics · Engineering Acoustics · Physical Acoustics · Structural Acoustics and Vibration · Education in Acoustics · Ghent University · University of Malta · University of Oxford · Loughborough University · IISc Bangalore · Isaac Newton Institute · University of Cambridge · IIT Bombay · IIT Kanpur · IIT Madras · IIT Kharagpur · WCE Sangli · ORCID · Figshare · ResearchGate · Google Scholar · Semantic Scholar · Scopus · NASA ADS · LinkedIn · X · YouTube · Instagram · Facebook
 
+</div>
 ---
 
 ## 📖 Citation
