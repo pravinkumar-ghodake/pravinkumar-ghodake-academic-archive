@@ -16,11 +16,11 @@
 ---
 
 > ### 📖 About This Page
-
-<div align="justify">
-
-This page provides an exhaustive, detailed narrative of the research outputs, conference presentations, independent figures, and experimental datasets produced by **Pravinkumar Ramchandra Ghodake**. It expands upon the official Google Sites Research Hub, meticulously documenting the scientific contributions, the peer-review milestones, the specific insights shared with world-leading professors, and the exact Figshare DOIs minted for archival priority and intellectual property protection.
-
+>
+><div align="justify">
+>
+>This page provides an exhaustive, detailed narrative of the research outputs, conference presentations, independent figures, and experimental datasets produced >by **Pravinkumar Ramchandra Ghodake**. It expands upon the official Google Sites Research Hub, meticulously documenting the scientific contributions, the peer->review milestones, the specific insights shared with world-leading professors, and the exact Figshare DOIs minted for archival priority and intellectual property >protection.
+>
 </div>
 
 ---
