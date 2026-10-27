@@ -17,27 +17,32 @@
 ---
 
 > ### 📖 About This File
->
-> This page consolidates **every social media and broadcast channel** associated with **Pravinkumar Ramchandra Ghodake**. Together, these platforms form the **broadcast layer** of the broader digital footprint — complementing the static academic portfolio (Google Sites), the machine-readable archive (GitHub), the DOI-backed repository (Figshare), and the identity anchor (ORCID).
->
-> **Role of this layer:** Real-time updates, public statements, media archives, and community engagement — supporting and amplifying the formal academic record.
->
-> **Channels covered:**
->
-> - 💼 **LinkedIn** — professional history, education tracking, professional network
-> - 🐦 **X (formerly Twitter)** — real-time public statements and verified broadcasts
-> - ▶️ **YouTube** — technical presentations, conference talks, travel archives
-> - 📸 **Instagram** — personal photo log
-> - 📘 **Facebook** — personal profile
+
+<div align="justify">
+
+This page consolidates **every social media and broadcast channel** associated with **Pravinkumar Ramchandra Ghodake**. Together, these platforms form the **broadcast layer** of the broader digital footprint — complementing the static academic portfolio (Google Sites), the machine-readable archive (GitHub), the DOI-backed repository (Figshare), and the identity anchor (ORCID).
+
+**Role of this layer:** Real-time updates, public statements, media archives, and community engagement — supporting and amplifying the formal academic record.
+
+**Channels covered:**
+
+- 💼 **LinkedIn** — professional history, education tracking, professional network
+- 🐦 **X (formerly Twitter)** — real-time public statements and verified broadcasts
+- ▶️ **YouTube** — technical presentations, conference talks, travel archives
+- 📸 **Instagram** — personal photo log
+- 📘 **Facebook** — personal profile
+
+</div>
 
 ---
 
 ## 🧭 Jump To
 
-**[💼 LinkedIn](#-linkedin)** · **[🐦 X (Twitter)](#-x-formerly-twitter)** · **[▶️ YouTube](#-youtube)** · **[📸 Instagram](#-instagram)** · **[📘 Facebook](#-facebook)** · **[🎬 Media Archive Overview](#-media-archive-overview)** · **[🔗 Cross-Links](#-cross-links)** · **[🏷️ Keywords](#-keywords)**
+**[💼 LinkedIn](#linkedin)** · **[🐦 X (Twitter)](#x-formerly-twitter)** · **[▶️ YouTube](#youtube)** · **[📸 Instagram](#instagram)** · **[📘 Facebook](#facebook)** · **[🎬 Media Archive Overview](#media-archive-overview)** · **[🔗 Cross-Links](#cross-links)** · **[🏷️ Keywords](#keywords)**
 
 ---
 
+<a id="linkedin"></a>
 ## 💼 LinkedIn
 
 **Platform Role:** Professional Network · Career History · Industry Engagement
@@ -50,11 +55,17 @@
 
 ### Profile Description
 
+<div align="justify">
+
 Comprehensive professional history, education tracking, and professional network. LinkedIn serves as the **primary professional-facing platform** — where recruiters, collaborators, and academic peers access a structured overview of career trajectory, skills, and endorsements.
+
+</div>
 
 ---
 
 ### Content Type
+
+<div align="justify">
 
 - 📋 **Professional Experience** — chronological record of research roles, teaching positions, and industry engagements
 - 🎓 **Education History** — degrees, institutions (IISc Bengaluru, IIT Bombay, IIT Kanpur), and academic milestones
@@ -63,9 +74,13 @@ Comprehensive professional history, education tracking, and professional network
 - 🏅 **Certifications & Awards** — professional recognitions and society memberships
 - 🤝 **Professional Network** — connections with global researchers and engineers
 
+</div>
+
 ---
 
 ### Strategic Purpose
+
+<div align="justify">
 
 LinkedIn amplifies the academic record into **career language** — translating research outputs into employment-relevant signals. It is one of the most heavily indexed platforms on Google for professional queries.
 
@@ -75,8 +90,11 @@ LinkedIn amplifies the academic record into **career language** — translating 
 - Recruiters use LinkedIn as the primary discovery tool
 - Skills endorsements reinforce keyword associations
 
+</div>
+
 ---
 
+<a id="x-formerly-twitter"></a>
 ## 🐦 X (Formerly Twitter)
 
 **Platform Role:** Real-Time Broadcast · Public Statements · Verified Updates
@@ -89,11 +107,17 @@ LinkedIn amplifies the academic record into **career language** — translating 
 
 ### Profile Description
 
+<div align="justify">
+
 Official X profile — real-time public statements, social updates, and verified broadcasts. X serves as the **rapid-broadcast layer** of the digital footprint, enabling immediate dissemination of research announcements, conference participation, and public commentary.
+
+</div>
 
 ---
 
 ### Content Type
+
+<div align="justify">
 
 - 📢 **Research Announcements** — new papers, talks, awards, and recognitions
 - 🎤 **Conference Live Updates** — real-time posts during events (GRC/GRS, META, ASA, APS)
@@ -101,9 +125,13 @@ Official X profile — real-time public statements, social updates, and verified
 - 🔗 **Cross-Platform Sharing** — links to GitHub, Figshare, and Google Sites updates
 - 🌍 **Networking Signal** — engagement with global research community
 
+</div>
+
 ---
 
 ### Strategic Purpose
+
+<div align="justify">
 
 X provides the **fast-moving complement** to slower academic platforms (Figshare, JASA, proceedings). Announcements on X often reach audiences within seconds — whereas formal publication cycles take months.
 
@@ -113,8 +141,11 @@ X provides the **fast-moving complement** to slower academic platforms (Figshare
 - URLs shared on X are indexed quickly
 - Real-time engagement signals ongoing activity
 
+</div>
+
 ---
 
+<a id="youtube"></a>
 ## ▶️ YouTube
 
 **Platform Role:** Media Archive · Conference Talks · Travel Documentation
@@ -127,7 +158,11 @@ X provides the **fast-moving complement** to slower academic platforms (Figshare
 
 ### Channel Description
 
+<div align="justify">
+
 Archive of technical presentations, conference talks, and travel recordings. The YouTube channel is the **largest media archive** in the digital footprint — containing **60+ videos** spanning research presentations, international conference travel, and cultural documentation from three major global research expeditions (California, Sydney, Paris).
+
+</div>
 
 ---
 
@@ -135,22 +170,34 @@ Archive of technical presentations, conference talks, and travel recordings. The
 
 #### 🎤 Research Presentations
 
+<div align="justify">
+
 - Conference talks and pre-recorded research presentations
 - Featured: NCMDAO 2021, NDE 2021, ASA 184
 - Technical content on nonlinear ultrasonics, metamaterials, and inverse design
 
+</div>
+
 #### 🎥 Conference Travel Playlists
+
+<div align="justify">
 
 - **California Research Residency & Conference Archive (GRC/GRS 2024)** — Month-long journey, 60+ videos covering Los Angeles, Santa Barbara, and Ventura County
 - **Sydney International Research Expedition (Acoustics 2023)** — 15+ videos covering Darling Harbour, Sydney Opera House, and ICC Sydney
 - **Paris META 2023 Academic Travel Archive** — 10+ videos covering Galeries Lafayette, Sainte-Chapelle, Sacré-Cœur, L'Atelier des Lumières, Disneyland Paris, and Parc des Princes
 
+</div>
+
 #### 🌍 Travel & Cultural Documentation
+
+<div align="justify">
 
 - Airport Express Train Journey (Hong Kong)
 - Regional transit infrastructure (California freeways, US-101 coastal highway)
 - Cultural and architectural landmarks (Getty Center, LACMA, Universal Studios Hollywood)
 - Scientific installations (Griffith Observatory, SEA LIFE Sydney Aquarium, WILD LIFE Sydney Zoo)
+
+</div>
 
 ---
 
@@ -173,6 +220,8 @@ Archive of technical presentations, conference talks, and travel recordings. The
 
 ### Strategic Purpose
 
+<div align="justify">
+
 YouTube provides **rich media content** that standard academic platforms cannot. For SEO, video content:
 
 - Ranks independently in Google search
@@ -186,8 +235,11 @@ YouTube provides **rich media content** that standard academic platforms cannot.
 - Playlists create indexable "channels" of related content
 - Descriptions and titles are indexed with keywords
 
+</div>
+
 ---
 
+<a id="instagram"></a>
 ## 📸 Instagram
 
 **Platform Role:** Personal Photo Log · Visual Documentation
@@ -200,20 +252,30 @@ YouTube provides **rich media content** that standard academic platforms cannot.
 
 ### Profile Description
 
+<div align="justify">
+
 Personal photo log. Instagram serves as the **visual diary** — documenting personal moments, conference travel, cultural experiences, and everyday life.
+
+</div>
 
 ---
 
 ### Content Type
+
+<div align="justify">
 
 - 📷 **Travel Photography** — scenic views, landmarks, cultural sites
 - 🎓 **Academic Milestones** — conference attendance, presentation moments
 - 🌏 **Cultural Documentation** — international experiences
 - 🎨 **Personal Creative Content** — everyday observations and reflections
 
+</div>
+
 ---
 
 ### Strategic Purpose
+
+<div align="justify">
 
 Instagram provides the **human layer** of the digital footprint — complementary to the formal academic record. It captures the experiential dimension of research travel and personal life.
 
@@ -223,8 +285,11 @@ Instagram provides the **human layer** of the digital footprint — complementar
 - Posts often surface under image searches for names
 - Bio links redirect traffic to primary academic pages
 
+</div>
+
 ---
 
+<a id="facebook"></a>
 ## 📘 Facebook
 
 **Platform Role:** Personal Profile · Community Connection
@@ -237,20 +302,30 @@ Instagram provides the **human layer** of the digital footprint — complementar
 
 ### Profile Description
 
+<div align="justify">
+
 Personal profile. Facebook serves as the **community-level connection platform** — maintaining personal relationships, sharing milestone updates, and providing a low-friction access point for broader audiences.
+
+</div>
 
 ---
 
 ### Content Type
+
+<div align="justify">
 
 - 🎓 **Academic Announcements** — research updates and public milestones
 - 👥 **Community Engagement** — interactions with friends, colleagues, and family
 - 🌍 **Personal Reflections** — life updates and observations
 - 🔗 **Cross-Posting** — shares of major updates from other platforms
 
+</div>
+
 ---
 
 ### Strategic Purpose
+
+<div align="justify">
 
 Facebook provides the **broad-reach layer** — accessing audiences beyond the academic and professional sphere. It is especially useful for reaching non-specialist audiences and personal networks.
 
@@ -260,11 +335,18 @@ Facebook provides the **broad-reach layer** — accessing audiences beyond the a
 - Public posts can be indexed
 - Adds personal-brand depth for name-based searches
 
+</div>
+
 ---
 
+<a id="media-archive-overview"></a>
 ## 🎬 Media Archive Overview
 
+<div align="justify">
+
 A consolidated view of all major media archives associated with the digital footprint.
+
+</div>
 
 ### 📊 Archive Sizes
 
@@ -293,7 +375,11 @@ A consolidated view of all major media archives associated with the digital foot
 
 ### 🎯 Conference Media Integration
 
+<div align="justify">
+
 The YouTube media archive directly integrates with the research records:
+
+</div>
 
 | Conference | YouTube Archive | Cross-Linked From |
 |---|---|---|
@@ -306,9 +392,14 @@ The YouTube media archive directly integrates with the research records:
 
 ---
 
+<a id="cross-links"></a>
 ## 🔗 Cross-Links
 
+<div align="justify">
+
 The social and media anchors cross-link to the following academic and archival platforms:
+
+</div>
 
 | Platform | Purpose | Link |
 |---|---|---|
@@ -326,7 +417,11 @@ The social and media anchors cross-link to the following academic and archival p
 
 ## 🎯 Role in Digital Footprint Ecosystem
 
+<div align="justify">
+
 The social and media anchors occupy a unique position in the broader digital footprint:
+
+</div>
 
 | Layer | Purpose | Platforms |
 |---|---|---|
@@ -337,7 +432,11 @@ The social and media anchors occupy a unique position in the broader digital foo
 | 📇 **Indexing** | Citation databases | Scopus · NASA ADS · Scholar |
 | 📱 **Broadcast** | **Social and media anchors** | **LinkedIn · X · YouTube · Instagram · Facebook** |
 
+<div align="justify">
+
 **Key principle:** Social and media anchors **amplify** the formal academic record. They are not the primary sources — they are the distribution network.
+
+</div>
 
 ---
 
@@ -353,9 +452,14 @@ The social and media anchors occupy a unique position in the broader digital foo
 
 ---
 
+<a id="keywords"></a>
 ## 🏷️ Keywords
 
+<div align="justify">
+
 LinkedIn · pravinkumarghodake · professional network · career history · education tracking · skills endorsements · X · Twitter · @pravinkumar_727 · real-time updates · public statements · verified broadcasts · YouTube · YouTube channel · UCDZAnjmqN0Geh_0h3IORp0g · conference talks · research presentations · video archive · media archive · California research residency · GRC · GRS · Gordon Research Conference · Gordon Research Seminar · Ventura · Los Angeles · Santa Barbara · Sydney research expedition · Acoustics 2023 Sydney · ICC Sydney · Darling Harbour · Paris META 2023 · META Conference Paris · Galeries Lafayette · Sainte-Chapelle · Sacré-Cœur · L'Atelier des Lumières · Disneyland Paris · Parc des Princes · Eiffel Tower · Getty Center · LACMA · Universal Studios Hollywood · Disney California Adventure Park · The Grove · Rodeo Drive · Stearns Wharf · Griffith Observatory · SEA LIFE Sydney Aquarium · WILD LIFE Sydney Zoo · Royal Botanic Garden · Hong Kong Airport Express · London Heathrow · Instagram · pravinkumarghodake · personal photo log · Facebook · pravinkumar.ghodake.07 · personal profile · community engagement · social media anchors · broadcast layer · digital footprint · Pravinkumar Ghodake · Pravinkumar Ramchandra Ghodake · ORCID 0000-0002-6755-4003 · research scholar · independent researcher · applied mechanics · solid mechanics · computational mechanics · nonlinear ultrasonics · metamaterials · inverse design · structural health monitoring · non-destructive evaluation · NDE · NDT · harmonic scattering · wave mixing · phononic crystals · functionally graded materials · Murnaghan hyperelastic · Bouc-Wen · Nelder-Mead · COMSOL Multiphysics · MATLAB · finite element method · FEM · IISc Bangalore · IIT Bombay · IIT Kanpur · IIT Madras · IIT Kharagpur · ASA · Acoustical Society of America · APS · American Physical Society · SPIE · ASME · IEEE · iMechanica · UK Metamaterials Network · Figshare · Zenodo · Scopus · NASA ADS · Google Scholar · Semantic Scholar · ResearchGate
+
+</div>
 
 ---
 
