@@ -17,9 +17,12 @@
 ---
 
 > ### 📖 About This File
-> <div align="justify">
-> This page consolidates **every institutional record, professional society appointment, committee service, session chair role, grant, fellowship, and award** associated with **Pravinkumar Ramchandra Ghodake**. All entries are sourced from official society publications, JASA records, APS archives, and institutional directories.
 >
+> <div align="justify">
+>  
+>This page consolidates **every institutional record, professional society appointment, committee service, session chair role, grant, fellowship, and award** associated with **Pravinkumar Ramchandra Ghodake**. All entries are sourced from official society publications, JASA records, APS archives, and institutional directories.
+>
+> 
 > **What's covered:**
 >
 > - 🏫 **Institutional Affiliations** — IISc Bengaluru, IIT Bombay, IIT Kanpur, IIT Madras, IIT Kharagpur
@@ -815,11 +818,17 @@ Two oral presentations delivered at the APS Global Physics Summit 2025:
 
 ---
 
+
 ## 🏷️ Keywords
-<div align="center">
+
+<div align="justify">
+
 Acoustical Society of America · ASA · American Physical Society · APS · American Society of Mechanical Engineers · ASME · SPIE · International Society for Optics and Photonics · UK Metamaterials Network · iMechanica · ORCID · Indian Institute of Science · IISc Bengaluru · Indian Institute of Technology Bombay · IIT Bombay · Indian Institute of Technology Kanpur · IIT Kanpur · Indian Institute of Technology Madras · IIT Madras · Indian Institute of Technology Kharagpur · IIT Kharagpur · Department of Mechanical Engineering · Department of Aerospace Engineering · Research Scholar · Independent Researcher · independent PhD student · single-author PhD thesis · 828-page thesis · Ghent University · University of Malta · University of Oxford · Loughborough University · Isaac Newton Institute · University of Cambridge · Stanford University · WCE Sangli · Computational Acoustics Technical Committee · Engineering Acoustics Technical Committee · Physical Acoustics Technical Committee · Structural Acoustics and Vibration Technical Committee · Education in Acoustics Committee · ASA Technical Committee Member · ASA Student Council Representative · Session Chair · APS March Meeting Presider · Matter under Extreme Conditions · Session AAA08 · ASA CIRE International Student Grant · IIT Bombay Institute Scholarship · IIT Bombay Research Fellowship · ISTAM Young Scientist Award · Young Scientist Award Session · Field-Weighted Citation Impact · FWCI 1.51 · FWCI 1.04 · Elsevier Scopus · NASA ADS · Scopus Indexed · peer review · academic governance · scientific appointments · institutional affiliation · research fellowship · conference grant · student leadership · international outreach · metamaterials · nonlinear ultrasonics · inverse design · structural health monitoring · non-destructive evaluation · harmonic scattering · wave propagation · S0 Lamb wave · SH waves · pinched hysteresis · Bouc-Wen · Generalized Bouc-Wen · Murnaghan hyperelastic · hyperbolic inclusions · Nelder-Mead algorithm · gradient-free optimization · COMSOL Multiphysics · MATLAB · JASA · Journal of the Acoustical Society of America · AIP Publishing · Acoustical News · 2024–2025 Annual Report of Technical Committees · 187th Meeting of the ASA · 184th Meeting of the ASA · 185th Meeting of the ASA · Acoustics 2023 Sydney · AAS · WESPAC · PRUAC · ICC Sydney · APS Global Physics Summit 2025 · APS March Meeting 2023 · APS March Meeting 2024 · GRC · GRS · Gordon Research Conference · Gordon Research Seminar · Ventura · California · Metamaterials 2022 · META 2022 · META 2023 · Paris · Torremolinos · IPMS 2022 · Malta · Minisymposium M8 · ISNA 2022 · IWSHM 2021/22 · QNDE 2021 · ICSV 2021 · Inter-Noise 2022 · ICINDE 2022 · IMPLAST 2022 · NCMDAO 2021 · iNCMDAO 2024 · ISTAM 2021 · NDE 2021 · NDE 2023 · NDE 2024 · UKACM 2021 · USNCCM 2021 · ICTAM 2021 · ASME IDETC/CIE 2021 · IEEE IUS 2021 · CILAMCE 2021 · MDAO 2019
+
 </div>
+
 ---
+
 
 ## 📖 Citation
 
