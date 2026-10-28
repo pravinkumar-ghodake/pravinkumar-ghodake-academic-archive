@@ -434,6 +434,14 @@ Under the following terms:
 
 ---
 
+## 📜 Licensing & Usage Sovereignty
+
+This repository operates under a **multi-licensing model** to protect different asset classes:
+* 📖 All narrative documentation, markdown content, text files, datasets, and cross-indices are licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+* 💻 All automated computational codebases, wrapper scripts, optimization engines, and software modules are licensed under the permissive **MIT License (LICENSE-MIT)**.
+
+---
+
 <div align="center">
 
 ### Thank You for Visiting
