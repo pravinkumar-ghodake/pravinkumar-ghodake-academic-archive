@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Publisher & Repository Directory — Pravinkumar Ramchandra Ghodake"
+description: "Every publisher, repository, and indexing platform hosting the work of Pravinkumar Ramchandra Ghodake — AIP/JASA, ASME, IEEE, DEStech, NDT.net, Figshare, Scopus, NASA ADS, and 20+ platforms."
+permalink: /01-public-records/publisher-directory/
+---
+-->
+
+
 <div align="center">
 
 # 🏛️ Publisher & Repository Directory
