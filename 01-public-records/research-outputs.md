@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Research Outputs — Pravinkumar Ramchandra Ghodake"
+description: "Additional research outputs, presentations, thesis material, and milestones by Pravinkumar Ramchandra Ghodake — nonlinear ultrasonics, metamaterials, and inverse design."
+permalink: /01-public-records/research-outputs/
+---
+-->
+
+
 <div align="center">
 
 # 🔬 Research Outputs, Presentations & Milestones
