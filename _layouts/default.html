@@ -36,8 +36,17 @@
     main pre code { background: none; padding: 0; }
     footer.archive-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #dee2e6; font-size: .85rem; color: #6c757d; text-align: center; }
     footer.archive-footer a { color: #0d6efd; }
+
+    /* ===== PHASE C: Related pages internal-linking section ===== */
+    section.related-pages { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #dee2e6; }
+    section.related-pages h2 { font-size: 1.1rem; margin: 0 0 1rem; color: #212529; }
+    section.related-pages ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.6rem; }
+    section.related-pages li { margin: 0; }
+    section.related-pages a { display: block; padding: 0.6rem 0.9rem; background: #ffffff; border: 1px solid #dee2e6; border-radius: 6px; color: #0d6efd; text-decoration: none; font-size: 0.92rem; transition: all 0.15s; }
+    section.related-pages a:hover { border-color: #0d6efd; transform: translateY(-1px); background: #f8f9fa; }
   </style>
-    <!-- ===== PHASE B: WebSite JSON-LD (sitelinks / site name eligibility) ===== -->
+
+  <!-- ===== PHASE B: WebSite JSON-LD (sitelinks / site name eligibility) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,7 +93,6 @@
   }
   </script>
 </head>
-</head>
 <body>
   <header class="archive-header">
     <a href="{{ site.baseurl }}/">← {{ site.author }}</a>
@@ -96,6 +104,26 @@
   <main>
     {{ content }}
   </main>
+
+  <!-- ===== PHASE C: Related pages internal cross-linking ===== -->
+  <section class="related-pages" aria-label="Related pages in this archive">
+    <h2>Related Pages in This Archive</h2>
+    <ul>
+      <li><a href="{{ site.baseurl }}/01-public-records/">📂 Public Records — Folder Index</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/academic-profiles/">🎓 Academic &amp; Research Profiles</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/research-records/">📚 Research Records</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/research-outputs/">🔬 Research Outputs</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/publisher-directory/">📖 Publisher &amp; Repository Directory</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/institutional-records/">🏛️ Institutional Records</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/google-sites-directory/">🌐 Google Sites Directory</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/social-media-anchors/">📱 Social &amp; Media Anchors</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/semantic-scholar-records/">🧠 Semantic Scholar AI Records</a></li>
+      <li><a href="{{ site.baseurl }}/01-public-records/conference-media-archive/">🎥 Conference Media Archive</a></li>
+      <li><a href="{{ site.baseurl }}/">🏠 Archive Home</a></li>
+    </ul>
+  </section>
+  <!-- ===== END PHASE C ===== -->
+
   <footer class="archive-footer">
     <p>© 2026 {{ site.author }} · <a href="https://orcid.org/0000-0002-6755-4003">ORCID 0000-0002-6755-4003</a></p>
     <p>Licensed under CC BY 4.0 · <a href="{{ site.baseurl }}/">Archive Home</a></p>
