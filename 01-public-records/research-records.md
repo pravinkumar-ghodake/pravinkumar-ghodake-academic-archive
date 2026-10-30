@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Research Records — Pravinkumar Ramchandra Ghodake"
+description: "Chronological archive of publications, conference talks, posters, and media by Pravinkumar Ramchandra Ghodake — JASA, Scopus-indexed conferences, APS, META, NODYCON, ISTAM, and 100+ media entries."
+permalink: /01-public-records/research-records/
+---
+-->
+
+
 <div align="center">
 
 # 🧭 Research Records
