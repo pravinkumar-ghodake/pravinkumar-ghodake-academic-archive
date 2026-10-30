@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Social & Media Anchors — Pravinkumar Ramchandra Ghodake"
+description: "Broadcast channels, video archives, and professional networks for Pravinkumar Ramchandra Ghodake — LinkedIn, X, YouTube (100+ videos), Instagram, and Facebook."
+permalink: /01-public-records/social-media-anchors/
+---
+-->
+
+
 <div align="center">
 
 # 📱 Social & Media Anchors
