@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Google Sites Directory — Pravinkumar Ramchandra Ghodake"
+description: "Complete index of all official Google Sites portfolio pages for Pravinkumar Ramchandra Ghodake — homepage, biography, research, teaching, awards, and 23 creative archive logs."
+permalink: /01-public-records/google-sites-directory/
+---
+-->
+
+
 <div align="center">
 
 # 🌐 Official Google Sites Directory
