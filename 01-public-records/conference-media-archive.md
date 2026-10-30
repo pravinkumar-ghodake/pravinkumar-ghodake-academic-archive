@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Conference Media Archive — Pravinkumar Ramchandra Ghodake"
+description: "Complete video index of research travel, conference participation, and technical presentations by Pravinkumar Ramchandra Ghodake — California, Sydney, Paris, 100+ entries."
+permalink: /01-public-records/conference-media-archive/
+---
+-->
+
+
 <div align="center">
 
 # 🎥 International Research Travel & Conference Media Archive
