@@ -1,0 +1,44 @@
+# ============================================================
+# _config.yml — Jekyll configuration for the academic archive
+# ============================================================
+title: "Pravinkumar Ramchandra Ghodake — Academic & Research Archive"
+description: "Verified academic archive of Pravinkumar Ramchandra Ghodake (ORCID 0000-0002-6755-4003) — publications, conference presentations, institutional records, certificates, and research documentation."
+author: "Pravinkumar Ramchandra Ghodake"
+
+# URLs — MUST match your actual GitHub Pages URL
+url: "https://pravinkumar-ghodake.github.io"
+baseurl: "/pravinkumar-ghodake-academic-archive"
+
+# Markdown engine — CRITICAL settings for your files
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true         # ← Required: parses Markdown inside <div> blocks
+  parse_span_html: true          # ← Required: parses Markdown inside <span> blocks
+
+# Exclude non-content from being treated as pages
+exclude:
+  - LICENSE
+  - LICENSE.md
+  - README.md
+  - profile-picture.jpg
+  - robots.txt
+  - sitemap.xml
+  - assets/
+  - _layouts/
+  - _config.yml
+
+# Default front matter for pages under 01-public-records/
+defaults:
+  - scope:
+      path: "01-public-records"
+      type: "pages"
+    values:
+      layout: "default"
+      permalink: "/01-public-records/:basename/"
+  - scope:
+      path: "01-public-records/index.md"
+      type: "pages"
+    values:
+      permalink: "/01-public-records/"
