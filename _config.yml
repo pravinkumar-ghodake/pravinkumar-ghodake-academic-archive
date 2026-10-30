@@ -14,17 +14,19 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-  parse_block_html: true         # ← Required: parses Markdown inside <div> blocks
-  parse_span_html: true          # ← Required: parses Markdown inside <span> blocks
+  parse_block_html: true         # Required: parses Markdown inside <div> blocks
+  parse_span_html: true          # Required: parses Markdown inside <span> blocks
 
 # Exclude non-content from being treated as pages
+# NOTE: Do NOT include sitemap.xml or robots.txt here.
+# In Jekyll 4.x (used by GitHub Pages), excluded files are dropped
+# from output entirely — causing 404s. Files without front matter
+# are copied as static files automatically, so no exclusion needed.
 exclude:
   - LICENSE
   - LICENSE.md
   - README.md
   - profile-picture.jpg
-  - robots.txt
-  - sitemap.xml
   - assets/
   - _layouts/
   - _config.yml
