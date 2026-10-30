@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Institutional Records — Pravinkumar Ramchandra Ghodake"
+description: "Appointments, committees, session chairs, grants, and awards for Pravinkumar Ramchandra Ghodake — ASA Technical Committees, APS Session Chair, ISTAM Young Scientist Award, and 12+ affiliations."
+permalink: /01-public-records/institutional-records/
+---
+-->
+
+
 <div align="center">
 
 # 🏛️ Institutional Records
