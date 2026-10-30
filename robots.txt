@@ -1,7 +1,35 @@
 User-agent: *
 Allow: /
 
-# Crawl-delay is ignored by Google but respected by some others
-Crawl-delay: 1
+# Explicitly allow major search crawlers
+User-agent: Googlebot
+Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI and research crawlers — this archive is designed for
+# machine-readability and AI discoverability
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap declaration (absolute URL, per spec)
 Sitemap: https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/sitemap.xml
