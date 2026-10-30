@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Academic & Research Profiles — Pravinkumar Ramchandra Ghodake"
+description: "Consolidated directory of every academic and research platform where Pravinkumar Ramchandra Ghodake maintains a profile — ORCID, Google Scholar, ResearchGate, SPIE, iMechanica, ASA, APS, and social anchors."
+permalink: /01-public-records/academic-profiles/
+---
+-->
+
+
 <div align="center">
 
 # Pravinkumar Ramchandra Ghodake
