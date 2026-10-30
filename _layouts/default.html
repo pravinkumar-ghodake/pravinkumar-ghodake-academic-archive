@@ -37,6 +37,53 @@
     footer.archive-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #dee2e6; font-size: .85rem; color: #6c757d; text-align: center; }
     footer.archive-footer a { color: #0d6efd; }
   </style>
+    <!-- ===== PHASE B: WebSite JSON-LD (sitelinks / site name eligibility) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "name": "Pravinkumar Ghodake Academic Archive",
+    "description": "{{ site.description | escape }}",
+    "publisher": {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+      "name": "{{ site.author | escape }}",
+      "url": "{{ site.url }}{{ site.baseurl }}/"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- ===== PHASE B: BreadcrumbList JSON-LD (breadcrumb rich result eligibility) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ site.url }}{{ site.baseurl }}/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Public Records",
+        "item": "{{ site.url }}{{ site.baseurl }}/01-public-records/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ page.title | split: ' — ' | first | escape }}",
+        "item": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+      }
+    ]
+  }
+  </script>
+</head>
 </head>
 <body>
   <header class="archive-header">
