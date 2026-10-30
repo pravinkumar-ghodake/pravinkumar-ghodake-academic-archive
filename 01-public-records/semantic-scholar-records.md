@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Semantic Scholar AI Records — Pravinkumar Ramchandra Ghodake"
+description: "AI-indexed publications with Corpus IDs for Pravinkumar Ramchandra Ghodake — 23 records indexed by Semantic Scholar, the Allen Institute for AI's academic search engine."
+permalink: /01-public-records/semantic-scholar-records/
+---
+-->
+
+
 <div align="center">
 
 # 🧠 Semantic Scholar AI Records
