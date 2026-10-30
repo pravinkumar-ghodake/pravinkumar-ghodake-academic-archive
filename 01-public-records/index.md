@@ -1,3 +1,13 @@
+<!--
+---
+layout: default
+title: "Public Records — Pravinkumar Ramchandra Ghodake"
+description: "Complete public records archive of Pravinkumar Ramchandra Ghodake — academic profiles, research records, publisher directory, institutional records, Google Sites directory, social anchors, Semantic Scholar records, and conference media archive."
+permalink: /01-public-records/
+---
+-->
+
+
 <div align="center">
 
 # 📂 Public Records
