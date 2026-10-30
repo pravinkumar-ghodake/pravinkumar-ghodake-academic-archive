@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Crawl-delay is ignored by Google but respected by some others
+Crawl-delay: 1
+
+Sitemap: https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/sitemap.xml
