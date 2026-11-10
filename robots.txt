@@ -32,4 +32,4 @@ User-agent: PerplexityBot
 Allow: /
 
 # Sitemap declaration (absolute URL, per spec)
-Sitemap: https://pravinkumar-ghodake.github.io/sovereign-intellect-blog/sitemap.xml
+Sitemap: https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/sitemap.xml
