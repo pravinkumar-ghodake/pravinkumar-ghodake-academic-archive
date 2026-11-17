@@ -14,38 +14,39 @@
 
 ## 1. Purpose
 
-This manifest documents the files, datasets, source records,
-provenance and integration status of the consolidated
-academic and intellectual knowledge base.
+This manifest documents the files, datasets, source records, provenance and integration status of the consolidated academic and intellectual knowledge base.
 
 The project maintains one canonical database on GitHub.
 
-Information from multiple independently maintained
-datasets and source collections is progressively
-incorporated into this database.
+Information from multiple independently maintained datasets and source collections is progressively incorporated into this database.
 
-Original database files are retained by the profile owner
-as local backups. Imported source records and their
-provenance are maintained inside the canonical database.
+Original database files are retained by the profile owner as local backups. Imported source records and their provenance are maintained inside the canonical database.
 
-This manifest is updated whenever a source is added,
-an import is completed, or a significant database
-structure or documentation change is made.
+Repository documentation, including the README and research keyword index, describes the scope, organization and maintenance of the knowledge base. These documentation files do not automatically constitute additional imported database datasets.
+
+This manifest is updated whenever a source is added, an import is completed, or a significant database structure or documentation change is made.
+
+---
 
 ## 2. Current repository files
 
 | File or directory | Purpose | Current status |
 |---|---|---|
-| `README.md` | Project overview, identity and data stewardship | Present |
+| `README.md` | Project overview, identity, research and intellectual scope, and data stewardship | Present; updated |
+| `ORCID_KEYWORDS.md` | Categorized research keyword and academic indexing document | Prepared; mark Present after committing |
 | `profile.sqlite` | Consolidated canonical database | Present; initial populated build |
 | `schema.sql` | SQLite database schema | Present; version 1.0 |
 | `DATA_DICTIONARY.md` | Table and field documentation | Present; schema alignment to be completed |
-| `DATABASE_BUILD_REPORT.md` | Build statistics and validation | Present |
-| `MANIFEST.md` | Source and file provenance register | Present |
+| `DATABASE_BUILD_REPORT.md` | Build statistics, source information and validation results | Present; update planned |
+| `MANIFEST.md` | Source, file and project provenance register | Present; updated revision |
 | `PROFILE_KNOWLEDGE_BRIEF.md` | Human-readable academic and intellectual profile | Planned |
 | `migrations/` | Versioned schema migrations | Planned |
 | `reconciliation/` | Reconciliation reports and documented decisions | Planned |
 | `exports/` | Generated CSV and JSON representations | Optional future addition |
+
+The repository file inventory describes documentation and database artifacts separately from the source datasets registered inside the SQLite database.
+
+---
 
 ## 3. Current canonical database inventory
 
@@ -63,20 +64,19 @@ The initial populated database contains the following records.
 | Import batches | 4 |
 | Registered claims | 1 |
 
-The 420 original link entries from the master directory
-and supplemental list resolve to 419 canonical link records.
+The 420 original link entries from the master directory and supplemental list resolve to 419 canonical link records.
 
-Original source entries are retained through the
-source-record and provenance structure.
+Original source entries are retained through the source-record and provenance structure.
 
-These counts describe the current database build.
-They are not claimed to represent the final complete
-academic and intellectual profile.
+These counts describe the current database build. They are not claimed to represent the final complete academic and intellectual profile.
+
+Documentation changes to `README.md`, `ORCID_KEYWORDS.md` and `MANIFEST.md` do not independently change these database counts.
+
+---
 
 ## 4. Registered source datasets
 
-The following source datasets are currently registered
-in the `sources` table of `profile.sqlite`.
+The following source datasets are currently registered in the `sources` table of `profile.sqlite`.
 
 ### SRC-MASTER-400 — Master link directory
 
@@ -91,11 +91,9 @@ in the `sources` table of `profile.sqlite`.
 | Import batch | `BATCH-MASTER-400` |
 | Import status | Completed |
 
-The directory contains 400 link entries organised
-into 11 original sections.
+The directory contains 400 link entries organised into 11 original sections.
 
-Its stored transcription preserves the supplied
-section organisation and URL entries.
+Its stored transcription preserves the supplied section organisation and URL entries.
 
 ### SRC-SUPPLEMENT-20 — Additional GitHub and project links
 
@@ -109,13 +107,9 @@ section organisation and URL entries.
 | Import batch | `BATCH-SUPPLEMENT-20` |
 | Import status | Completed |
 
-The supplemental entries include links to the
-Three Harmonics and Verse & Variable projects
-and the associated GitHub account and repositories.
+The supplemental entries include links to the Three Harmonics and Verse & Variable projects and the associated GitHub account and repositories.
 
-One normalized URL duplicates a target already
-present in the master directory. Both source entries
-are retained, while the canonical link is deduplicated.
+One normalized URL duplicates a target already present in the master directory. Both source entries are retained, while the canonical link is deduplicated.
 
 ### SRC-BRIEF-001 — Profile knowledge brief
 
@@ -128,12 +122,9 @@ are retained, while the canonical link is deduplicated.
 | Import batch | `BATCH-BRIEF-001` |
 | Import status | Completed with warnings |
 
-The source contains profile identity strings,
-research themes, a working research narrative
-and publication-classification guidance.
+The source contains profile identity strings, research themes, a working research narrative and publication-classification guidance.
 
-The originating AI vendor is not asserted because
-the available source metadata does not establish it.
+The originating AI vendor is not asserted because the available source metadata does not establish it.
 
 ### SRC-REPORT-001 — Database build report
 
@@ -146,23 +137,31 @@ the available source metadata does not establish it.
 | Import batch | `BATCH-REPORT-001` |
 | Import status | Completed |
 
-The report documents the construction of the
-400-link directory and its category counts.
+The report documents the construction of the 400-link directory and its category counts.
 
-Its aggregate figures are retained as source information
-and are not automatically treated as separate
-independently verified academic records.
+Its aggregate figures are retained as source information and are not automatically treated as separate independently verified academic records.
+
+### ORCID keyword documentation
+
+`ORCID_KEYWORDS.md` is maintained as a repository-level research keyword and academic indexing document.
+
+It organizes research topics, methods, experimental techniques, academic-context terms and broader intellectual areas using the ORCID keyword material and supplementary keyword information supplied for the archive.
+
+It is a documentation and discovery resource, not a separately imported source dataset in the current SQLite database.
+
+Consequently, its addition to the repository does not increase the registered source dataset count or import batch count.
+
+The document also distinguishes research topics from institutional names, conference names, awards, professional roles, platforms and research-output titles. Keyword inclusion alone does not establish a formal appointment, affiliation, award, publication or specific research contribution.
+
+---
 
 ## 5. Historical datasets awaiting incorporation
 
-Additional databases and exports have been supplied
-or referenced in previous project conversations.
+Additional databases and exports have been supplied or referenced in previous project conversations.
 
-They are not yet counted as imported source datasets
-in the current canonical database.
+They are not yet counted as imported source datasets in the current canonical database.
 
-The following historical materials remain candidates
-for comparison and integration.
+The following historical materials remain candidates for comparison and integration.
 
 | Historical source artifact | Information available | Current status |
 |---|---|---|
@@ -176,44 +175,39 @@ for comparison and integration.
 | Perplexity JSON and SQL schema export | Historical structured source export | Awaiting file-level comparison |
 | Earlier ChatGPT knowledge-base package | Previously generated database and documentation package | Awaiting comparison |
 
-Historical file descriptions are retained as provenance
-leads. They do not substitute for re-inspection
-of the original files during import.
+Historical file descriptions are retained as provenance leads. They do not substitute for re-inspection of the original files during import.
 
-In particular, the reported 400-link JSON and CSV exports
-must be compared with the already imported master
-directory before any additional link records are added.
+In particular, the reported 400-link JSON and CSV exports must be compared with the already imported master directory before any additional link records are added.
+
+---
 
 ## 6. Source and verification policy
 
-The profile owner maintains the archive and states that
-the supplied academic, professional and profile information
-and source links have been manually and independently
-checked against their relevant references.
+The profile owner maintains the archive and states that the supplied academic, professional and profile information and source links have been manually and independently checked against their relevant references.
 
-The database maintains source attribution and
-verification history to support traceability.
+The database maintains source attribution and verification history to support traceability.
 
 The following distinctions are maintained:
 
 - Source provenance identifies where information originated.
-- Record verification describes the evidence review
-  associated with a canonical record.
+- Record verification describes the evidence review associated with a canonical record.
 - Link availability describes whether a URL is accessible.
 - Historical verification records preserve previous checks.
-- Reconciliation records document corrections and
-  differences between source datasets.
+- Reconciliation records document corrections and differences between source datasets.
 
 These are separate aspects of data stewardship.
 
+Repository documentation provides context and discovery information. It does not replace the source records or evidence associated with individual claims.
+
+Similarly, the presence of an institution, conference, award, professional role or research topic in a keyword index does not independently establish a specific relationship or activity. Such details should be represented through their relevant records and supporting references.
+
+---
+
 ## 7. Single-database policy
 
-`profile.sqlite` is the sole canonical database
-published in this directory.
+`profile.sqlite` is the sole canonical database published in this directory.
 
-Additional source databases are incorporated into
-the existing canonical database through documented
-import and reconciliation procedures.
+Additional source databases are incorporated into the existing canonical database through documented import and reconciliation procedures.
 
 The database preserves:
 
@@ -227,32 +221,65 @@ The database preserves:
 - Conflicts and their resolution history
 - Historical record changes
 
-Original database files remain available as
-profile-owner backups outside this public repository.
+Original database files remain available as profile-owner backups outside this public repository.
+
+Repository documentation may be updated independently of the SQLite database, provided that such changes do not misrepresent the database's actual contents, schema or import status.
+
+---
 
 ## 8. Research and intellectual project coverage
 
-The knowledge base is intended to cover the profile's
-scientific, academic, creative and intellectual work.
+The knowledge base is intended to cover the profile's scientific, academic, creative and intellectual work.
 
-This includes:
+Its scope includes:
 
-- Academic qualifications and professional roles
-- Independent scientific research
-- Publications and conference contributions
-- Research datasets and software
+### 8.1 Scientific and academic research
+
+- Nonlinear ultrasonics and nonlinear elastic waves
+- Harmonic generation, harmonic scattering and wave mixing
+- Mechanical, acoustic and phononic metamaterials
+- Structural health monitoring and nondestructive evaluation
+- Damage quantification and early-stage damage detection
+- Computational, theoretical and experimental mechanics
+- Mechanics of composite materials
+- Impact mechanics and fracture mechanics
+- Inverse problems, inverse design and optimization
+- Machine learning and uncertainty quantification in mechanics
+- Advanced wave control and emerging metamaterial research
+
+### 8.2 Research methods and experimental work
+
+- Finite element modelling and numerical simulation
+- Computational and mathematical methods
+- Experimental mechanics and material characterization
+- Ultrasonic measurement and guided-wave techniques
+- Digital image correlation and high-speed imaging
+- Impact testing and dynamic mechanical experiments
+- Shape optimization and topology optimization
+- Bayesian inverse methods and surrogate modelling
+
+The detailed research keyword and indexing taxonomy is maintained separately in `ORCID_KEYWORDS.md`.
+
+### 8.3 Literature, creative work and interdisciplinary projects
+
+The wider intellectual profile also includes:
+
 - Literature and multilingual creative writing
-- Independent publishing initiatives
-- Website and software development
-- Intellectual essays and independent projects
+- Independent literary publishing
+- Research communication
+- Novel digital publishing and website design
+- Independent software and digital projects
+- Intellectual essays and interdisciplinary exploration
 
-Related records are connected through the canonical
-database rather than maintained as competing profiles.
+These activities are treated as connected parts of the broader intellectual and creative portfolio, while remaining distinguishable from scientific research outputs.
+
+Related records are connected through the canonical database rather than maintained as competing profiles.
+
+---
 
 ## 9. Maintenance and version history
 
-New source datasets and records are incorporated
-through documented updates.
+New source datasets and records are incorporated through documented updates.
 
 Every significant update should identify:
 
@@ -264,18 +291,22 @@ Every significant update should identify:
 6. The resulting database version.
 7. The validation results.
 
-The canonical database must remain structurally
-consistent with its published schema and data dictionary.
+The canonical database must remain structurally consistent with its published schema and data dictionary.
 
-Previous information should remain traceable
-rather than being silently overwritten.
+Documentation changes should also be traceable. In particular, updates to the README, keyword index, manifest and build report should describe the repository's actual contents and current status.
+
+A documentation-only update does not, by itself, constitute a database schema migration or database rebuild.
+
+Previous information should remain traceable rather than being silently overwritten.
+
+---
 
 ## 10. Current project status
 
-**Current stage:** Initial canonical database and
-documentation established.
+**Current stage:** Initial canonical database and documentation established; documentation harmonization and historical-source reconciliation underway.
 
-**Completed:**
+### Completed
+
 - Initial SQLite database generation.
 - Initial schema version 1.0.
 - Import of the 400-entry master link directory.
@@ -283,16 +314,27 @@ documentation established.
 - Import of the supplied profile brief and build report.
 - Initial provenance and verification-history structure.
 - Database integrity and foreign-key validation.
+- Updated README project overview and research and intellectual scope.
+- Expanded description of literature, creative work and interdisciplinary projects in the README.
+- Preparation of the ORCID keyword and research index.
+- Updated manifest structure and repository file inventory.
 
-**Remaining:**
+### Remaining
+
+- Confirm and commit `ORCID_KEYWORDS.md` if not already present.
+- Update `DATABASE_BUILD_REPORT.md` to align with the current database and repository documentation.
 - Incorporation of historical ChatGPT and Perplexity database records.
 - Reconciliation of research outputs and publication versions.
 - Population of academic qualifications and professional appointments.
 - Detailed authorship and conference presentation records.
 - Structured representation of independent projects and releases.
-- Schema migration and documentation updates.
+- Schema migration design and testing.
+- Update of `DATA_DICTIONARY.md` following schema decisions.
+- Rebuilding and validating `profile.sqlite` after approved data and schema changes.
 - Creation of the comprehensive profile knowledge brief.
 - Public-facing profile pages and discovery improvements.
+- Metadata, crawler policy and sitemap improvements.
+- Search-engine monitoring and ongoing maintenance.
 
 ---
 
