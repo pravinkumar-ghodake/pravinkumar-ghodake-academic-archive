@@ -1,7 +1,16 @@
+# ============================================================
+# PRAVINKUMAR GHODAKE — ACADEMIC KNOWLEDGE ARCHIVE
+# Crawler policy
+# ============================================================
+
+# General permission for public website content
 User-agent: *
 Allow: /
 
-# Explicitly allow major search crawlers
+# ------------------------------------------------------------
+# MAJOR SEARCH ENGINE CRAWLERS
+# ------------------------------------------------------------
+
 User-agent: Googlebot
 Allow: /
 
@@ -11,10 +20,21 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# AI and research crawlers — this archive is designed for
-# machine-readability and AI discoverability
+# ------------------------------------------------------------
+# OPENAI CRAWLERS
+# ------------------------------------------------------------
+
+# ChatGPT Search discovery
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI model-training crawler
 User-agent: GPTBot
 Allow: /
+
+# ------------------------------------------------------------
+# OTHER AI AND RESEARCH CRAWLERS
+# ------------------------------------------------------------
 
 User-agent: CCBot
 Allow: /
@@ -31,5 +51,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Sitemap declaration (absolute URL, per spec)
+# ------------------------------------------------------------
+# XML SITEMAP
+# ------------------------------------------------------------
+
 Sitemap: https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/sitemap.xml
