@@ -1,90 +1,161 @@
-# Pravinkumar Ghodake — Academic Knowledge Base
+# Pravinkumar Ghodake — Academic & Intellectual Knowledge Base
 
-A consolidated, structured and continuously maintained
-academic knowledge base for Pravinkumar Ramchandra Ghodake.
+**Pravinkumar Ramchandra Ghodake**
+
+Independent Researcher · Scientist · PhD Student · Postdoc Student
+
+A structured, machine-readable and continuously maintained
+archive of academic research, scientific contributions,
+professional activities, literature, creative work,
+software and independent intellectual projects.
+
+---
 
 ## Purpose
 
-This knowledge base brings together academic, professional,
-research and public-profile information from multiple
-independent data sources into one consistent structure.
+This knowledge base provides a consolidated and
+searchable representation of the academic, scientific,
+professional and wider intellectual work of
+Pravinkumar Ramchandra Ghodake.
+
+It brings related information together in a structured
+format while preserving the original identity of each
+research output, project, contribution and source record.
+
+## Research and intellectual scope
+
+### Scientific research
+
+- Nonlinear ultrasonics
+- Nonlinear elastic waves
+- Harmonic generation and scattering
+- Wave mixing and localized damage detection
+- Mechanical and phononic metamaterials
+- Inverse design and optimization
+- Structural health monitoring and nondestructive evaluation
+- Computational and theoretical mechanics
+
+### Wider intellectual and creative work
+
+- Literature and multilingual creative writing
+- Independent literary publishing
+- Novel digital publishing and website design
+- Independent software and digital projects
+- Intellectual essays and interdisciplinary exploration
+
+## Data Stewardship and Verification
+
+This archive is maintained by Pravinkumar Ramchandra Ghodake.
+
+Its information is manually curated and independently
+verified by the profile owner against the relevant original,
+primary and authoritative source material.
+
+The archive maintains source references, record relationships,
+verification history and dated updates to support accuracy,
+transparency, traceability and long-term reliability.
+
+Academic publications, research contributions, professional
+activities, creative projects and other records are classified
+according to their actual nature.
+
+Corrections and new information are incorporated through
+documented updates, preserving the historical record and
+the provenance of individual entries.
 
 ## Canonical database
 
-The primary database is:
+The primary structured database is:
 
 `profile.sqlite`
 
-This is the single consolidated database containing
-the reconciled information from the supplied ChatGPT,
-Perplexity and other research and profile databases.
+It is the single consolidated SQLite database for the
+academic and intellectual knowledge archive.
 
-New source databases can be incorporated over time
-without creating competing canonical databases.
+Information from additional databases and source collections
+is incorporated into this database through documented
+imports, reconciliation and provenance tracking.
 
-## Database contents
+## Database documentation
 
-The database includes:
+| File | Purpose |
+|---|---|
+| `profile.sqlite` | Consolidated structured database |
+| `schema.sql` | SQLite database schema |
+| `DATA_DICTIONARY.md` | Database tables, fields and relationships |
+| `DATABASE_BUILD_REPORT.md` | Database build and validation information |
+| `MANIFEST.md` | Source register and provenance |
+| `PROFILE_KNOWLEDGE_BRIEF.md` | Human-readable profile |
+| `reconciliation/` | Reconciliation history and documented decisions |
+| `migrations/` | Versioned database schema changes |
 
-- Personal and academic identity
-- Academic qualifications and appointments
-- Research interests and specialisations
-- Publications and research outputs
-- Conference presentations and proceedings
-- Academic identifiers and profiles
-- Research datasets and repositories
-- Professional memberships and achievements
-- Academic and professional links
-- Evidence, source attribution and provenance
-- Verification history and unresolved conflicts
+Additional documentation is incorporated as the archive develops.
 
-## Data integrity and provenance
+## Data organisation principles
 
-Each imported record should retain its source information,
-including its originating dataset and original record
-identifier wherever available.
+1. Maintain one consolidated canonical database.
+2. Preserve source attribution for imported records.
+3. Maintain a clear distinction between research works and their different output records.
+4. Represent authorship and collaboration accurately.
+5. Classify publications, abstracts, presentations, datasets and other outputs separately.
+6. Preserve historical records and dated changes.
+7. Document corrections and reconciliations.
+8. Maintain clear relationships between scientific, literary, creative and software projects.
+9. Keep source references and verification information traceable.
+10. Support continuous, documented updates.
 
-Duplicate records should be linked or consolidated
-without losing their source references.
+## Academic and intellectual projects
 
-Conflicting information should be documented rather
-than silently overwritten.
+The knowledge base recognises scientific research,
+literature, creative writing, digital publishing,
+software development and independent intellectual
+projects as connected dimensions of the profile.
 
-Verification status should distinguish independently
-verified information, historically checked information,
-user-confirmed information, inferred information and
-unresolved claims.
+Each project is documented according to its actual
+purpose, outputs, versions, associated records
+and applicable licensing information.
+
+## Machine-readable accessibility
+
+The archive is maintained using structured data and
+readable documentation to support access by:
+
+- Researchers and academic communities
+- Search engines
+- AI-powered search and retrieval systems
+- Digital research platforms
+- Data discovery and indexing services
+
+Public-facing HTML and Markdown pages complement
+the downloadable SQLite database.
 
 ## Continuous maintenance
 
-The database is designed to evolve.
+New publications, research contributions, conferences,
+projects, software releases, identifiers and professional
+records can be incorporated over time.
 
-New publications, conference contributions, academic
-appointments, identifiers, research projects and other
-relevant information can be incorporated through
-documented updates.
+Every update should preserve provenance, document
+material changes and maintain the integrity of the
+canonical database.
 
-Previous information and verification history should
-remain traceable.
+## Relationship to the main academic archive
 
-## Documentation
+This directory complements:
 
-- `PROFILE_KNOWLEDGE_BRIEF.md` — Human-readable profile.
-- `DATA_DICTIONARY.md` — Database structure and field definitions.
-- `schema.sql` — SQLite database schema.
+`01-public-records/`
 
-## Machine-readable access
+The public-records section provides access to identifiable
+academic and professional source records.
 
-The canonical database is maintained in SQLite format.
-Supporting documentation and public-facing pages provide
-readable access to the information.
+This knowledge base provides the consolidated,
+structured representation and connected organisation
+of the information.
 
-## Relationship to the academic archive
+---
 
-This knowledge base complements the repository's
-`01-public-records/` directory.
+**Maintained by:** Pravinkumar Ramchandra Ghodake
 
-The public-records directory contains identifiable
-academic and professional records. This directory
-contains the consolidated structured knowledge base
-and its supporting documentation.
+**Database:** `profile.sqlite`
+
+**Schema:** Version 1.0 — initial version, subject to documented migration.
