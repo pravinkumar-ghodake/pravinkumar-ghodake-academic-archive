@@ -4,7 +4,7 @@
 
 **Profile:** Pravinkumar Ramchandra Ghodake  
 **Canonical database:** `profile.sqlite`  
-**Inspected attachment:** `profile(1).sqlite`  
+**Inspected database:** `profile.sqlite`  
 **Current schema version:** 1.0  
 **Target schema version:** 1.1  
 **Plan date:** 2026-11-17  
@@ -47,16 +47,15 @@ No executable migration has been run or applied.
 
 ### 2.1 Inspected database file
 
-The inspected attachment was:
+The inspected database is:
 
-`profile(1).sqlite`
+`profile.sqlite`
 
-The attachment represents the Version 1.0 database supplied for inspection.
+This is the canonical Version 1.0 SQLite database maintained in the repository.
 
 | Attribute | Inspected value |
 |---|---|
-| Attachment filename | `profile(1).sqlite` |
-| Intended canonical filename | `profile.sqlite` |
+| Database filename | `profile.sqlite` |
 | SQLite version | 3.46.1 |
 | File size | 1,351,680 bytes |
 | Approximate size | 1.29 MiB |
@@ -69,7 +68,7 @@ The attachment represents the Version 1.0 database supplied for inspection.
 
 `16d00294c2ed71963399a2dafdd1e8256f0d8bfbf45580ed7b8f42ed73904cde`
 
-The checksum identifies the inspected attachment and should be retained as its inspection reference.
+The checksum identifies the inspected canonical database and should be retained as its inspection reference.
 
 The original canonical database should remain unchanged until the migration has been successfully tested and approved.
 
@@ -84,7 +83,7 @@ The actual database contains:
 | Indexes | 30 |
 | **Total canonical records** | **431** |
 
-The previously documented structural counts are therefore confirmed by the inspected attachment.
+The previously documented structural counts are therefore confirmed by the inspected database.
 
 ### 2.3 SQLite integrity results
 
@@ -1456,7 +1455,7 @@ The objective is a trustworthy, transparent, traceable, maintainable and interop
 **Maintained by:** Pravinkumar Ramchandra Ghodake  
 **Repository area:** `02-ai-knowledge-base/`  
 **Canonical database:** `profile.sqlite`  
-**Inspected attachment:** `profile(1).sqlite`  
+**Inspected database:** `profile.sqlite`  
 **Current schema:** 1.0  
 **Target schema:** 1.1  
 **Migration status:** Design and testing preparation
