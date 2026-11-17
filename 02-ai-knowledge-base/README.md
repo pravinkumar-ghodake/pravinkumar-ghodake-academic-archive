@@ -22,26 +22,172 @@ It brings related information together in a structured
 format while preserving the original identity of each
 research output, project, contribution and source record.
 
+
 ## Research and intellectual scope
 
-### Scientific research
+Pravinkumar Ramchandra Ghodake's research interests span nonlinear mechanics, elastic-wave physics, ultrasonics, mechanical and phononic metamaterials, inverse design, and computational and experimental mechanics. The broader research profile also connects these areas with structural health monitoring, nondestructive evaluation, advanced materials, optimisation, and data-driven methods.
 
-- Nonlinear ultrasonics
-- Nonlinear elastic waves
-- Harmonic generation and scattering
-- Wave mixing and localized damage detection
-- Mechanical and phononic metamaterials
-- Inverse design and optimization
-- Structural health monitoring and nondestructive evaluation
-- Computational and theoretical mechanics
+The research and intellectual scope is organised into the following connected domains.
 
-### Wider intellectual and creative work
+### 1. Nonlinear mechanics and elastic-wave physics
+
+- Nonlinear elastic waves and nonlinear wave propagation
+- Nonlinear elasticity and hyperelasticity
+- Hysteretic and contact nonlinearity
+- Nonlinear dynamics, bifurcation analysis and chaotic dynamics
+- Nonlinear periodic structures and lattice dynamics
+- Wave propagation, elastodynamics and wave scattering
+- Harmonic generation, higher harmonics and fractional harmonics
+- Nonlinear wave mixing and two-wave mixing
+- Harmonic scattering and compensatory waves
+- Nonlinear localisation, intrinsic localized modes and discrete breathers
+- Solitons and granular crystals
+- Third-order elastic constants and acoustoelasticity
+
+### 2. Nonlinear ultrasonics, physical acoustics and nondestructive evaluation
+
+- Nonlinear ultrasonics and nonlinear acoustics
+- Ultrasonic guided waves, Lamb waves and shear-horizontal waves
+- Harmonic generation, harmonic scattering and second-harmonic suppression
+- Contact acoustic nonlinearity and localized hysteretic damage
+- Wave mixing and damage quantification
+- Early-stage damage and micro-crack detection
+- Nondestructive evaluation (NDE) and nondestructive testing (NDT)
+- Structural health monitoring and structural integrity
+- Acoustic emission and resonant ultrasound spectroscopy
+- Nonlinear resonant ultrasound spectroscopy
+- Guided-wave tomography and ultrasonic array imaging
+- Phased-array ultrasonics, laser ultrasonics and air-coupled ultrasonics
+- Piezoelectric sensing and ultrasonic transducers
+- Inverse scattering, scattering theory and multiple scattering
+- Uncertainty in NDE and additive-manufacturing NDE
+
+### 3. Mechanical metamaterials, phononic materials and wave control
+
+- Mechanical metamaterials and acoustic metamaterials
+- Phononic materials and phononic crystals
+- Nonlinear metamaterials and nonlinear phononic crystals
+- Functionally graded and quasi-periodic metamaterials
+- Non-periodic and locally resonant metamaterials
+- Time-modulated, time-varying and space-time metamaterials
+- Four-dimensional (4D) metamaterials
+- Time-modulated phononic crystals and time crystals
+- Floquet time crystals and discrete time crystals
+- Inverse design of mechanical and phononic metamaterials
+- Bandgap engineering and dispersion engineering
+- Tunable metamaterials and metamaterial design
+- Nonlinear wave cloaking and elastic-wave cloaking
+- Acoustic and elastic invisibility
+- Direction-independent metamaterials and cylindrical metamaterial rods
+- Nonreciprocal wave propagation and elastodynamic reciprocity
+- Acoustic nonreciprocity and asymmetric hysteretic nonlinearity
+- Metasurfaces, acoustic metasurfaces and elastic metasurfaces
+- Topological acoustics and topological phononics
+- Valley Hall effects, exceptional points and non-Hermitian acoustics
+- Parity-time-symmetric acoustics and transformation acoustics
+- Acoustic black holes and nonlinear energy sinks
+- Targeted energy transfer and quantum analogies in acoustics
+
+### 4. Solid mechanics, composite materials, impact and fracture
+
+- Solid mechanics, applied mechanics and continuum mechanics
+- Computational, theoretical and experimental mechanics
+- Mechanics of composite materials and composite laminates
+- Glass-fibre and epoxy-glass-fibre composites
+- Impact mechanics and low-velocity impact
+- Split Hopkinson pressure-bar testing
+- Drop-weight impact testing and high-speed imaging
+- Dynamic photoelasticity and experimental mechanics
+- Fracture mechanics and dynamic fracture
+- Mode-I crack propagation and fracture toughness
+- Fatigue damage and fatigue crack growth
+- Delamination, matrix damage and fibre breakage
+- Micro-voids, plastic slip bands and dislocation networks
+- Damage mechanics, plasticity and viscoelasticity
+- Energy absorption, auxetic materials and lattice structures
+- Anisotropic materials and micromechanics
+- Eshelby inclusion theory and effective-medium approaches
+
+### 5. Computational mechanics, inverse problems and optimisation
+
+- Finite element methods and computational modelling
+- COMSOL Multiphysics and numerical simulation
+- Finite difference, spectral element and boundary element methods
+- Meshless methods and model-order reduction
+- Inverse problems and Bayesian inverse methods
+- Inverse design and inverse scattering
+- Shape optimisation and topology optimisation
+- Level-set shape optimisation
+- Reliability-based design optimisation
+- Uncertainty quantification and polynomial chaos expansion
+- Kriging and surrogate models
+- Surrogate-assisted optimisation
+- Design of experiments and sensitivity analysis
+- Global sensitivity analysis
+- Gradient-free, multi-objective and min-max optimisation
+- Nelder-Mead optimisation
+
+### 6. Machine learning, data-driven mechanics and intelligent monitoring
+
+- Machine learning for NDE
+- Machine learning in mechanics
+- Deep learning in mechanics
+- Data-driven mechanics
+- Physics-informed neural networks
+- Support vector machine regression
+- Digital twins
+- Damage pattern recognition
+- Reliability and uncertainty in data-driven NDE
+- Data-assisted modelling and surrogate-based prediction
+
+### 7. Experimental methods, measurement and characterisation
+
+- Three-dimensional digital image correlation
+- High-speed imaging
+- Dynamic photoelasticity
+- Split Hopkinson pressure-bar methods
+- Low-velocity and drop-weight impact experiments
+- Ultrasonic transducers and piezoelectric wafer active sensors
+- Laser ultrasonics and air-coupled ultrasonics
+- Acoustic emission and ultrasonic imaging
+- Experimental validation of computational and theoretical models
+
+### 8. Broader and emerging research interests
+
+The ORCID-associated research vocabulary also includes wider and emerging topics that connect with the domains above:
+
+- Nonlinear localisation and nonlinear lattice dynamics
+- Time crystals and Floquet systems
+- Topological and non-Hermitian wave physics
+- Nonreciprocal and asymmetric wave propagation
+- Underwater acoustics and engineering acoustics
+- Acoustic and elastic metasurfaces
+- Full-waveform inversion and Born approximation
+- Homogenisation and effective-medium theory
+- Fractional harmonics and Raman-scattering analogies
+- Nonlinear energy sinks and targeted energy transfer
+- Time-reversal acoustics
+- Digital twins and physics-informed computational methods
+
+### 9. Literature, creative work and interdisciplinary projects
+
+The wider intellectual profile also includes,
 
 - Literature and multilingual creative writing
 - Independent literary publishing
+- Research communication
 - Novel digital publishing and website design
 - Independent software and digital projects
 - Intellectual essays and interdisciplinary exploration
+
+These activities are treated as connected parts of the broader intellectual and creative portfolio, while remaining distinguishable from scientific research outputs.
+
+
+### Research keyword source
+
+The detailed keyword vocabulary associated with the research profile is maintained separately in `ORCID_KEYWORDS.md`. The categories above provide a readable overview; the keyword index preserves the more granular terminology for discovery, structured-data maintenance and future database updates.
+
+
 
 ## Data Stewardship and Verification
 
