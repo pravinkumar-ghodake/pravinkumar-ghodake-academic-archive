@@ -21,7 +21,8 @@
 --
 -- The records table must be rebuilt to extend its CHECK
 -- constraint. Foreign-key enforcement is temporarily disabled
--- for this controlled rebuild and restored before validation.
+-- for this controlled rebuild and restored after COMMIT.
+-- This script performs structural changes only; it imports no records.
 --
 -- ============================================================
 
@@ -163,16 +164,90 @@ BEGIN IMMEDIATE;
 
 
 -- ------------------------------------------------------------
--- 5. VERIFY STARTING VERSION AGAIN INSIDE TRANSACTION
+-- 5. REVERIFY THE COMPLETE BASELINE INSIDE THE TRANSACTION
+--
+-- BEGIN IMMEDIATE has acquired the write reservation.
+-- Repeat the complete baseline check to close the gap between
+-- the preflight check and the start of the transaction.
 -- ------------------------------------------------------------
 
 INSERT INTO _migration_guard (ok)
 SELECT CASE
-    WHEN (
-        SELECT metadata_value
-        FROM schema_metadata
-        WHERE metadata_key = 'schema_version'
-    ) = '1.0'
+    WHEN
+        (
+            SELECT metadata_value
+            FROM schema_metadata
+            WHERE metadata_key = 'schema_version'
+        ) = '1.0'
+
+        AND (SELECT COUNT(*) FROM records) = 431
+        AND (SELECT COUNT(*) FROM links) = 419
+        AND (SELECT COUNT(*) FROM research_themes) = 10
+        AND (SELECT COUNT(*) FROM people) = 1
+        AND (SELECT COUNT(*) FROM claims) = 1
+
+        AND (SELECT COUNT(*) FROM sources) = 4
+        AND (SELECT COUNT(*) FROM import_batches) = 4
+        AND (SELECT COUNT(*) FROM source_records) = 435
+        AND (SELECT COUNT(*) FROM record_provenance) = 433
+
+        AND (
+            SELECT COUNT(DISTINCT canonical_record_id)
+            FROM record_provenance
+        ) = 431
+
+        AND (
+            SELECT COUNT(*)
+            FROM source_records
+            WHERE content_hash IS NULL
+               OR content_hash = ''
+        ) = 0
+
+        AND (
+            SELECT COUNT(*)
+            FROM links
+            WHERE url IS NULL
+               OR url = ''
+        ) = 0
+
+        AND (
+            SELECT COUNT(*)
+            FROM (
+                SELECT normalized_url
+                FROM links
+                WHERE normalized_url IS NOT NULL
+                  AND normalized_url <> ''
+                GROUP BY normalized_url
+                HAVING COUNT(*) > 1
+            )
+        ) = 0
+
+        AND (SELECT COUNT(*) FROM institutions) = 0
+        AND (SELECT COUNT(*) FROM identifiers) = 0
+        AND (SELECT COUNT(*) FROM education) = 0
+        AND (SELECT COUNT(*) FROM appointments) = 0
+        AND (SELECT COUNT(*) FROM research_outputs) = 0
+        AND (SELECT COUNT(*) FROM output_authors) = 0
+        AND (SELECT COUNT(*) FROM conferences) = 0
+        AND (SELECT COUNT(*) FROM presentations) = 0
+        AND (SELECT COUNT(*) FROM awards) = 0
+        AND (SELECT COUNT(*) FROM research_relationships) = 0
+        AND (SELECT COUNT(*) FROM verification_events) = 0
+        AND (SELECT COUNT(*) FROM conflicts) = 0
+        AND (SELECT COUNT(*) FROM conflict_items) = 0
+        AND (SELECT COUNT(*) FROM claim_evidence) = 0
+
+        AND (
+            SELECT integrity_check
+            FROM pragma_integrity_check
+            LIMIT 1
+        ) = 'ok'
+
+        AND (
+            SELECT COUNT(*)
+            FROM pragma_foreign_key_check
+        ) = 0
+
     THEN 1
     ELSE 0
 END;
@@ -550,6 +625,9 @@ CREATE INDEX idx_presentations_submission
 
 -- ------------------------------------------------------------
 -- 12. PROJECTS
+--
+-- Canonical title and description are stored in records.
+-- URLs are stored in links and related through record_links.
 -- ------------------------------------------------------------
 
 CREATE TABLE projects (
@@ -588,9 +666,6 @@ CREATE TABLE projects (
 
     start_date TEXT,
     end_date TEXT,
-
-    primary_url TEXT,
-    description TEXT,
     notes TEXT
 );
 
@@ -643,6 +718,9 @@ CREATE INDEX idx_project_contributors_person
 
 -- ------------------------------------------------------------
 -- 14. CREATIVE WORKS
+--
+-- Canonical title and description are stored in records.
+-- URLs are stored in links and related through record_links.
 -- ------------------------------------------------------------
 
 CREATE TABLE creative_works (
@@ -658,9 +736,6 @@ CREATE TABLE creative_works (
     publication_date TEXT,
     publisher TEXT,
 
-    primary_url TEXT,
-
-    description TEXT,
     notes TEXT
 );
 
@@ -700,9 +775,64 @@ CREATE INDEX idx_project_creative_works_work
 
 
 -- ------------------------------------------------------------
+-- 15A. CANONICAL RECORD-TO-LINK RELATIONSHIPS
+--
+-- Keep URLs normalized in the existing links table. This bridge
+-- allows projects, creative works and other canonical records
+-- to reference one or more link records with a defined role.
+-- ------------------------------------------------------------
+
+CREATE TABLE record_links (
+
+    record_id TEXT NOT NULL
+        REFERENCES records(record_id) ON DELETE CASCADE,
+
+    link_record_id TEXT NOT NULL
+        REFERENCES links(record_id) ON DELETE RESTRICT,
+
+    link_role TEXT NOT NULL DEFAULT 'related'
+        CHECK (
+            link_role IN (
+                'primary',
+                'homepage',
+                'repository',
+                'publication',
+                'documentation',
+                'demo',
+                'download',
+                'source',
+                'related',
+                'other'
+            )
+        ),
+
+    display_order INTEGER NOT NULL DEFAULT 1
+        CHECK (display_order >= 1),
+
+    notes TEXT,
+
+    PRIMARY KEY (record_id, link_record_id),
+    CHECK (record_id <> link_record_id)
+);
+
+
+CREATE INDEX idx_record_links_link
+    ON record_links(link_record_id);
+
+CREATE INDEX idx_record_links_role
+    ON record_links(link_role);
+
+CREATE UNIQUE INDEX idx_record_links_one_primary
+    ON record_links(record_id)
+    WHERE link_role = 'primary';
+
+
+-- ------------------------------------------------------------
 -- 16. PROJECT RELEASES
 --
--- Releases are child records, not common records.
+-- Releases remain child rows, not canonical records.
+-- Release URLs are normalized in links and connected through
+-- project_release_links. Provenance is many-to-many.
 -- ------------------------------------------------------------
 
 CREATE TABLE project_releases (
@@ -710,7 +840,7 @@ CREATE TABLE project_releases (
     release_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
     project_record_id TEXT NOT NULL
-        REFERENCES projects(record_id),
+        REFERENCES projects(record_id) ON DELETE CASCADE,
 
     release_version TEXT,
 
@@ -727,28 +857,111 @@ CREATE TABLE project_releases (
         ),
 
     release_date TEXT,
+    notes TEXT,
 
-    release_url TEXT,
-    repository_url TEXT,
-
-    notes TEXT
+    UNIQUE (project_record_id, release_version)
 );
 
 
 CREATE INDEX idx_project_releases_project
     ON project_releases(project_record_id);
 
+CREATE INDEX idx_project_releases_date
+    ON project_releases(release_date);
+
 
 -- ------------------------------------------------------------
--- 17. RECORD-LEVEL LICENSING
+-- 16A. PROJECT RELEASE LINKS
+-- ------------------------------------------------------------
+
+CREATE TABLE project_release_links (
+
+    release_id INTEGER NOT NULL
+        REFERENCES project_releases(release_id) ON DELETE CASCADE,
+
+    link_record_id TEXT NOT NULL
+        REFERENCES links(record_id) ON DELETE RESTRICT,
+
+    link_role TEXT NOT NULL
+        CHECK (
+            link_role IN (
+                'release',
+                'repository',
+                'download',
+                'documentation',
+                'demo',
+                'other'
+            )
+        ),
+
+    display_order INTEGER NOT NULL DEFAULT 1
+        CHECK (display_order >= 1),
+
+    notes TEXT,
+
+    PRIMARY KEY (release_id, link_record_id)
+);
+
+
+CREATE INDEX idx_project_release_links_link
+    ON project_release_links(link_record_id);
+
+CREATE INDEX idx_project_release_links_role
+    ON project_release_links(link_role);
+
+
+-- ------------------------------------------------------------
+-- 16B. PROJECT RELEASE PROVENANCE
+-- ------------------------------------------------------------
+
+CREATE TABLE project_release_sources (
+
+    release_id INTEGER NOT NULL
+        REFERENCES project_releases(release_id) ON DELETE CASCADE,
+
+    source_record_id TEXT NOT NULL
+        REFERENCES source_records(source_record_id) ON DELETE RESTRICT,
+
+    source_role TEXT NOT NULL DEFAULT 'supporting'
+        CHECK (
+            source_role IN (
+                'origin',
+                'supporting',
+                'corroborating',
+                'release_announcement',
+                'repository_metadata',
+                'other'
+            )
+        ),
+
+    evidence_note TEXT,
+    added_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (release_id, source_record_id)
+);
+
+
+CREATE INDEX idx_project_release_sources_source
+    ON project_release_sources(source_record_id);
+
+
+-- ------------------------------------------------------------
+-- 17. LICENSE ASSIGNMENTS
+--
+-- A license can apply either to a canonical record or to one
+-- project release. Multiple source records can support each
+-- license assignment through license_assignment_sources.
 -- ------------------------------------------------------------
 
 CREATE TABLE record_licenses (
 
     license_assignment_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-    record_id TEXT NOT NULL
-        REFERENCES records(record_id),
+    record_id TEXT
+        REFERENCES records(record_id) ON DELETE CASCADE,
+
+    release_id INTEGER
+        REFERENCES project_releases(release_id) ON DELETE CASCADE,
 
     license_scope TEXT NOT NULL
         CHECK (
@@ -770,19 +983,60 @@ CREATE TABLE record_licenses (
     license_url TEXT,
 
     effective_date TEXT,
+    notes TEXT,
 
-    source_record_id TEXT
-        REFERENCES source_records(source_record_id),
-
-    notes TEXT
+    CHECK (
+        (record_id IS NOT NULL AND release_id IS NULL)
+        OR
+        (record_id IS NULL AND release_id IS NOT NULL)
+    )
 );
 
 
 CREATE INDEX idx_record_licenses_record
     ON record_licenses(record_id);
 
+CREATE INDEX idx_record_licenses_release
+    ON record_licenses(release_id);
+
 CREATE INDEX idx_record_licenses_scope
     ON record_licenses(license_scope);
+
+
+-- ------------------------------------------------------------
+-- 17A. LICENSE ASSIGNMENT PROVENANCE
+-- ------------------------------------------------------------
+
+CREATE TABLE license_assignment_sources (
+
+    license_assignment_id INTEGER NOT NULL
+        REFERENCES record_licenses(license_assignment_id)
+        ON DELETE CASCADE,
+
+    source_record_id TEXT NOT NULL
+        REFERENCES source_records(source_record_id) ON DELETE RESTRICT,
+
+    source_role TEXT NOT NULL DEFAULT 'supporting'
+        CHECK (
+            source_role IN (
+                'origin',
+                'supporting',
+                'corroborating',
+                'license_text',
+                'repository_metadata',
+                'other'
+            )
+        ),
+
+    evidence_note TEXT,
+    added_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (license_assignment_id, source_record_id)
+);
+
+
+CREATE INDEX idx_license_assignment_sources_source
+    ON license_assignment_sources(source_record_id);
 
 
 -- ------------------------------------------------------------
@@ -848,6 +1102,176 @@ CREATE INDEX idx_conference_participations_person
 
 CREATE INDEX idx_conference_participations_presentation
     ON conference_participations(presentation_record_id);
+
+
+-- ------------------------------------------------------------
+-- 18A. CONFERENCE RELATIONSHIP CONSISTENCY
+--
+-- Prevent presentations, submissions and participation rows
+-- from connecting records belonging to different conferences.
+-- ------------------------------------------------------------
+
+CREATE TRIGGER trg_conference_participations_consistency_insert
+BEFORE INSERT ON conference_participations
+WHEN
+    (
+        NEW.presentation_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM presentations p
+            WHERE p.record_id = NEW.presentation_record_id
+              AND p.conference_record_id IS NEW.conference_record_id
+        )
+    )
+    OR
+    (
+        NEW.submission_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM conference_submissions cs
+            WHERE cs.record_id = NEW.submission_record_id
+              AND cs.conference_record_id IS NEW.conference_record_id
+        )
+    )
+    OR
+    (
+        NEW.presentation_record_id IS NOT NULL
+        AND NEW.submission_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM presentations p
+            WHERE p.record_id = NEW.presentation_record_id
+              AND p.submission_record_id IS NEW.submission_record_id
+        )
+    )
+BEGIN
+    SELECT RAISE(
+        ABORT,
+        'Conference participation references inconsistent conference records'
+    );
+END;
+
+
+CREATE TRIGGER trg_conference_participations_consistency_update
+BEFORE UPDATE OF
+    conference_record_id,
+    presentation_record_id,
+    submission_record_id
+ON conference_participations
+WHEN
+    (
+        NEW.presentation_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM presentations p
+            WHERE p.record_id = NEW.presentation_record_id
+              AND p.conference_record_id IS NEW.conference_record_id
+        )
+    )
+    OR
+    (
+        NEW.submission_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM conference_submissions cs
+            WHERE cs.record_id = NEW.submission_record_id
+              AND cs.conference_record_id IS NEW.conference_record_id
+        )
+    )
+    OR
+    (
+        NEW.presentation_record_id IS NOT NULL
+        AND NEW.submission_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM presentations p
+            WHERE p.record_id = NEW.presentation_record_id
+              AND p.submission_record_id IS NEW.submission_record_id
+        )
+    )
+BEGIN
+    SELECT RAISE(
+        ABORT,
+        'Conference participation references inconsistent conference records'
+    );
+END;
+
+
+CREATE TRIGGER trg_presentations_conference_consistency_insert
+BEFORE INSERT ON presentations
+WHEN NEW.submission_record_id IS NOT NULL
+ AND NOT EXISTS (
+    SELECT 1
+    FROM conference_submissions cs
+    WHERE cs.record_id = NEW.submission_record_id
+      AND cs.conference_record_id IS NEW.conference_record_id
+ )
+BEGIN
+    SELECT RAISE(
+        ABORT,
+        'Presentation and submission must belong to the same conference'
+    );
+END;
+
+
+CREATE TRIGGER trg_presentations_conference_consistency_update
+BEFORE UPDATE OF
+    conference_record_id,
+    submission_record_id
+ON presentations
+WHEN
+    (
+        NEW.submission_record_id IS NOT NULL
+        AND NOT EXISTS (
+            SELECT 1
+            FROM conference_submissions cs
+            WHERE cs.record_id = NEW.submission_record_id
+              AND cs.conference_record_id IS NEW.conference_record_id
+        )
+    )
+    OR EXISTS (
+        SELECT 1
+        FROM conference_participations cp
+        WHERE cp.presentation_record_id = NEW.record_id
+          AND cp.conference_record_id IS NOT NEW.conference_record_id
+    )
+    OR EXISTS (
+        SELECT 1
+        FROM conference_participations cp
+        WHERE cp.presentation_record_id = NEW.record_id
+          AND cp.submission_record_id IS NOT NULL
+          AND cp.submission_record_id IS NOT NEW.submission_record_id
+    )
+BEGIN
+    SELECT RAISE(
+        ABORT,
+        'Presentation update would create inconsistent conference relationships'
+    );
+END;
+
+
+CREATE TRIGGER trg_conference_submissions_conference_consistency_update
+BEFORE UPDATE OF conference_record_id
+ON conference_submissions
+WHEN
+    EXISTS (
+        SELECT 1
+        FROM presentations p
+        WHERE p.submission_record_id = OLD.record_id
+          AND p.conference_record_id IS NOT NEW.conference_record_id
+    )
+    OR EXISTS (
+        SELECT 1
+        FROM conference_participations cp
+        WHERE cp.submission_record_id = OLD.record_id
+          AND cp.conference_record_id IS NOT NEW.conference_record_id
+    )
+BEGIN
+    SELECT RAISE(
+        ABORT,
+        'Submission conference change would invalidate related records'
+    );
+END;
 
 
 -- ------------------------------------------------------------
@@ -958,7 +1382,6 @@ CREATE TABLE keywords (
     keyword_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
     keyword_text TEXT NOT NULL,
-
     normalized_keyword TEXT NOT NULL,
 
     keyword_category TEXT NOT NULL
@@ -979,19 +1402,14 @@ CREATE TABLE keywords (
         ),
 
     description TEXT,
-
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    UNIQUE (
-        keyword_category,
-        normalized_keyword
-    )
+    UNIQUE (keyword_category, normalized_keyword)
 );
 
 
 CREATE INDEX idx_keywords_category
     ON keywords(keyword_category);
-
 
 CREATE INDEX idx_keywords_text
     ON keywords(keyword_text);
@@ -1025,12 +1443,10 @@ CREATE TABLE record_keywords (
             )
         ),
 
-    source_record_id TEXT
-        REFERENCES source_records(source_record_id),
-
     assignment_notes TEXT,
+    assigned_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    assigned_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    UNIQUE (record_id, keyword_id)
 );
 
 
@@ -1040,8 +1456,42 @@ CREATE INDEX idx_record_keywords_record
 CREATE INDEX idx_record_keywords_keyword
     ON record_keywords(keyword_id);
 
-CREATE INDEX idx_record_keywords_source
-    ON record_keywords(source_record_id);
+
+-- ------------------------------------------------------------
+-- 22A. KEYWORD ASSIGNMENT PROVENANCE
+--
+-- One keyword assignment may be supported by multiple sources.
+-- ------------------------------------------------------------
+
+CREATE TABLE record_keyword_sources (
+
+    record_keyword_id INTEGER NOT NULL
+        REFERENCES record_keywords(record_keyword_id) ON DELETE CASCADE,
+
+    source_record_id TEXT NOT NULL
+        REFERENCES source_records(source_record_id) ON DELETE RESTRICT,
+
+    source_role TEXT NOT NULL DEFAULT 'supporting'
+        CHECK (
+            source_role IN (
+                'origin',
+                'supporting',
+                'corroborating',
+                'curatorial',
+                'imported_from',
+                'other'
+            )
+        ),
+
+    evidence_note TEXT,
+    added_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (record_keyword_id, source_record_id)
+);
+
+
+CREATE INDEX idx_record_keyword_sources_source
+    ON record_keyword_sources(source_record_id);
 
 
 -- ------------------------------------------------------------
@@ -1780,7 +2230,21 @@ SELECT
     p.project_status,
     p.start_date,
     p.end_date,
-    p.primary_url,
+    (
+        SELECT l.url
+        FROM record_links rl
+        JOIN links l
+            ON l.record_id = rl.link_record_id
+        WHERE rl.record_id = p.record_id
+          AND rl.link_role IN ('primary', 'homepage')
+        ORDER BY
+            CASE rl.link_role
+                WHEN 'primary' THEN 1
+                ELSE 2
+            END,
+            rl.display_order
+        LIMIT 1
+    ) AS primary_url,
     r.verification_status
 
 FROM projects p
@@ -1798,12 +2262,27 @@ CREATE VIEW v_creative_works AS
 SELECT
     r.record_id,
     r.title,
+    r.description,
     cw.work_type,
     cw.language,
     cw.medium,
     cw.publication_date,
     cw.publisher,
-    cw.primary_url,
+    (
+        SELECT l.url
+        FROM record_links rl
+        JOIN links l
+            ON l.record_id = rl.link_record_id
+        WHERE rl.record_id = cw.record_id
+          AND rl.link_role IN ('primary', 'homepage')
+        ORDER BY
+            CASE rl.link_role
+                WHEN 'primary' THEN 1
+                ELSE 2
+            END,
+            rl.display_order
+        LIMIT 1
+    ) AS primary_url,
     r.verification_status
 
 FROM creative_works cw
@@ -1834,19 +2313,21 @@ JOIN records r
 
 
 -- ------------------------------------------------------------
--- 31. NEW KEYWORD INDEX VIEW
+-- 31. KEYWORD INDEX VIEW
 -- ------------------------------------------------------------
 
 CREATE VIEW v_keyword_index AS
 
 SELECT
+    rk.record_keyword_id,
     rk.record_id,
     r.title,
     k.keyword_id,
     k.keyword_text,
     k.keyword_category,
     rk.assignment_classification,
-    rk.source_record_id
+    rk.assignment_notes,
+    COUNT(DISTINCT rks.source_record_id) AS source_count
 
 FROM record_keywords rk
 
@@ -1854,7 +2335,129 @@ JOIN records r
     ON r.record_id = rk.record_id
 
 JOIN keywords k
+    ON k.keyword_id = rk.keyword_id
+
+LEFT JOIN record_keyword_sources rks
+    ON rks.record_keyword_id = rk.record_keyword_id
+
+GROUP BY
+    rk.record_keyword_id,
+    rk.record_id,
+    r.title,
+    k.keyword_id,
+    k.keyword_text,
+    k.keyword_category,
+    rk.assignment_classification,
+    rk.assignment_notes;
+
+
+-- ------------------------------------------------------------
+-- 31A. KEYWORD ASSIGNMENT SOURCE VIEW
+-- ------------------------------------------------------------
+
+CREATE VIEW v_keyword_assignment_sources AS
+
+SELECT
+    rks.record_keyword_id,
+    rk.record_id,
+    r.title,
+    k.keyword_text,
+    rks.source_record_id,
+    rks.source_role,
+    rks.evidence_note,
+    rks.added_at
+
+FROM record_keyword_sources rks
+
+JOIN record_keywords rk
+    ON rk.record_keyword_id = rks.record_keyword_id
+
+JOIN records r
+    ON r.record_id = rk.record_id
+
+JOIN keywords k
     ON k.keyword_id = rk.keyword_id;
+
+
+-- ------------------------------------------------------------
+-- 31B. PROJECT RELEASE VIEW
+-- ------------------------------------------------------------
+
+CREATE VIEW v_project_releases AS
+
+SELECT
+    pr.release_id,
+    pr.project_record_id,
+    r.title AS project_title,
+    pr.release_version,
+    pr.release_type,
+    pr.release_date,
+    pr.notes,
+    (
+        SELECT l.url
+        FROM project_release_links prl
+        JOIN links l
+            ON l.record_id = prl.link_record_id
+        WHERE prl.release_id = pr.release_id
+          AND prl.link_role = 'release'
+        ORDER BY prl.display_order
+        LIMIT 1
+    ) AS release_url,
+    (
+        SELECT l.url
+        FROM project_release_links prl
+        JOIN links l
+            ON l.record_id = prl.link_record_id
+        WHERE prl.release_id = pr.release_id
+          AND prl.link_role = 'repository'
+        ORDER BY prl.display_order
+        LIMIT 1
+    ) AS repository_url,
+    (
+        SELECT COUNT(*)
+        FROM project_release_sources prs
+        WHERE prs.release_id = pr.release_id
+    ) AS source_count
+
+FROM project_releases pr
+
+JOIN records r
+    ON r.record_id = pr.project_record_id;
+
+
+-- ------------------------------------------------------------
+-- 31C. LICENSE ASSIGNMENT VIEW
+-- ------------------------------------------------------------
+
+CREATE VIEW v_license_assignments AS
+
+SELECT
+    rl.license_assignment_id,
+    rl.record_id,
+    r.title AS record_title,
+    rl.release_id,
+    pr.project_record_id,
+    pr.release_version,
+    rl.license_scope,
+    rl.applicable_component,
+    rl.license_name,
+    rl.license_identifier,
+    rl.license_url,
+    rl.effective_date,
+    (
+        SELECT COUNT(*)
+        FROM license_assignment_sources las
+        WHERE las.license_assignment_id = rl.license_assignment_id
+    ) AS source_count,
+    rl.notes
+
+FROM record_licenses rl
+
+LEFT JOIN records r
+    ON r.record_id = rl.record_id
+
+LEFT JOIN project_releases pr
+    ON pr.release_id = rl.release_id;
 
 
 -- ------------------------------------------------------------
@@ -1885,13 +2488,11 @@ WHERE metadata_key = 'database_status';
 -- 33. PRE-COMMIT VALIDATION
 --
 -- Any failed check causes the migration guard to fail.
--- Execute with sqlite3 -bail so failure stops the script.
+-- Run with sqlite3 -bail so failures stop execution.
 -- ------------------------------------------------------------
 
 INSERT INTO _migration_guard (ok)
-
 SELECT CASE
-
     WHEN
         (
             SELECT metadata_value
@@ -1902,11 +2503,32 @@ SELECT CASE
         AND (SELECT COUNT(*) FROM records) = 431
         AND (SELECT COUNT(*) FROM links) = 419
         AND (SELECT COUNT(*) FROM research_themes) = 10
+        AND (SELECT COUNT(*) FROM people) = 1
+        AND (SELECT COUNT(*) FROM claims) = 1
 
         AND (SELECT COUNT(*) FROM sources) = 4
         AND (SELECT COUNT(*) FROM import_batches) = 4
         AND (SELECT COUNT(*) FROM source_records) = 435
         AND (SELECT COUNT(*) FROM record_provenance) = 433
+
+        -- The migration is structural; it imports no new profile data.
+        AND (SELECT COUNT(*) FROM conference_submissions) = 0
+        AND (SELECT COUNT(*) FROM projects) = 0
+        AND (SELECT COUNT(*) FROM project_contributors) = 0
+        AND (SELECT COUNT(*) FROM creative_works) = 0
+        AND (SELECT COUNT(*) FROM project_creative_works) = 0
+        AND (SELECT COUNT(*) FROM record_links) = 0
+        AND (SELECT COUNT(*) FROM project_releases) = 0
+        AND (SELECT COUNT(*) FROM project_release_links) = 0
+        AND (SELECT COUNT(*) FROM project_release_sources) = 0
+        AND (SELECT COUNT(*) FROM record_licenses) = 0
+        AND (SELECT COUNT(*) FROM license_assignment_sources) = 0
+        AND (SELECT COUNT(*) FROM conference_participations) = 0
+        AND (SELECT COUNT(*) FROM reconciliation_decisions) = 0
+        AND (SELECT COUNT(*) FROM reconciliation_decision_items) = 0
+        AND (SELECT COUNT(*) FROM keywords) = 0
+        AND (SELECT COUNT(*) FROM record_keywords) = 0
+        AND (SELECT COUNT(*) FROM record_keyword_sources) = 0
 
         AND (
             SELECT COUNT(*)
@@ -1922,7 +2544,6 @@ SELECT CASE
     THEN 1
     ELSE 0
 END;
-
 
 DELETE FROM _migration_guard;
 
@@ -2030,6 +2651,8 @@ FROM record_provenance;
 -- Expected source records: 435
 -- Expected provenance relationships: 433
 --
--- No new academic records have been imported by this script.
--- No existing profile records have been intentionally deleted.
+-- This migration changes schema structure only; it imports no new
+-- academic, project, creative-work, conference or keyword records.
+-- Existing canonical records and source/provenance rows are preserved.
+-- Execute only on a separate test copy; deployment is a separate step.
 -- ------------------------------------------------------------
