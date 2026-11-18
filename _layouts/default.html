@@ -7,6 +7,9 @@
   {% assign archive_url = "/" | absolute_url %}
   {% assign website_id = archive_url | append: "#website" %}
   {% assign person_id = "https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/#person" %}
+  {% assign breadcrumb_section_title = page.breadcrumb_section | default: "Public Records" %}
+  {% assign breadcrumb_section_path = page.breadcrumb_path | default: "/01-public-records/" %}
+  {% assign breadcrumb_section_url = breadcrumb_section_path | absolute_url %}
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -218,7 +221,7 @@
         },
         "inLanguage": {{ page.lang | default: site.lang | default: "en" | jsonify }}
       },
-      {
+            {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {
@@ -227,27 +230,20 @@
             "name": "Home",
             "item": {{ archive_url | jsonify }}
           }
-          {% if page.url == "/01-public-records/" %}
+          {% unless page.url == breadcrumb_section_path %}
           ,{
             "@type": "ListItem",
             "position": 2,
-            "name": {{ page_title | split: " — " | first | jsonify }},
-            "item": {{ page_canonical | jsonify }}
+            "name": {{ breadcrumb_section_title | jsonify }},
+            "item": {{ breadcrumb_section_url | jsonify }}
           }
-          {% else %}
+          {% endunless %}
           ,{
             "@type": "ListItem",
-            "position": 2,
-            "name": "Public Records",
-            "item": {{ "/01-public-records/" | absolute_url | jsonify }}
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
+            "position": {% if page.url == breadcrumb_section_path %}2{% else %}3{% endif %},
             "name": {{ page_title | split: " — " | first | jsonify }},
             "item": {{ page_canonical | jsonify }}
           }
-          {% endif %}
         ]
       }
     ]
