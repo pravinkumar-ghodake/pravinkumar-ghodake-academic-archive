@@ -345,6 +345,9 @@ CREATE TABLE verification_events(
 CREATE INDEX idx_verification_record
   ON verification_events(record_id);
 
+CREATE INDEX idx_verification_scope
+  ON verification_events(verification_scope);
+
 CREATE TABLE change_log(
   change_id INTEGER PRIMARY KEY AUTOINCREMENT,
   record_id TEXT REFERENCES records(record_id),
