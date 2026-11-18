@@ -4,9 +4,11 @@
   {% assign page_title = page.title | default: site.title %}
   {% assign page_description = page.description | default: site.description %}
   {% assign page_canonical = page.url | replace: 'index.html', '' | absolute_url %}
-  {% assign archive_url = "/" | absolute_url %}
-  {% assign website_id = archive_url | append: "#website" %}
+  {% assign website_url = "/" | absolute_url %}
+  {% assign website_id = website_url | append: "#website" %}
   {% assign person_id = "https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/#person" %}
+  {% assign author_name = site.author.full_name | default: site.author.name | default: site.author %}
+  {% assign page_og_type = page.og_type | default: "website" %}
   {% assign breadcrumb_section_title = page.breadcrumb_section | default: "Public Records" %}
   {% assign breadcrumb_section_path = page.breadcrumb_path | default: "/01-public-records/" %}
   {% assign breadcrumb_section_url = breadcrumb_section_path | absolute_url %}
@@ -19,14 +21,14 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow">
-  <meta name="author" content="{{ site.author | escape }}">
+  <meta name="author" content="{{ author_name | escape }}">
 
   <link rel="canonical" href="{{ page_canonical | escape }}">
 
   <meta property="og:title" content="{{ page_title | escape }}">
   <meta property="og:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
   <meta property="og:url" content="{{ page_canonical | escape }}">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="{{ page_og_type | escape }}">
   <meta property="og:site_name" content="{{ site.title | escape }}">
 
   <meta name="twitter:card" content="summary">
@@ -143,7 +145,6 @@
       color: #0d6efd;
     }
 
-    /* Related pages */
     section.related-pages {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -188,7 +189,10 @@
     }
   </style>
 
-  <!-- Shared archive and author identity references -->
+  <!--
+    The full Person entity and master sameAs list live in the root index.html.
+    This layout connects each archive page to that shared Person @id.
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -196,7 +200,7 @@
       {
         "@type": "WebSite",
         "@id": {{ website_id | jsonify }},
-        "url": {{ archive_url | jsonify }},
+        "url": {{ website_url | jsonify }},
         "name": {{ site.title | jsonify }},
         "description": {{ site.description | jsonify }},
         "creator": {
@@ -221,14 +225,14 @@
         },
         "inLanguage": {{ page.lang | default: site.lang | default: "en" | jsonify }}
       },
-            {
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": {{ archive_url | jsonify }}
+            "item": {{ website_url | jsonify }}
           }
           {% unless page.url == breadcrumb_section_path %}
           ,{
@@ -253,7 +257,7 @@
 
 <body>
   <header class="archive-header">
-    <a href="{{ '/' | relative_url }}">&larr; {{ site.author | escape }}</a>
+    <a href="{{ '/' | relative_url }}">&larr; {{ author_name | escape }}</a>
     <nav class="archive-nav" aria-label="Archive navigation">
       <a href="{{ '/01-public-records/' | relative_url }}">Public Records</a>
       <a href="{{ '/' | relative_url }}">Home</a>
@@ -282,7 +286,7 @@
   </section>
 
   <footer class="archive-footer">
-    <p>&copy; 2026 {{ site.author | escape }} &middot;
+    <p>&copy; 2026 {{ author_name | escape }} &middot;
       <a href="https://orcid.org/0000-0002-6755-4003">ORCID 0000-0002-6755-4003</a>
     </p>
     <p>Licensed under CC BY 4.0 &middot;
