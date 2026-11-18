@@ -1,11 +1,11 @@
 # Data Dictionary — Academic and Intellectual Knowledge Base
 
 **File:** `02-ai-knowledge-base/DATA_DICTIONARY.md`  
-**Document status:** Version 1.1 schema reference  
-**Canonical database:** `profile.sqlite`, schema version 1.0 baseline  
-**Schema described here:** Version 1.1  
-**Migration status:** Tested on a separate copy; not applied to the canonical database  
-**Fresh-schema status:** Created and validated on a separate blank test database  
+**Document status:** Current schema reference  
+**Canonical database:** `profile.sqlite`, schema version 1.1  
+**Baseline schema:** Version 1.0  
+**Migration status:** Version 1.0-to-1.1 migration tested, applied and published  
+**Fresh-schema status:** Version 1.1 definition created and validated on a separate blank test database  
 **Last updated:** 2026-11-18
 
 ---
@@ -16,10 +16,10 @@ This document defines the meaning, intended use, and relationships of the princi
 
 It distinguishes two database states:
 
-1. **Version 1.0 — canonical baseline.** This is the schema version of the current canonical `profile.sqlite` database. Its baseline contents and file hash are recorded in Section 10.
-2. **Version 1.1 — tested schema.** This is the schema defined by `schema.sql` and `migrations/001_schema_v1_0_to_v1_1.sql`. The migration was tested on a separate copy of the baseline database. The fresh-schema definition was also loaded into a separate blank test database and compared with the migrated test copy.
+1. **Version 1.0 — historical baseline.** This was the schema version of the original canonical `profile.sqlite` database. Its baseline contents and file hash are recorded in Section 10.
+2. **Version 1.1 — current canonical schema.** This is the schema now used by the published canonical `profile.sqlite`. It is defined by `schema.sql` and was introduced to the canonical database by `migrations/001_schema_v1_0_to_v1_1.sql`.
 
-The v1.1 tests did not replace or modify the canonical `profile.sqlite`. Version 1.0 remains the canonical database baseline until a separate, approved deployment.
+The migration was tested on a separate copy of the Version 1.0 baseline before it was applied to the canonical database. The Version 1.1 fresh-schema definition was also loaded into a separate blank test database and compared with the migrated test copy. The updated canonical database was downloaded after publication and its SHA-256 was confirmed to match the tested release candidate.
 
 This document is a human-readable companion to `schema.sql` and the migration script. The SQL files remain authoritative for exact constraints, column types, foreign keys, indexes, triggers, views, and executable definitions. For unchanged Version 1.0 tables, this dictionary describes their purpose without guessing at column definitions not repeated in the Version 1.1 migration.
 
@@ -103,7 +103,7 @@ The central table for canonical entities.
 - `award`
 - `other`
 
-**Version 1.1 `record_type` values:**
+**Version 1.1 canonical `record_type` values:**
 
 - `person`
 - `institution`
@@ -123,7 +123,7 @@ The central table for canonical entities.
 - `conference_submission`
 - `other`
 
-The Version 1.1 schema adds `project`, `creative_work`, and `conference_submission`.
+Version 1.1 adds `project`, `creative_work`, and `conference_submission`.
 
 ### 3.2 `verification_status` values
 
@@ -143,9 +143,9 @@ These labels describe the state of a record in the database. They do not replace
 
 ---
 
-## 4. Version 1.0 tables retained in the model
+## 4. Version 1.0 tables retained in the Version 1.1 model
 
-The following tables form the pre-existing Version 1.0 model. Their detailed column definitions remain in the authoritative SQL files. Their purpose is summarized here; this document does not invent additional columns for them.
+The following tables formed part of the Version 1.0 model and remain in the Version 1.1 model. Their detailed column definitions are in the authoritative SQL files. Their purposes are summarized here; this document does not invent additional columns for them.
 
 | Table | Purpose |
 |---|---|
@@ -177,7 +177,7 @@ The following tables form the pre-existing Version 1.0 model. Their detailed col
 
 ### 4.1 Existing views
 
-The Version 1.0 model includes the following views, recreated by the Version 1.1 schema:
+The Version 1.0 model included the following views, which are retained in the Version 1.1 schema:
 
 | View | Purpose |
 |---|---|
@@ -234,7 +234,7 @@ Two nullable foreign-key columns are added:
 | `output_record_id` | Optional link to the related canonical research output. |
 | `submission_record_id` | Optional link to the associated conference submission record. |
 
-The existing presentation-to-conference relationship remains part of the Version 1.0 presentation structure. Version 1.1 consistency triggers are intended to prevent a presentation and its submission from referring to different conferences.
+The existing presentation-to-conference relationship remains part of the presentation structure. Version 1.1 consistency triggers are intended to prevent a presentation and its submission from referring to different conferences.
 
 ### 5.4 `conflict_items`
 
@@ -269,7 +269,7 @@ This scope distinguishes the subject of a verification event. In particular, URL
 
 ## 6. Version 1.1 new tables
 
-All tables in this section are part of the tested Version 1.1 schema. They are present in the migration test copy and the fresh-schema test database. They are not yet part of the canonical `profile.sqlite`, which remains at Version 1.0.
+All tables in this section are part of the published Version 1.1 schema. Their presence in the schema does not by itself establish that each table contains records.
 
 ### 6.1 `conference_submissions`
 
@@ -584,7 +584,7 @@ The assignment/source pair is the composite primary key. An assignment may have 
 
 ## 8. Views in Version 1.1
 
-The Version 1.1 schema retains four existing views and adds seven views.
+The published Version 1.1 schema retains four existing views and adds seven views.
 
 | View | Purpose |
 |---|---|
@@ -618,9 +618,11 @@ The Version 1.1 schema retains four existing views and adds seven views.
 
 ---
 
-## 10. Version 1.0 canonical baseline
+## 10. Version 1.0 baseline and Version 1.1 deployment
 
-The recorded read-only inspection of the canonical `profile.sqlite` database reported the following Version 1.0 baseline:
+### 10.1 Version 1.0 baseline
+
+The recorded read-only inspection of the original canonical `profile.sqlite` database reported the following Version 1.0 baseline:
 
 | Metric | Recorded value |
 |---|---:|
@@ -639,49 +641,26 @@ The recorded read-only inspection of the canonical `profile.sqlite` database rep
 | SQLite integrity check | `ok` |
 | Foreign-key check | 0 violations |
 
-The Version 1.0 `schema.sql` defined 25 tables, four views, and 30 explicit index definitions, consistent with these recorded structural counts.
+The Version 1.0 schema defined 25 tables, four views and 30 explicit index definitions, consistent with these recorded structural counts.
 
-Recorded database file details at the time of inspection:
+Recorded Version 1.0 baseline file details:
 
 - Filename: `profile.sqlite`
 - File size: 1,351,680 bytes
-- SQLite version reported by the inspection: 3.46.1
+- SQLite version reported by that inspection: 3.46.1
 - SHA-256: `16d00294c2ed71963399a2dafdd1e8256f0d8bfbf45580ed7b8f42ed73904cde`
 
-These are historical inspection results, not a live query. The baseline hash was checked again before migration testing and matched the value above.
+The baseline SHA-256 was checked before migration testing and again against the downloaded repository file before release-candidate migration.
 
 The inspection also noted that the 10 research-theme rows were provisional and used inferred titles/unclassified verification states. That state should not be interpreted as a completed import or validation of the separate ORCID keyword index.
 
-### 10.1 Version 1.1 test-copy validation
+### 10.2 Version 1.1 canonical status
 
-The Version 1.0-to-1.1 migration was run on a separate copy of the baseline database. The canonical `profile.sqlite` was not used as the migration test target.
+The canonical `profile.sqlite` now uses Version 1.1. The published file has metadata indicating schema version `1.1` and database status `Schema v1.1 migration`.
 
-A separate blank test database was created from the updated Version 1.1 `schema.sql`. The following results were recorded for the fresh-schema database:
+The migration preserved the compared baseline records. The v1.1 structure provides additional tables, relationships, indexes, triggers and views for future structured work.
 
-| Check | Result |
-|---|---|
-| Foreign-key enforcement | Enabled (`1`) |
-| SQLite `integrity_check` | `ok` |
-| `foreign_key_check` | No violations returned |
-| Schema version metadata | `1.1` |
-| Database status metadata | `Fresh schema v1.1 definition` |
-| Tables | 42 |
-| Triggers | 41 |
-| Views | 11 |
-
-The fresh-schema database was compared with the migrated test copy:
-
-- Table columns, order, types, nullability, defaults and primary-key metadata: no differences.
-- Foreign-key definitions: no differences.
-- Index definitions and indexed-column details: no differences after adding `idx_verification_scope` to `schema.sql` and rebuilding the fresh test database.
-- Table definitions: matched after normalizing layout whitespace and double quotes around identifiers.
-- Trigger and view definitions: matched after the same normalization. Single-quoted SQL text was preserved during comparison.
-
-The migration test copy also passed SQLite integrity and foreign-key checks. A comparison against the baseline reported zero changes, inserts or deletes for the following existing tables: `records`, `people`, `links`, `research_themes`, `claims`, `sources`, `import_batches`, `source_records`, and `record_provenance`.
-
-Selected Version 1.1 relationships, constraints, triggers and cleanup paths were exercised on the migration test copy using temporary, rollback-capable test records. Those checks included person record-type enforcement, project and creative-work relationships, conference submission and participation relationships, release and license associations, keyword provenance, reconciliation links, and timestamp refresh behavior. The reported final checks showed no leftover test rows.
-
-These results establish structural and selected behavioral checks on separate test databases. They do not establish the factual correctness of every profile claim, the completeness of every source dataset, or the reliability of external websites and search indexes. The results were supplied by the profile owner and were not independently audited.
+The new schema does not by itself establish that every new table is populated or that every future profile record has been imported.
 
 ---
 
@@ -689,28 +668,47 @@ These results establish structural and selected behavioral checks on separate te
 
 | Item | Status |
 |---|---|
-| Version 1.0 canonical database | Existing baseline; remains the current canonical `profile.sqlite` |
-| Version 1.1 schema in `schema.sql` | Fresh-database creation tested and structurally compared with the migrated test copy |
-| `migrations/001_schema_v1_0_to_v1_1.sql` | Tested on a separate copy of the Version 1.0 baseline |
+| Version 1.0 baseline | Preserved as the migration reference and local backup |
+| Canonical `profile.sqlite` | Version 1.1; published |
+| `schema.sql` | Version 1.1; fresh-database creation tested |
+| `migrations/001_schema_v1_0_to_v1_1.sql` | Applied to the canonical database after separate-copy testing |
 | Version 1.1 migration plan | Created and used for the migration work |
-| Version 1.1 data dictionary | Described in this file |
-| Version 1.1 integrity and foreign-key checks | Passed on the separate test databases |
-| Version 1.1 selected relationship and trigger tests | Passed on the migration test copy |
-| Canonical database deployment | Not performed; Version 1.0 remains current |
+| Version 1.1 data dictionary | Describes the published canonical schema |
+| Migration integrity and foreign-key checks | Passed on separate test copies and the release candidate |
+| Fresh-schema integrity and foreign-key checks | Passed on a separate blank test database |
+| Existing-data preservation comparisons | Passed for the listed baseline tables |
+| Canonical database publication | Completed; downloaded published file matched the tested candidate |
 
-**Important:** A table or field described as Version 1.1 is not evidence that it already exists in the canonical `profile.sqlite`. Do not update the canonical database's schema version to `1.1` until the migration is separately approved and applied to the canonical database.
+The canonical database has been deployed at Version 1.1. Do not run `001_schema_v1_0_to_v1_1.sql` again against it; the migration is for a Version 1.0 database.
 
 ---
 
-## 12. Authoritative project files
+## 12. Canonical database policy
 
-The paths below refer to current repository paths. Original or import-time filenames, including any duplicate-upload suffixes, should be retained only where they document the actual source filename. A suffix alone does not establish a separate dataset.
+`profile.sqlite` is the sole canonical database published in this directory.
 
-- `schema.sql` — Version 1.1 schema definition for creating a fresh database.
-- `migrations/001_schema_v1_0_to_v1_1.sql` — tested migration from schema version 1.0 to 1.1.
-- `SCHEMA_V1_1_MIGRATION_PLAN.md` — migration rationale, scope, and implementation plan.
-- `DATABASE_BUILD_REPORT.md` — recorded database construction, migration, validation and limitations.
-- `reconciliation/reconciliation-report.md` — reconciliation methodology and findings.
-- `MANIFEST.md` — archive file inventory and project structure.
+The canonical database is now Version 1.1. The Version 1.0 baseline is retained by the profile owner as a backup and migration reference.
 
-When this dictionary and an executable SQL definition differ, inspect the SQL and update this document after the schema decision is confirmed. Do not silently alter the SQL or the canonical database to make the documentation appear consistent.
+Historical databases and exports are treated as source materials for comparison, reconciliation and integration.
+
+The project does not maintain multiple competing canonical databases.
+
+The canonical database must preserve source provenance, historical information, documented corrections and relationships between records.
+
+All future changes should follow reproducible import, reconciliation, migration and validation procedures.
+
+---
+
+**Maintained by:** Pravinkumar Ramchandra Ghodake
+
+**Canonical database:** `profile.sqlite`
+
+**Database format:** SQLite
+
+**Canonical schema:** Version 1.1
+
+**Migration:** Version 1.0 to Version 1.1
+
+**Migration and fresh-schema validation:** Passed
+
+**Canonical database deployment:** Completed and verified
