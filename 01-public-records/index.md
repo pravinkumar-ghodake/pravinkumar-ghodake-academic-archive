@@ -47,6 +47,8 @@ permalink: /01-public-records/
 >
 > </div>
 
+**Related archive:** [Academic & Intellectual Knowledge Base](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/02-ai-knowledge-base/)
+
 ---
 
 ## 🗂️ Files in This Folder
