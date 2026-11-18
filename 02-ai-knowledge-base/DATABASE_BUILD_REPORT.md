@@ -8,11 +8,11 @@
 
 **Database format:** SQLite
 
-**Baseline schema:** Version 1.0
+**Canonical database schema:** Version 1.0 baseline
 
-**Target schema:** Version 1.1
+**Migration target:** Version 1.1
 
-**Build stage:** Initial canonical database migrated and checked on a separate test copy
+**Build stage:** Version 1.1 migration and fresh-schema definition tested on separate copies; canonical deployment pending
 
 **Report last updated:** 2026-11-18
 
@@ -22,7 +22,7 @@
 
 The database provides a consolidated, structured and machine-readable representation of the academic, scientific, professional, creative and intellectual profile of Pravinkumar Ramchandra Ghodake.
 
-It is designed to integrate information from independently maintained databases, source collections, academic records and other relevant materials into one canonical database.
+It is designed to integrate information from multiple independently maintained databases, source collections, academic records and other relevant materials into one canonical database.
 
 The database preserves source attribution, original source records, provenance relationships, verification history and links between related records.
 
@@ -34,7 +34,7 @@ The database is progressively developed through documented imports, reconciliati
 
 ## 3. Initial database contents
 
-The initial populated database contains the following records. These counts were confirmed again after the v1.1 migration on the test copy.
+The canonical Version 1.0 baseline contains the following records. The counts were also confirmed after migrating a separate copy to Version 1.1.
 
 | Content | Records |
 |---|---:|
@@ -74,7 +74,7 @@ The current figures do not represent the final complete academic and intellectua
 
 ## 4. Registered source datasets
 
-The initial database contains four registered source datasets.
+The canonical Version 1.0 database contains four registered source datasets.
 
 ### 4.1 SRC-MASTER-400 — Master link directory
 
@@ -118,7 +118,7 @@ Both source entries are retained, while the corresponding canonical link is dedu
 | Field | Value |
 |---|---|
 | Source identifier | `SRC-BRIEF-001` |
-| Original filename | Profile knowledge brief supplied for import |
+| Source name | Profile knowledge brief supplied for import |
 | Source type | Other AI / vendor unattributed |
 | Acquisition date | 2026-11-16 |
 | Imported source records | 14 |
@@ -134,7 +134,7 @@ The originating AI vendor is not asserted because the available source metadata 
 | Field | Value |
 |---|---|
 | Source identifier | `SRC-REPORT-001` |
-| Original filename | Database build report supplied for import |
+| Source name | Database build report supplied for import |
 | Source type | Other AI / vendor unattributed |
 | Acquisition date | 2026-11-16 |
 | Imported source records | 1 |
@@ -147,19 +147,19 @@ Its aggregate figures are retained as source information and are not automatical
 
 ### 4.5 Duplicate-upload filename note
 
-Some database and documentation files were uploaded more than once during earlier analysis. The resulting automatic `(1)` filename suffixes were later manually corrected.
+Some database and documentation files were uploaded more than once during earlier analysis. The duplicate uploads led to automatic `(1)` suffixes being added to filenames. The profile owner later manually corrected the filenames.
 
-Those suffixes were upload-name artifacts; they should not be interpreted as data versions, source identifiers or evidence that the files contain different records.
+Those suffixes were upload-name artifacts. They should not be interpreted as data versions, source identifiers or evidence that the files contain different records.
 
-Earlier inventories that included `(1)` may therefore contain inaccurate filenames. Before importing or reconciling a historical artifact, check its current exact filename and inspect the file itself. Do not treat two names as two distinct datasets solely because one previously had an automatic suffix.
+Earlier inventories that included `(1)` may contain inaccurate filenames. Before importing or reconciling a historical artifact, check its current exact filename and inspect the file itself. Do not treat two names as distinct datasets solely because one previously had an automatic suffix.
 
 ---
 
 ## 5. Database structure and schema status
 
-The initial schema was version 1.0. The v1.1 migration adds structured support for further academic, professional, project, creative-work, release, licensing, keyword and reconciliation records.
+The canonical database remains at schema version 1.0. Version 1.1 adds structured support for further academic, professional, project, creative-work, release, licensing, keyword and reconciliation records.
 
-After migration, the test copy contained the following SQLite objects:
+The tested Version 1.1 schema contains the following object counts:
 
 | Object type | Count |
 |---|---:|
@@ -167,7 +167,7 @@ After migration, the test copy contained the following SQLite objects:
 | Triggers | 41 |
 | Views | 11 |
 
-The v1.1 schema supports the following functional areas:
+The Version 1.1 schema supports the following functional areas:
 
 - Profile identity and people
 - Institutions and academic identifiers
@@ -186,22 +186,22 @@ The v1.1 schema supports the following functional areas:
 - Reconciliation items and their relationships
 - Database change history
 
-### 5.1 Schema files
+### 5.1 Schema files and their roles
 
-The repository uses two different SQL files for two different purposes:
+The repository uses two SQL files for different purposes:
 
-- `schema.sql` describes the current v1.1 structure for creating a new, empty database.
-- `migrations/001_schema_v1_0_to_v1_1.sql` upgrades an existing v1.0 database to v1.1 while preserving its data.
+- `schema.sql` defines Version 1.1 for creating a new, empty database.
+- `migrations/001_schema_v1_0_to_v1_1.sql` upgrades an existing Version 1.0 database to Version 1.1 while preserving its data.
 
-The migration was applied and checked on a separate test copy. The new `schema.sql` should also be run against a separate blank test database and checked before it is treated as independently validated for fresh database creation.
+The migration script was tested on a separate copy of the Version 1.0 baseline. The fresh-database definition in `schema.sql` was also loaded into a separate blank test database and compared with the migrated test copy.
 
-Do not apply the migration script to a database that is already at schema version 1.1.
+The canonical `profile.sqlite` has not been replaced by either test database.
 
 ---
 
 ## 6. Migration and technical validation
 
-The v1.0 to v1.1 migration was tested on a separate copy of the baseline database. The canonical baseline file was not used as the migration test target.
+The Version 1.0-to-1.1 migration was tested on a separate copy of the baseline database. The canonical baseline file was not used as the migration test target.
 
 The baseline file’s SHA-256 was checked and matched:
 
@@ -209,7 +209,9 @@ The baseline file’s SHA-256 was checked and matched:
 
 The SQLite command-line tool used for the checks reported version 3.54.1, 64-bit.
 
-The test copy reported the following results after migration:
+### 6.1 Migration test-copy results
+
+The migrated test copy reported:
 
 | Validation item | Result |
 |---|---|
@@ -225,8 +227,11 @@ The test copy reported the following results after migration:
 | Import batches | 4 |
 | Source records | 435 |
 | Record provenance relationships | 433 |
+| Tables | 42 |
+| Triggers | 41 |
+| Views | 11 |
 
-### 6.1 Existing-data preservation comparison
+### 6.2 Existing-data preservation comparison
 
 A database comparison was run between the baseline and migrated test copy for these existing tables:
 
@@ -244,34 +249,59 @@ Each comparison reported zero changes, zero inserted rows and zero deleted rows.
 
 This comparison covers the listed tables. It is not a claim that every possible database value or every external source record has been independently checked for factual accuracy.
 
-### 6.2 Structural and behavior checks
+### 6.3 Migration behavior checks
 
-The following checks were also run against the test copy:
+The following checks were run against the migrated test copy using temporary test records and rollback-capable transactions:
 
-- Confirmed the expected post-migration object inventory of 42 tables, 41 triggers and 11 views.
-- Confirmed that an invalid person subtype was rejected with the expected message: `people requires record_type person`.
-- Checked that the rejected insert left no test rows behind.
-- Created test project, contributor, creative-work and project-work relationship rows; confirmed the expected rows existed and that cleanup left no test rows behind.
-- Created test conference output, submission, presentation and participation relationships; confirmed expected counts and successful cleanup.
-- Checked project-release relationships, release/source relationships, separate content and code license entries, keyword assignments and reconciliation records; confirmed expected counts and cleanup.
-- Confirmed an update trigger refreshed the `updated_at` timestamp during a test update.
-- Checked verification events using the `content` and `url_availability` scopes; confirmed two distinct scopes and successful cleanup.
-- Checked multiple participation roles for the same test conference/person combination; confirmed both roles were retained.
-- Checked a reconciliation item linked to both a canonical record and a source record; confirmed the relationship and successful cleanup.
-- Re-ran the integrity, foreign-key and row-preservation checks after the behavior tests.
-- Re-ran the table comparisons after cleanup; the listed existing tables again showed no changes, inserts or deletes.
+- An invalid person subtype was rejected with the expected message: `people requires record_type person`.
+- A follow-up check confirmed that the rejected insertion left no test rows behind.
+- Test project, contributor, creative-work and project-work relationship rows were created and counted; cleanup left no test rows behind.
+- Test conference output, submission, presentation and participation relationships were created and counted; cleanup left no test rows behind.
+- Project-release relationships, release/source relationships, content and code licenses, keyword assignments and reconciliation records were checked; cleanup left no test rows behind.
+- An update trigger refreshed the `updated_at` timestamp during a test update.
+- Verification events using the `content` and `url_availability` scopes were checked; two distinct scopes were present and cleanup left no test rows behind.
+- Multiple participation roles for the same test conference/person combination were retained.
+- A reconciliation item linked to both a canonical record and a source record was checked.
+- Final integrity, foreign-key and row-preservation checks were repeated after the behavior tests.
+- The listed baseline tables again showed no changes, inserts or deletes after cleanup.
 
-The relationship and trigger checks used temporary test records inside rollback-capable test transactions. The reported final checks showed no leftover test rows.
+### 6.4 Fresh-database schema validation
 
-### 6.3 What these checks establish
+The updated `schema.sql` was loaded into a new blank test database. The first comparison found that `schema.sql` lacked the `idx_verification_scope` index. That index was added to `schema.sql`, and a new blank test database was created from the corrected file.
 
-These checks provide evidence that the tested migration:
+The corrected fresh-schema database reported:
 
-- Completed on the separate test copy.
-- Preserved the compared pre-existing records in the listed tables.
-- Left the test database structurally consistent according to SQLite’s integrity and foreign-key checks.
-- Enforced the tested record-type and relationship rules.
-- Exercised the tested triggers and cleanup paths.
+| Validation item | Result |
+|---|---|
+| Foreign-key enforcement | Enabled (`1`) |
+| SQLite integrity check | `ok` |
+| Foreign-key check | No violations returned |
+| Schema metadata | Version `1.1` |
+| Database status metadata | `Fresh schema v1.1 definition` |
+| Tables | 42 |
+| Triggers | 41 |
+| Views | 11 |
+
+The corrected fresh-schema database was compared with the migrated test copy:
+
+- Table columns, order, types, nullability, defaults and primary-key metadata: no differences.
+- Foreign-key definitions: no differences.
+- Index definitions, uniqueness, partial-index status and indexed-column details: no differences.
+- Table definitions: matched after normalizing layout whitespace and double quotes around identifiers.
+- Trigger and view definitions: matched after the same normalization. Single-quoted SQL text was preserved during comparison.
+
+These checks confirm that the tested fresh-schema definition and migrated test-copy schema agree on the compared structures. They do not mean that the canonical database has been migrated.
+
+### 6.5 What these checks establish
+
+The checks provide evidence that:
+
+- The migration completed on the separate test copy.
+- The compared pre-existing records were preserved in the listed tables.
+- The migrated and fresh-schema test databases passed SQLite integrity and foreign-key checks.
+- The tested record-type, relationship and trigger rules behaved as expected on the migration test copy.
+- The fresh `schema.sql` definition creates the tested Version 1.1 structure.
+- The fresh and migrated test-copy definitions agree on the compared columns, foreign keys, indexes, tables, triggers and views.
 
 They do not establish the factual correctness of every profile claim, the completeness of every source dataset, or the reliability of external websites and search indexes.
 
@@ -292,10 +322,10 @@ The following concepts are kept distinct:
 | Source provenance | Identifies where information originated |
 | Record verification | Documents whether profile information has been checked against relevant evidence |
 | Link availability | Describes whether a URL is currently accessible |
-| Technical validation | Checks structural integrity and consistency of the database |
+| Technical validation | Checks the structural integrity and consistency of the database |
 | Reconciliation | Documents differences, duplicates, corrections and decisions between source records |
 
-A record’s factual verification status and the current accessibility of its associated URL are separate matters.
+A record's factual verification status and the current accessibility of its associated URL are separate matters.
 
 For example, a previously checked academic record may remain supported by retained source information even if its external URL later becomes unavailable.
 
@@ -338,7 +368,7 @@ Additional datasets will be incorporated progressively into the same canonical d
 
 ### 8.1 Historical materials awaiting reconciliation
 
-The following historical materials have been identified for comparison and possible integration. Their current exact filenames must be checked because earlier duplicate uploads caused automatic `(1)` suffixes that were later manually corrected.
+The following materials have been identified for future comparison and integration. Names here omit the duplicate-upload suffixes; check each artifact's current exact filename before use.
 
 - `links.json`
 - `links.csv`
@@ -356,7 +386,7 @@ The 400-link JSON and CSV exports must be compared with the already imported mas
 
 ### 8.2 Current coverage limitations
 
-The initial database is not yet the complete structured representation of every academic and intellectual activity.
+The canonical database is not yet the complete structured representation of every academic and intellectual activity.
 
 Further work is required for:
 
@@ -386,10 +416,10 @@ The current documentation includes:
 | `ORCID_KEYWORDS.md` | Categorized research keywords and academic indexing terms |
 | `MANIFEST.md` | Repository file inventory, source register and integration status |
 | `DATA_DICTIONARY.md` | Table and field documentation |
-| `schema.sql` | Current schema definition for a new v1.1 database |
+| `schema.sql` | Version 1.1 schema definition for creating a fresh database |
 | `migrations/001_schema_v1_0_to_v1_1.sql` | Migration from schema v1.0 to v1.1 |
 | `SCHEMA_V1_1_MIGRATION_PLAN.md` | Migration rationale, scope and validation plan |
-| `DATABASE_BUILD_REPORT.md` | Database construction, counts, validation and limitations |
+| `DATABASE_BUILD_REPORT.md` | Database construction, migration checks, counts, validation and limitations |
 
 These documentation files improve human readability and machine discovery.
 
@@ -425,11 +455,13 @@ Existing historical records and source provenance should remain traceable rather
 
 Documentation changes should remain aligned with the actual database and repository contents.
 
+A documentation-only update does not, by itself, constitute a database schema migration or database rebuild.
+
 ---
 
 ## 11. Current status
 
-**Current database stage:** Initial canonical database established; v1.0-to-v1.1 migration checked on a separate test copy; historical-source reconciliation and structured profile expansion remain in progress.
+**Current database stage:** Canonical Version 1.0 database established; Version 1.1 migration and fresh-schema definition tested on separate copies; canonical deployment and historical-source reconciliation remain pending.
 
 ### Completed
 
@@ -442,16 +474,20 @@ Documentation changes should remain aligned with the actual database and reposit
 - Initial provenance and verification-history structure.
 - Baseline database SHA-256 confirmation.
 - Migration of a separate baseline copy to schema version 1.1.
-- Post-migration SQLite integrity and foreign-key checks on the test copy.
+- SQLite integrity and foreign-key checks on the migrated test copy.
 - Comparison showing the listed pre-existing tables unchanged after migration.
-- Savepoint-based checks of selected v1.1 relationships, constraints, triggers and cleanup behavior.
+- Savepoint-based checks of selected Version 1.1 relationships, constraints, triggers and cleanup behavior.
+- Fresh-database creation using the corrected Version 1.1 `schema.sql`.
+- Fresh-schema integrity and foreign-key checks.
+- Structural comparison of the fresh-schema and migrated test-copy databases.
 - Updated project README and expanded research and intellectual scope.
 - Preparation of the ORCID keyword and research index.
-- Updated repository manifest and migration documentation.
+- Updated migration plan and data dictionary.
+- Updated manifest and build report to record migration and fresh-schema validation results.
 
 ### Remaining
 
-- Run and document a fresh-database creation check using the current `schema.sql`.
+- Review and approve deployment of Version 1.1 to the canonical `profile.sqlite`.
 - Inspect and compare historical ChatGPT and Perplexity database files.
 - Audit exact source filenames after the duplicate-upload suffix corrections.
 - Reconcile historical datasets at the record level.
@@ -459,8 +495,7 @@ Documentation changes should remain aligned with the actual database and reposit
 - Add structured education and professional appointment records.
 - Add detailed authorship and conference presentation records.
 - Structure independent scientific, literary and digital projects.
-- Update the data dictionary to match the final v1.1 schema.
-- Rebuild and validate the published canonical `profile.sqlite` after approved data and schema changes.
+- Rebuild and validate the canonical `profile.sqlite` after an approved schema migration and data changes.
 - Create the comprehensive profile knowledge brief.
 - Improve public-facing profile and project pages.
 - Maintain metadata, crawler policy and sitemap information.
@@ -471,6 +506,8 @@ Documentation changes should remain aligned with the actual database and reposit
 ## 12. Canonical database policy
 
 `profile.sqlite` is the sole canonical database published in this directory.
+
+The Version 1.1 migration was tested on a separate copy. The fresh-schema test database and migrated test copy have not replaced the canonical database.
 
 Historical databases and exports are treated as source materials for comparison, reconciliation and integration.
 
@@ -488,8 +525,12 @@ All future changes should follow reproducible import, reconciliation, migration 
 
 **Database format:** SQLite
 
-**Current schema target:** Version 1.1
+**Canonical schema:** Version 1.0 baseline
 
-**Migration validation:** Completed on a separate test copy
+**Migration target:** Version 1.1
 
-**Fresh-database validation of `schema.sql`:** Pending
+**Migration validation:** Passed on a separate test copy
+
+**Fresh-schema validation:** Passed on a separate blank test database
+
+**Canonical database deployment:** Not performed
