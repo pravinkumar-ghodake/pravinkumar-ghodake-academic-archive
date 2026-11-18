@@ -122,7 +122,7 @@ One normalized URL duplicates a target already present in the master directory. 
 
 | Field | Value |
 |---|---|
-| Original filename | `PROFILE_KNOWLEDGE_BRIEF(1).md` |
+| Original filename | `PROFILE_KNOWLEDGE_BRIEF.md` |
 | Source type | Other AI / vendor unattributed |
 | Acquisition date | 2026-11-16 |
 | Imported source records | 14 |
@@ -174,19 +174,19 @@ The following historical materials remain candidates for comparison and integrat
 
 | Historical source artifact | Information available | Current status |
 |---|---|---|
-| `links(1).json` | Reported 400-link JSON export | Awaiting record-level comparison |
-| `links(1).csv` | Reported matching 400-row CSV export | Awaiting record-level comparison |
+| `links.json` | Reported 400-link JSON export | Awaiting record-level comparison |
+| `links.csv` | Reported matching 400-row CSV export | Awaiting record-level comparison |
 | `pravinkumar_ghodake_knowledge.db` | Previously inspected SQLite database; six tables and 437 rows were reported | Awaiting import |
 | `pravinkumar_ghodake_ai_context_brief.md` | Earlier 27-line profile context brief | Awaiting comparison |
-| `ghodake_profile(1).db` | Historical Perplexity-labelled database export | Awaiting import |
-| `Ghodake Profile Database (JSON)(1).json` | Historical Perplexity-related structured profile export | Awaiting import |
+| `ghodake_profile.db` | Historical Perplexity-labelled database export | Awaiting import |
+| `Ghodake Profile Database (JSON).json` | Historical Perplexity-related structured profile export | Awaiting import |
 | `pravinkumar_ghodake_knowledge.json` | Structured knowledge export; vendor attribution not established | Awaiting import |
 | Perplexity JSON and SQL schema export | Historical structured source export | Awaiting file-level comparison |
 | Earlier ChatGPT knowledge-base package | Previously generated database and documentation package | Awaiting comparison |
 
 Historical file descriptions are retained as provenance leads. They do not substitute for re-inspection of the original files during import.
 
-The historical files named `links(1).json` and `links(1).csv` should be distinguished from the current repository files `links.json` and `links.csv`. Their contents must be compared with the master directory and the canonical database before any additional link records are added.
+The historical files named `links.json` and `links.csv` should be distinguished from the current repository files `links.json` and `links.csv`. Their contents must be compared with the master directory and the canonical database before any additional link records are added.
 
 ---
 
