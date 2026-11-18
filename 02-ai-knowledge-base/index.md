@@ -13,6 +13,11 @@ breadcrumb_path: "/02-ai-knowledge-base/"
 
 ### Pravinkumar Ramchandra Ghodake
 
+**Published page:**  
+[https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/02-ai-knowledge-base/](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/02-ai-knowledge-base/)
+
+[Open the knowledge-base page →](https://pravinkumar-ghodake.github.io/pravinkumar-ghodake-academic-archive/02-ai-knowledge-base/)
+
 **Structured profile · Research vocabulary · Source provenance · Database documentation**
 
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--6755--4003-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-6755-4003)
