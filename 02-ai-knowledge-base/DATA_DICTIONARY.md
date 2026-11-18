@@ -1,10 +1,11 @@
 # Data Dictionary — Academic and Intellectual Knowledge Base
 
 **File:** `02-ai-knowledge-base/DATA_DICTIONARY.md`  
-**Document status:** Proposed schema reference  
-**Current database schema:** Version 1.0  
-**Target schema described here:** Version 1.1  
-**Migration status:** Prepared; not executed against the canonical `profile.sqlite` database  
+**Document status:** Version 1.1 schema reference  
+**Canonical database:** `profile.sqlite`, schema version 1.0 baseline  
+**Schema described here:** Version 1.1  
+**Migration status:** Tested on a separate copy; not applied to the canonical database  
+**Fresh-schema status:** Created and validated on a separate blank test database  
 **Last updated:** 2026-11-18
 
 ---
@@ -13,14 +14,16 @@
 
 This document defines the meaning, intended use, and relationships of the principal data structures in the Academic and Intellectual Knowledge Base.
 
-It describes two distinct states:
+It distinguishes two database states:
 
-1. **Version 1.0 — current database baseline.** These are the structures recorded in the inspected `profile.sqlite` database and the committed Version 1.0 schema.
-2. **Version 1.1 — proposed target design.** These are the changes described by `migrations/001_schema_v1_0_to_v1_1.sql`.
+1. **Version 1.0 — canonical baseline.** This is the schema version of the current canonical `profile.sqlite` database. Its baseline contents and file hash are recorded in Section 10.
+2. **Version 1.1 — tested schema.** This is the schema defined by `schema.sql` and `migrations/001_schema_v1_0_to_v1_1.sql`. The migration was tested on a separate copy of the baseline database. The fresh-schema definition was also loaded into a separate blank test database and compared with the migrated test copy.
 
-Version 1.1 is documented here as a design target. Its new tables, columns, triggers, and views must not be treated as present in the canonical database until the migration has been tested, approved, and applied. The migration has not been executed against the canonical database.
+The v1.1 tests did not replace or modify the canonical `profile.sqlite`. Version 1.0 remains the canonical database baseline until a separate, approved deployment.
 
-This document is a human-readable companion to `schema.sql` and the migration script. The SQL files remain authoritative for exact constraints, column types, foreign keys, indexes, triggers, and executable definitions. For unchanged Version 1.0 tables, this dictionary describes the table's purpose without guessing at column definitions not repeated in the Version 1.1 migration.
+This document is a human-readable companion to `schema.sql` and the migration script. The SQL files remain authoritative for exact constraints, column types, foreign keys, indexes, triggers, views, and executable definitions. For unchanged Version 1.0 tables, this dictionary describes their purpose without guessing at column definitions not repeated in the Version 1.1 migration.
+
+---
 
 ## 2. Data-model principles
 
@@ -28,7 +31,7 @@ This document is a human-readable companion to `schema.sql` and the migration sc
 
 `records` is the central registry of canonical entities. A canonical record has one `record_id` and one `record_type`. Specialized tables hold domain-specific attributes and refer back to that record.
 
-The canonical record title and description are stored in `records.title` and `records.description`. In the proposed Version 1.1 design, `research_outputs` no longer has a separate title column; the title remains in `records`.
+The canonical record title and description are stored in `records.title` and `records.description`. In the Version 1.1 schema, `research_outputs` does not have a separate title column; the title remains in `records`.
 
 ### 2.2 Source records and provenance
 
@@ -36,7 +39,7 @@ Source records describe imported or captured material from which canonical recor
 
 A source record is not automatically a verified fact. Its origin and content are preserved so that a reader can trace information back to the material from which it came.
 
-`record_provenance` connects canonical records to source records. The proposed Version 1.1 design also introduces dedicated many-to-many source-association tables for project releases, license assignments, and keyword assignments.
+`record_provenance` connects canonical records to source records. Version 1.1 also provides dedicated many-to-many source-association tables for project releases, license assignments, and keyword assignments.
 
 ### 2.3 Verification is scoped
 
@@ -44,7 +47,7 @@ A record's verification status and a link's availability status describe differe
 
 - `records.verification_status` describes the epistemic or review state of the canonical record.
 - `links.link_status` describes the status of the URL or link record as represented in the Version 1.0 model. It must not be interpreted as proof that the linked content verifies every claim associated with it.
-- `verification_events.verification_scope` (proposed in Version 1.1) identifies what kind of verification activity an event concerns.
+- `verification_events.verification_scope` identifies what kind of verification activity an event concerns.
 
 A URL being reachable does not by itself prove that the page's content is accurate, current, or sufficient evidence for a claim.
 
@@ -59,6 +62,8 @@ The schema stores date and time values as text. Use consistent ISO 8601 represen
 ### 2.6 Authorship and participation
 
 Authorship, presentation, attendance, organization, reviewing, and other conference roles are distinct relationships. A submission record does not prove that a contribution was accepted or presented. A presentation record does not by itself prove attendance by every author.
+
+---
 
 ## 3. Canonical record structure
 
@@ -81,7 +86,7 @@ The central table for canonical entities.
 | `created_at` | Timestamp when the record was created. |
 | `updated_at` | Timestamp of the latest tracked update. |
 
-**Version 1.0 `record_type` values:**
+**Version 1.0 baseline `record_type` values:**
 
 - `person`
 - `institution`
@@ -98,7 +103,7 @@ The central table for canonical entities.
 - `award`
 - `other`
 
-**Proposed Version 1.1 `record_type` values:**
+**Version 1.1 `record_type` values:**
 
 - `person`
 - `institution`
@@ -113,14 +118,16 @@ The central table for canonical entities.
 - `link`
 - `claim`
 - `award`
-- `project` — added in Version 1.1
-- `creative_work` — added in Version 1.1
-- `conference_submission` — added in Version 1.1
+- `project`
+- `creative_work`
+- `conference_submission`
 - `other`
+
+The Version 1.1 schema adds `project`, `creative_work`, and `conference_submission`.
 
 ### 3.2 `verification_status` values
 
-The Version 1.0 schema already permits the following values. The Version 1.1 migration should be checked to ensure that it retains these values.
+The Version 1.1 schema retains the following values:
 
 | Value | Meaning |
 |---|---|
@@ -134,9 +141,11 @@ The Version 1.0 schema already permits the following values. The Version 1.1 mig
 
 These labels describe the state of a record in the database. They do not replace the evidence trail or explain the quality of a source on their own.
 
+---
+
 ## 4. Version 1.0 tables retained in the model
 
-The following tables form the pre-existing Version 1.0 model. Their detailed column definitions remain in the authoritative `schema.sql` file. Their purpose is summarized here; this document does not invent additional columns for them.
+The following tables form the pre-existing Version 1.0 model. Their detailed column definitions remain in the authoritative SQL files. Their purpose is summarized here; this document does not invent additional columns for them.
 
 | Table | Purpose |
 |---|---|
@@ -168,7 +177,7 @@ The following tables form the pre-existing Version 1.0 model. Their detailed col
 
 ### 4.1 Existing views
 
-The Version 1.0 model includes the following views, recreated by the proposed Version 1.1 migration:
+The Version 1.0 model includes the following views, recreated by the Version 1.1 schema:
 
 | View | Purpose |
 |---|---|
@@ -177,17 +186,19 @@ The Version 1.0 model includes the following views, recreated by the proposed Ve
 | `v_academic_links` | Presents link records together with the associated canonical record's verification status. |
 | `v_record_source_count` | Counts distinct source records associated with each canonical record through `record_provenance`. |
 
+---
+
 ## 5. Version 1.1 changes to existing tables
 
 ### 5.1 `records`
 
 The record table is rebuilt to expand the `record_type` CHECK constraint. Three new types are included: `project`, `creative_work`, and `conference_submission`.
 
-The proposed Version 1.1 rebuild preserves existing record identifiers and existing record values. It does not import new academic records.
+The Version 1.1 migration preserves existing record identifiers and existing record values. The migration itself does not import new academic records.
 
 ### 5.2 `research_outputs`
 
-The proposed Version 1.1 table uses `records.title` as the single canonical title and contains the following output-specific fields:
+Version 1.1 uses `records.title` as the single canonical title. `research_outputs` contains the following output-specific fields:
 
 | Column | Meaning |
 |---|---|
@@ -254,9 +265,11 @@ Allowed values:
 
 This scope distinguishes the subject of a verification event. In particular, URL availability must not be conflated with verification of page content or a factual claim.
 
+---
+
 ## 6. Version 1.1 new tables
 
-All tables in this section are proposed additions. They should be considered part of the live schema only after successful migration and validation.
+All tables in this section are part of the tested Version 1.1 schema. They are present in the migration test copy and the fresh-schema test database. They are not yet part of the canonical `profile.sqlite`, which remains at Version 1.0.
 
 ### 6.1 `conference_submissions`
 
@@ -349,7 +362,7 @@ Connects a canonical record to one or more URL records in `links`. It avoids sto
 
 Allowed `link_role` values: `primary`, `homepage`, `repository`, `publication`, `documentation`, `demo`, `download`, `source`, `related`, `other`.
 
-The `(record_id, link_record_id)` pair is unique. The proposed schema also permits no more than one `primary` link per canonical record. A record cannot link to itself as a link record.
+The `(record_id, link_record_id)` pair is unique. The schema also permits no more than one `primary` link per canonical record. A record cannot link to itself as a link record.
 
 ### 6.7 `project_releases`
 
@@ -366,7 +379,7 @@ Represents a version or release belonging to a project. A release is a child row
 
 Allowed `release_type` values: `software_release`, `content_release`, `publication_release`, `website_update`, `dataset_release`, `other`.
 
-The `(project_record_id, release_version)` pair is unique under the proposed schema.
+The `(project_record_id, release_version)` pair is unique under the schema.
 
 ### 6.8 `project_release_links`
 
@@ -543,6 +556,8 @@ Allowed `source_role` values: `origin`, `supporting`, `corroborating`, `curatori
 
 The assignment/source pair is the composite primary key. An assignment may have no source association while its provenance is not yet recorded; this should not be mistaken for evidence that no source exists.
 
+---
+
 ## 7. Relationships at a glance
 
 | Parent / subject | Related table | Relationship |
@@ -565,9 +580,11 @@ The assignment/source pair is the composite primary key. An assignment may have 
 | `records` | `record_keywords` | A canonical record may have multiple keyword assignments. |
 | `record_keywords` | `record_keyword_sources` | A keyword assignment may be supported by multiple source records. |
 
-## 8. Views proposed for Version 1.1
+---
 
-The migration recreates the four existing views and adds seven proposed views.
+## 8. Views in Version 1.1
+
+The Version 1.1 schema retains four existing views and adds seven views.
 
 | View | Purpose |
 |---|---|
@@ -583,6 +600,8 @@ The migration recreates the four existing views and adds seven proposed views.
 | `v_project_releases` | Project release details, release/repository URLs, and source count. |
 | `v_license_assignments` | License assignments with canonical record or release context and source count. |
 
+---
+
 ## 9. Verification, evidence, and interpretation rules
 
 1. A source record records what a source contains; it does not automatically establish the truth of every statement in that source.
@@ -597,7 +616,9 @@ The migration recreates the four existing views and adds seven proposed views.
 10. Record disagreements as reconciliation decisions or conflicts rather than silently overwriting source-specific information.
 11. A license assignment applies only to its declared target and scope. A project-level license does not automatically establish the license of every release, dataset, document, or third-party component.
 
-## 10. Version 1.0 inspection baseline
+---
+
+## 10. Version 1.0 canonical baseline
 
 The recorded read-only inspection of the canonical `profile.sqlite` database reported the following Version 1.0 baseline:
 
@@ -618,7 +639,7 @@ The recorded read-only inspection of the canonical `profile.sqlite` database rep
 | SQLite integrity check | `ok` |
 | Foreign-key check | 0 violations |
 
-The Version 1.0 `schema.sql` defines 25 tables, four views, and 30 explicit index definitions, consistent with these reported structural counts.
+The Version 1.0 `schema.sql` defined 25 tables, four views, and 30 explicit index definitions, consistent with these recorded structural counts.
 
 Recorded database file details at the time of inspection:
 
@@ -627,33 +648,68 @@ Recorded database file details at the time of inspection:
 - SQLite version reported by the inspection: 3.46.1
 - SHA-256: `16d00294c2ed71963399a2dafdd1e8256f0d8bfbf45580ed7b8f42ed73904cde`
 
-These are historical inspection results, not a live query. Re-run database checks when migration testing is resumed. The Version 1.1 migration contains baseline guards and expected record counts; any mismatch must be investigated rather than bypassed.
+These are historical inspection results, not a live query. The baseline hash was checked again before migration testing and matched the value above.
 
 The inspection also noted that the 10 research-theme rows were provisional and used inferred titles/unclassified verification states. That state should not be interpreted as a completed import or validation of the separate ORCID keyword index.
+
+### 10.1 Version 1.1 test-copy validation
+
+The Version 1.0-to-1.1 migration was run on a separate copy of the baseline database. The canonical `profile.sqlite` was not used as the migration test target.
+
+A separate blank test database was created from the updated Version 1.1 `schema.sql`. The following results were recorded for the fresh-schema database:
+
+| Check | Result |
+|---|---|
+| Foreign-key enforcement | Enabled (`1`) |
+| SQLite `integrity_check` | `ok` |
+| `foreign_key_check` | No violations returned |
+| Schema version metadata | `1.1` |
+| Database status metadata | `Fresh schema v1.1 definition` |
+| Tables | 42 |
+| Triggers | 41 |
+| Views | 11 |
+
+The fresh-schema database was compared with the migrated test copy:
+
+- Table columns, order, types, nullability, defaults and primary-key metadata: no differences.
+- Foreign-key definitions: no differences.
+- Index definitions and indexed-column details: no differences after adding `idx_verification_scope` to `schema.sql` and rebuilding the fresh test database.
+- Table definitions: matched after normalizing layout whitespace and double quotes around identifiers.
+- Trigger and view definitions: matched after the same normalization. Single-quoted SQL text was preserved during comparison.
+
+The migration test copy also passed SQLite integrity and foreign-key checks. A comparison against the baseline reported zero changes, inserts or deletes for the following existing tables: `records`, `people`, `links`, `research_themes`, `claims`, `sources`, `import_batches`, `source_records`, and `record_provenance`.
+
+Selected Version 1.1 relationships, constraints, triggers and cleanup paths were exercised on the migration test copy using temporary, rollback-capable test records. Those checks included person record-type enforcement, project and creative-work relationships, conference submission and participation relationships, release and license associations, keyword provenance, reconciliation links, and timestamp refresh behavior. The reported final checks showed no leftover test rows.
+
+These results establish structural and selected behavioral checks on separate test databases. They do not establish the factual correctness of every profile claim, the completeness of every source dataset, or the reliability of external websites and search indexes. The results were supplied by the profile owner and were not independently audited.
+
+---
 
 ## 11. Schema and deployment status
 
 | Item | Status |
 |---|---|
-| Version 1.0 schema | Existing baseline |
-| `profile.sqlite` | Canonical database; retain unchanged until an approved migration |
-| Version 1.1 migration plan | Created |
-| Version 1.1 migration SQL | Prepared; not executed against the canonical database |
-| Version 1.1 data dictionary | Proposed reference in this file |
-| Migration test on a separate database copy | Deferred |
-| Version 1.1 integrity and relationship validation | Pending |
+| Version 1.0 canonical database | Existing baseline; remains the current canonical `profile.sqlite` |
+| Version 1.1 schema in `schema.sql` | Fresh-database creation tested and structurally compared with the migrated test copy |
+| `migrations/001_schema_v1_0_to_v1_1.sql` | Tested on a separate copy of the Version 1.0 baseline |
+| Version 1.1 migration plan | Created and used for the migration work |
+| Version 1.1 data dictionary | Described in this file |
+| Version 1.1 integrity and foreign-key checks | Passed on the separate test databases |
+| Version 1.1 selected relationship and trigger tests | Passed on the migration test copy |
 | Canonical database deployment | Not performed; Version 1.0 remains current |
 
-**Important:** A table or field described as Version 1.1 proposed is not evidence that it already exists in `profile.sqlite`. Do not update the live schema version to `1.1` until the migration has been tested and approved.
+**Important:** A table or field described as Version 1.1 is not evidence that it already exists in the canonical `profile.sqlite`. Do not update the canonical database's schema version to `1.1` until the migration is separately approved and applied to the canonical database.
+
+---
 
 ## 12. Authoritative project files
 
 The paths below refer to current repository paths. Original or import-time filenames, including any duplicate-upload suffixes, should be retained only where they document the actual source filename. A suffix alone does not establish a separate dataset.
 
-- `schema.sql` — Version 1.0 schema definition and baseline SQL reference.
-- `migrations/001_schema_v1_0_to_v1_1.sql` — proposed Version 1.0-to-1.1 migration.
+- `schema.sql` — Version 1.1 schema definition for creating a fresh database.
+- `migrations/001_schema_v1_0_to_v1_1.sql` — tested migration from schema version 1.0 to 1.1.
 - `SCHEMA_V1_1_MIGRATION_PLAN.md` — migration rationale, scope, and implementation plan.
-- `DATABASE_BUILD_REPORT.md` — recorded database construction and inspection information.
+- `DATABASE_BUILD_REPORT.md` — recorded database construction, migration, validation and limitations.
 - `reconciliation/reconciliation-report.md` — reconciliation methodology and findings.
 - `MANIFEST.md` — archive file inventory and project structure.
 
