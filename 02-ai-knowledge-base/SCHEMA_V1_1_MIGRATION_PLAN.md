@@ -8,9 +8,10 @@
 **Current schema version:** 1.0  
 **Target schema version:** 1.1  
 **Plan date:** 2026-11-17  
-**Status:** Proposed — based on actual Version 1.0 database inspection  
+**Last reviewed:** 2026-11-18  
+**Status:** Proposed target design; migration SQL drafted; review and testing pending  
 **Migration execution:** Not started  
-**Database modifications:** None
+**Database modifications:** None; the canonical database remains at Version 1.0
 
 ---
 
@@ -39,7 +40,7 @@ The migration aims to:
 
 This plan is based on the actual Version 1.0 database inspection results recorded below, not solely on the original SQL definition.
 
-No executable migration has been run or applied.
+The migration SQL has been drafted but has not been tested or applied to the canonical database.
 
 ---
 
@@ -98,7 +99,7 @@ The integrity check and foreign-key check passed.
 
 However, the inspection connection reported foreign-key enforcement as disabled.
 
-This is an important connection-level setting and is addressed in the migration safety requirements in Section 13.
+This is an important connection-level setting and is addressed in the migration safety requirements in Section 12.
 
 ---
 
@@ -368,7 +369,7 @@ The existing fields should be assigned clear responsibilities.
 
 The verification-event structure should be extended with an explicit verification scope.
 
-Proposed scopes include:
+The drafted migration currently allows these scopes:
 
 - `content`
 - `reference`
@@ -376,7 +377,7 @@ Proposed scopes include:
 - `url_availability`
 - `historical`
 
-The final allowed values will be defined during schema design.
+These values remain subject to design review before migration approval.
 
 ### 5.4 Important rule
 
@@ -418,7 +419,7 @@ The target remains one canonical SQLite database.
 
 The following tables are proposed additions.
 
-Their final column definitions, constraints, indexes and relationships must be confirmed before executable migration SQL is prepared.
+The initial Version 1.1 definitions are drafted in `migrations/001_schema_v1_0_to_v1_1.sql`. They remain proposed until the design review and migration testing are complete. The migration has not been applied to the canonical database.
 
 ### 7.1 Projects
 
@@ -526,7 +527,7 @@ Represent identifiable software, publishing or digital-project releases.
 
 Potential fields:
 
-- `record_id`
+- `release_id`
 - `project_record_id`
 - `release_version`
 - `release_type`
@@ -535,7 +536,7 @@ Potential fields:
 - `repository_url`
 - `notes`
 
-The final decision on whether every release should become a common `records` entity or a project-specific child record will be made during detailed schema design.
+The drafted migration models project releases as project-specific child records, not as common entities in `records`.
 
 ### 7.6 Record-level licensing
 
@@ -744,7 +745,7 @@ Potential field:
 
 - `verification_scope`
 
-Additional status and evidence constraints will be finalized when the migration SQL is designed.
+The drafted migration currently constrains this field to the scopes listed in Section 5.3. These values remain proposed until the migration design is approved.
 
 This is intended to preserve the existing verification history model while making its meaning clearer.
 
@@ -756,17 +757,17 @@ This is intended to preserve the existing verification history model while makin
 
 The `records.record_type` CHECK constraint should be expanded to include the approved new entity types.
 
-Potential additions:
+The drafted migration adds:
 
 - `project`
 - `creative_work`
-- `project_release`
+- `conference_submission`
 
-Additional types may be considered where the final table architecture requires them.
+Project releases remain project-specific child records and are not added as a `records.record_type`.
 
-This change will likely require rebuilding the `records` table because SQLite does not directly support replacing an existing CHECK constraint through a simple `ALTER TABLE`.
+This change requires rebuilding the `records` table because SQLite does not directly support replacing an existing CHECK constraint through a simple `ALTER TABLE`.
 
-The final set of record types must be approved before the migration is written.
+The final set of record types must be approved before the migration is executed.
 
 ### 8.2 Research outputs and canonical titles
 
@@ -850,11 +851,13 @@ At minimum, consider:
 
 - People
 - Institutions
+- Identifiers
 - Education
 - Appointments
 - Research outputs
 - Conferences
 - Presentations
+- Conference submissions
 - Research themes
 - Research relationships
 - Links
@@ -862,9 +865,12 @@ At minimum, consider:
 - Claims
 - Projects
 - Creative works
-- Project releases
+
+Project releases are project-specific child records rather than common `records` entities.
 
 Validation should be applied during insertion and when a specialized record or its parent record is updated.
+
+The drafted migration includes record-type validation triggers. The preflight and pre-commit guards must also check that the existing populated records match their specialized-table types; triggers alone do not verify existing rows.
 
 The complete trigger inventory will be documented in the revised `schema.sql`.
 
@@ -1068,32 +1074,36 @@ Confirm:
 - Conference participation structure.
 - Canonical-title policy.
 - Conflict-item primary key.
-- Record-type validation triggers.
+- Record-type validation triggers and existing-record consistency checks.
 - Timestamp behavior.
 - Index and view changes.
 
 Record every approved design decision.
 
-### Stage 3 — Prepare migration SQL
+### Stage 3 — Review and finalize the drafted migration SQL
 
-Proposed migration file:
+Migration file:
 
 `migrations/001_schema_v1_0_to_v1_1.sql`
 
-The migration must:
+The migration has been drafted and is under review. Before testing it, confirm that it:
 
-- Confirm the expected starting schema version.
-- Check that it is running against the intended database version.
-- Enable foreign-key enforcement before opening the migration transaction.
-- Preserve the current canonical records.
-- Preserve source records and content hashes.
-- Preserve provenance relationships.
-- Rebuild constrained tables where required.
-- Create the approved new tables.
-- Add approved relationships.
-- Add appropriate indexes and triggers.
-- Recreate affected views.
-- Update schema metadata only after successful changes.
+- Confirms the expected starting schema version.
+- Checks that it is running against the intended database version.
+- Preserves the current canonical records.
+- Preserves source records and content hashes.
+- Preserves provenance relationships.
+- Checks that existing records match their specialized-table types.
+- Rebuilds constrained tables where required.
+- Creates the approved new tables.
+- Adds approved relationships.
+- Adds appropriate indexes and triggers.
+- Recreates affected views.
+- Checks integrity and foreign keys before commit.
+- Updates schema metadata only after successful structural changes.
+- Restores foreign-key enforcement after the transaction.
+
+The script is intended for a separate copy of Version 1.0 `profile.sqlite` and must not be run against the canonical database during review.
 
 ### Stage 4 — Test using a separate database copy
 
@@ -1185,24 +1195,15 @@ These observations are compatible.
 
 Foreign-key enforcement is a connection-level SQLite setting. It is not a permanent setting stored in the database file.
 
-### 12.2 Migration requirement
+### 12.2 Migration procedure
 
-Every connection used for migration, database modification or import must explicitly enable foreign-key enforcement.
+The drafted migration starts with foreign-key enforcement enabled and runs its baseline checks. Because it rebuilds the referenced `records` table, it then disables foreign-key enforcement **before** `BEGIN IMMEDIATE`.
 
-This must happen before the migration transaction begins.
+During the transaction, the migration checks `PRAGMA foreign_key_check` and database integrity before it commits. A failed guard must stop the run; use the `sqlite3 -bail` procedure specified in the SQL file.
 
-The migration procedure should:
+After a successful commit, the script enables foreign-key enforcement again and runs final checks. Do not change `PRAGMA foreign_keys` while the transaction is active.
 
-1. Open the intended database copy.
-2. Enable foreign-key enforcement.
-3. Confirm that enforcement is active.
-4. Begin the migration transaction.
-5. Perform the approved migration operations.
-6. Run relevant validation checks.
-7. Roll back if validation fails.
-8. Commit only when the migration succeeds.
-
-Do not attempt to toggle foreign-key enforcement from inside an active transaction.
+Run this procedure only on a separate test copy of the database. Preserve the canonical Version 1.0 database until the tested migration is reviewed and approved.
 
 ### 12.3 SQLite version
 
@@ -1256,6 +1257,7 @@ Compare original and migrated:
 - Current/superseded status.
 - Source references.
 - Provenance relationships.
+- Specialized-table record-type relationships.
 
 Existing stable record identifiers should remain unchanged.
 
@@ -1333,24 +1335,23 @@ The actual database inspection establishes a strong basis for the Version 1.1 de
 
 | Decision | Proposed direction | Status |
 |---|---|---|
-| Extend record-type taxonomy | Add project and creative-work types | Proposed |
+| Extend record-type taxonomy | Add `project`, `creative_work` and `conference_submission`; keep project releases as child records | Drafted; approval pending |
 | Project categories | Controlled project-type classification | Proposed |
 | Project contributors | Explicit person-to-project roles | Proposed |
 | Creative works | Separate specialized table | Proposed |
-| Project releases | Separate release records | Proposed |
+| Project releases | Project-specific child records | Drafted; approval pending |
 | Record-level licensing | Separate scopes for code, content, data and documentation | Proposed |
 | Conference participation | Dedicated participation table | Proposed |
 | Presentation-to-output relationship | Add `output_record_id` | Proposed |
 | Research-output title | Use `records.title` as canonical title | Proposed |
 | Conflict-item primary key | Introduce `conflict_item_id` | Proposed |
-| Record-type triggers | Add specialized-table type validation | Proposed |
+| Record-type triggers and existing-data checks | Add specialized-table type validation and migration guards | Drafted; approval pending |
 | Automatic update timestamps | Controlled timestamp triggers | Proposed |
 | Keyword indexing | Add `keywords` and `record_keywords` | Proposed |
-| Verification scope | Distinguish content and URL checks | Proposed |
+| Verification scope | Distinguish content and URL checks | Drafted; approval pending |
 | Source-file checksums | Calculate missing checksums from original files | Pending source-file availability |
 | URL uniqueness | Retain current structure until normalization policy is approved | Pending |
-| Project-release representation | Common record or project-specific child entity | Pending |
-| Final new table columns and constraints | Finalize during detailed SQL design | Pending |
+| Final new table columns and constraints | Drafted in migration SQL; review before approval | Pending |
 
 No proposed structural change should be considered implemented until it has been tested.
 
@@ -1362,9 +1363,9 @@ No proposed structural change should be considered implemented until it has been
 |---|---|---|
 | `SCHEMA_V1_1_MIGRATION_PLAN.md` | Version 1.1 design and migration documentation | Current document |
 | Actual Version 1.0 inspection baseline | Original database evidence and record counts | Completed |
-| `migrations/001_schema_v1_0_to_v1_1.sql` | Executable migration | Not started |
-| Updated `schema.sql` | Complete Version 1.1 schema definition | Pending migration |
-| Updated `DATA_DICTIONARY.md` | New tables, relationships and field documentation | Pending migration |
+| `migrations/001_schema_v1_0_to_v1_1.sql` | Executable migration | Drafted; review and testing pending |
+| Updated `schema.sql` | Complete Version 1.1 schema definition | Pending migration review |
+| Updated `DATA_DICTIONARY.md` | New tables, relationships and field documentation | To be reconciled with finalized migration |
 | Updated `DATABASE_BUILD_REPORT.md` | Actual inspection and migration validation results | To be updated |
 | Updated `MANIFEST.md` | Repository inventory and file status | Pending |
 | Version 1.1 test database | Safely migrated and validated database copy | Not started |
@@ -1379,7 +1380,7 @@ The following rules apply throughout the migration process:
 1. Preserve the original Version 1.0 database.
 2. Keep a separate backup and record its SHA-256 fingerprint.
 3. Do not execute untested SQL against the canonical database.
-4. Enable foreign-key enforcement on every migration or import connection.
+4. Enable foreign-key enforcement on each migration or import connection. For the controlled `records` table rebuild, disable it before the transaction and restore it after commit, as documented in the migration SQL. Do not toggle it inside the transaction.
 5. Preserve all existing canonical record identifiers.
 6. Preserve source records and their original payloads.
 7. Preserve provenance relationships.
@@ -1414,13 +1415,14 @@ The following rules apply throughout the migration process:
 | Profile claim evidence gap identified | Completed |
 | Verification semantics reviewed | Completed |
 | Proposed Version 1.1 structures | Documented |
+| Migration SQL draft | Completed; review pending |
+| Existing-record type-consistency safeguards | To be added and reviewed |
 | Final schema design approval | Pending |
-| Executable migration SQL | Not started |
 | Migration testing | Not started |
 | Version 1.1 database validation | Not started |
 | Canonical database replacement | Not authorized |
 
-**Overall status:** The actual Version 1.0 database has been inspected, and the proposed Version 1.1 design is documented. The next task is to finalize the table structures and relationships before writing the migration SQL.
+**Overall status:** The actual Version 1.0 database has been inspected, and the proposed Version 1.1 migration SQL has been drafted. The next task is to reconcile the plan with the SQL, add and review the existing-record type-consistency safeguards, and then test the migration on a separate database copy. The canonical database remains unchanged.
 
 ---
 
@@ -1458,4 +1460,4 @@ The objective is a trustworthy, transparent, traceable, maintainable and interop
 **Inspected database:** `profile.sqlite`  
 **Current schema:** 1.0  
 **Target schema:** 1.1  
-**Migration status:** Design and testing preparation
+**Migration status:** SQL drafted; review and testing pending
