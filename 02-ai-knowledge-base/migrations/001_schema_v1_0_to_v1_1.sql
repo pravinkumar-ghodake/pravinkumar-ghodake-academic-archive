@@ -112,6 +112,75 @@ SELECT CASE
             )
         ) = 0
 
+        -- Existing canonical records use these four types.
+        AND (
+            SELECT COUNT(*)
+            FROM records
+            WHERE record_type NOT IN (
+                'person',
+                'link',
+                'research_theme',
+                'claim'
+            )
+        ) = 0
+
+        -- Each existing canonical record must have a specialized
+        -- row of the matching type.
+        AND NOT EXISTS (
+            SELECT 1
+            FROM records AS r
+            LEFT JOIN (
+                SELECT record_id, 'person' AS expected_type
+                FROM people
+
+                UNION ALL
+
+                SELECT record_id, 'link'
+                FROM links
+
+                UNION ALL
+
+                SELECT record_id, 'research_theme'
+                FROM research_themes
+
+                UNION ALL
+
+                SELECT record_id, 'claim'
+                FROM claims
+            ) AS specialized
+                ON specialized.record_id = r.record_id
+               AND specialized.expected_type = r.record_type
+            WHERE specialized.record_id IS NULL
+        )
+
+        -- No populated specialized row may point to a record
+        -- of a different type.
+        AND NOT EXISTS (
+            SELECT 1
+            FROM (
+                SELECT record_id, 'person' AS expected_type
+                FROM people
+
+                UNION ALL
+
+                SELECT record_id, 'link'
+                FROM links
+
+                UNION ALL
+
+                SELECT record_id, 'research_theme'
+                FROM research_themes
+
+                UNION ALL
+
+                SELECT record_id, 'claim'
+                FROM claims
+            ) AS specialized
+            JOIN records AS r
+                ON r.record_id = specialized.record_id
+            WHERE r.record_type <> specialized.expected_type
+        )
+
         -- Specialized tables expected to be empty
         -- according to the actual Version 1.0 inspection.
 
@@ -221,6 +290,75 @@ SELECT CASE
                 HAVING COUNT(*) > 1
             )
         ) = 0
+
+        -- Existing canonical records use these four types.
+        AND (
+            SELECT COUNT(*)
+            FROM records
+            WHERE record_type NOT IN (
+                'person',
+                'link',
+                'research_theme',
+                'claim'
+            )
+        ) = 0
+
+        -- Each existing canonical record must have a specialized
+        -- row of the matching type.
+        AND NOT EXISTS (
+            SELECT 1
+            FROM records AS r
+            LEFT JOIN (
+                SELECT record_id, 'person' AS expected_type
+                FROM people
+
+                UNION ALL
+
+                SELECT record_id, 'link'
+                FROM links
+
+                UNION ALL
+
+                SELECT record_id, 'research_theme'
+                FROM research_themes
+
+                UNION ALL
+
+                SELECT record_id, 'claim'
+                FROM claims
+            ) AS specialized
+                ON specialized.record_id = r.record_id
+               AND specialized.expected_type = r.record_type
+            WHERE specialized.record_id IS NULL
+        )
+
+        -- No populated specialized row may point to a record
+        -- of a different type.
+        AND NOT EXISTS (
+            SELECT 1
+            FROM (
+                SELECT record_id, 'person' AS expected_type
+                FROM people
+
+                UNION ALL
+
+                SELECT record_id, 'link'
+                FROM links
+
+                UNION ALL
+
+                SELECT record_id, 'research_theme'
+                FROM research_themes
+
+                UNION ALL
+
+                SELECT record_id, 'claim'
+                FROM claims
+            ) AS specialized
+            JOIN records AS r
+                ON r.record_id = specialized.record_id
+            WHERE r.record_type <> specialized.expected_type
+        )
 
         AND (SELECT COUNT(*) FROM institutions) = 0
         AND (SELECT COUNT(*) FROM identifiers) = 0
@@ -2510,6 +2648,75 @@ SELECT CASE
         AND (SELECT COUNT(*) FROM import_batches) = 4
         AND (SELECT COUNT(*) FROM source_records) = 435
         AND (SELECT COUNT(*) FROM record_provenance) = 433
+
+        -- Existing canonical records use these four types.
+        AND (
+            SELECT COUNT(*)
+            FROM records
+            WHERE record_type NOT IN (
+                'person',
+                'link',
+                'research_theme',
+                'claim'
+            )
+        ) = 0
+
+        -- Each existing canonical record must have a specialized
+        -- row of the matching type.
+        AND NOT EXISTS (
+            SELECT 1
+            FROM records AS r
+            LEFT JOIN (
+                SELECT record_id, 'person' AS expected_type
+                FROM people
+
+                UNION ALL
+
+                SELECT record_id, 'link'
+                FROM links
+
+                UNION ALL
+
+                SELECT record_id, 'research_theme'
+                FROM research_themes
+
+                UNION ALL
+
+                SELECT record_id, 'claim'
+                FROM claims
+            ) AS specialized
+                ON specialized.record_id = r.record_id
+               AND specialized.expected_type = r.record_type
+            WHERE specialized.record_id IS NULL
+        )
+
+        -- No populated specialized row may point to a record
+        -- of a different type.
+        AND NOT EXISTS (
+            SELECT 1
+            FROM (
+                SELECT record_id, 'person' AS expected_type
+                FROM people
+
+                UNION ALL
+
+                SELECT record_id, 'link'
+                FROM links
+
+                UNION ALL
+
+                SELECT record_id, 'research_theme'
+                FROM research_themes
+
+                UNION ALL
+
+                SELECT record_id, 'claim'
+                FROM claims
+            ) AS specialized
+            JOIN records AS r
+                ON r.record_id = specialized.record_id
+            WHERE r.record_type <> specialized.expected_type
+        )
 
         -- The migration is structural; it imports no new profile data.
         AND (SELECT COUNT(*) FROM conference_submissions) = 0
