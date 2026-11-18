@@ -81,7 +81,24 @@ The central table for canonical entities.
 | `created_at` | Timestamp when the record was created. |
 | `updated_at` | Timestamp of the latest tracked update. |
 
-**Version 1.1 record types:**
+**Version 1.0 `record_type` values:**
+
+- `person`
+- `institution`
+- `identifier`
+- `education`
+- `appointment`
+- `research_output`
+- `conference`
+- `presentation`
+- `research_theme`
+- `research_relationship`
+- `link`
+- `claim`
+- `award`
+- `other`
+
+**Proposed Version 1.1 `record_type` values:**
 
 - `person`
 - `institution`
@@ -103,7 +120,7 @@ The central table for canonical entities.
 
 ### 3.2 `verification_status` values
 
-The proposed Version 1.1 CHECK constraint permits the following values:
+The Version 1.0 schema already permits the following values. The Version 1.1 migration should be checked to ensure that it retains these values.
 
 | Value | Meaning |
 |---|---|
@@ -124,6 +141,7 @@ The following tables form the pre-existing Version 1.0 model. Their detailed col
 | Table | Purpose |
 |---|---|
 | `schema_metadata` | Stores database-level metadata, including the schema version and database status. |
+| `records` | Common registry for canonical entities, stable IDs, record types and shared metadata. |
 | `people` | Person-specific details for canonical person records, including the profile-subject record. |
 | `institutions` | Institution-specific details for canonical institution records. |
 | `identifiers` | Persistent or external identifiers associated with canonical records. |
@@ -600,6 +618,8 @@ The recorded read-only inspection of the canonical `profile.sqlite` database rep
 | SQLite integrity check | `ok` |
 | Foreign-key check | 0 violations |
 
+The Version 1.0 `schema.sql` defines 25 tables, four views, and 30 explicit index definitions, consistent with these reported structural counts.
+
 Recorded database file details at the time of inspection:
 
 - Filename: `profile.sqlite`
@@ -618,15 +638,17 @@ The inspection also noted that the 10 research-theme rows were provisional and u
 | Version 1.0 schema | Existing baseline |
 | `profile.sqlite` | Canonical database; retain unchanged until an approved migration |
 | Version 1.1 migration plan | Created |
-| Version 1.1 migration SQL | Prepared; execution not confirmed |
+| Version 1.1 migration SQL | Prepared; not executed against the canonical database |
 | Version 1.1 data dictionary | Proposed reference in this file |
 | Migration test on a separate database copy | Deferred |
 | Version 1.1 integrity and relationship validation | Pending |
-| Canonical database deployment | Not authorized / not performed |
+| Canonical database deployment | Not performed; Version 1.0 remains current |
 
 **Important:** A table or field described as Version 1.1 proposed is not evidence that it already exists in `profile.sqlite`. Do not update the live schema version to `1.1` until the migration has been tested and approved.
 
 ## 12. Authoritative project files
+
+The paths below refer to current repository paths. Original or import-time filenames, including any duplicate-upload suffixes, should be retained only where they document the actual source filename. A suffix alone does not establish a separate dataset.
 
 - `schema.sql` — Version 1.0 schema definition and baseline SQL reference.
 - `migrations/001_schema_v1_0_to_v1_1.sql` — proposed Version 1.0-to-1.1 migration.
