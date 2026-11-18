@@ -22,7 +22,6 @@ It brings related information together in a structured
 format while preserving the original identity of each
 research output, project, contribution and source record.
 
-
 ## Research and intellectual scope
 
 Pravinkumar Ramchandra Ghodake's research interests span nonlinear mechanics, elastic-wave physics, ultrasonics, mechanical and phononic metamaterials, inverse design, and computational and experimental mechanics. The broader research profile also connects these areas with structural health monitoring, nondestructive evaluation, advanced materials, optimisation, and data-driven methods.
@@ -171,7 +170,7 @@ The ORCID-associated research vocabulary also includes wider and emerging topics
 
 ### 9. Literature, creative work and interdisciplinary projects
 
-The wider intellectual profile also includes,
+The wider intellectual profile also includes:
 
 - Literature and multilingual creative writing
 - Independent literary publishing
@@ -182,12 +181,9 @@ The wider intellectual profile also includes,
 
 These activities are treated as connected parts of the broader intellectual and creative portfolio, while remaining distinguishable from scientific research outputs.
 
-
 ### Research keyword source
 
-The detailed keyword vocabulary associated with the research profile is maintained separately in `ORCID_KEYWORDS.md`. The categories above provide a readable overview; the keyword index preserves the more granular terminology for discovery, structured-data maintenance and future database updates.
-
-
+The detailed keyword vocabulary associated with the research profile is maintained separately in [ORCID_KEYWORDS.md](ORCID_KEYWORDS.md). The categories above provide a readable overview; the keyword index preserves the more granular terminology for discovery, structured-data maintenance and future database updates.
 
 ## Data Stewardship and Verification
 
@@ -226,14 +222,18 @@ imports, reconciliation and provenance tracking.
 
 | File | Purpose |
 |---|---|
-| `profile.sqlite` | Consolidated structured database |
-| `schema.sql` | SQLite database schema |
-| `DATA_DICTIONARY.md` | Database tables, fields and relationships |
-| `DATABASE_BUILD_REPORT.md` | Database build and validation information |
-| `MANIFEST.md` | Source register and provenance |
-| `PROFILE_KNOWLEDGE_BRIEF.md` | Human-readable profile |
-| `reconciliation/` | Reconciliation history and documented decisions |
-| `migrations/` | Versioned database schema changes |
+| [profile.sqlite](profile.sqlite) | Consolidated structured database |
+| [schema.sql](schema.sql) | SQLite database schema |
+| [DATA_DICTIONARY.md](DATA_DICTIONARY.md) | Database tables, fields and relationships |
+| [DATABASE_BUILD_REPORT.md](DATABASE_BUILD_REPORT.md) | Database build and validation information |
+| [MANIFEST.md](MANIFEST.md) | Source register and provenance |
+| [PROFILE_KNOWLEDGE_BRIEF.md](PROFILE_KNOWLEDGE_BRIEF.md) | Human-readable profile |
+| [ORCID_KEYWORDS.md](ORCID_KEYWORDS.md) | Research keyword and academic indexing document |
+| [links.csv](links.csv) | Structured link data in CSV format |
+| [links.json](links.json) | Structured link data in JSON format |
+| [SCHEMA_V1_1_MIGRATION_PLAN.md](SCHEMA_V1_1_MIGRATION_PLAN.md) | Schema migration plan |
+| [reconciliation/](reconciliation/) | Reconciliation history and documented decisions |
+| [migrations/](migrations/) | Versioned schema changes |
 
 Additional documentation is incorporated as the archive develops.
 
@@ -287,9 +287,7 @@ canonical database.
 
 ## Relationship to the main academic archive
 
-This directory complements:
-
-`01-public-records/`
+This directory complements [01-public-records/](../01-public-records/).
 
 The public-records section provides access to identifiable
 academic and professional source records.
