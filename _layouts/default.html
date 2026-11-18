@@ -53,7 +53,7 @@
     "@type": "WebSite",
     "@id": "{{ site.url }}{{ site.baseurl }}/#website",
     "url": "{{ site.url }}{{ site.baseurl }}/",
-    "name": "Pravinkumar Ghodake Academic Archive",
+    "name": {{ site.title | jsonify }},
     "description": "{{ site.description | escape }}",
     "publisher": {
       "@type": "Person",
