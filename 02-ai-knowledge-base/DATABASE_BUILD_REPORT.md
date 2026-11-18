@@ -12,7 +12,7 @@
 
 **Build stage:** Initial canonical database construction
 
-**Report last updated:** 2026-11-17
+**Report last updated:** 2026-11-18
 
 ---
 
@@ -118,7 +118,7 @@ Both source entries are retained, while the corresponding canonical link is dedu
 | Field | Value |
 |---|---|
 | Source identifier | `SRC-BRIEF-001` |
-| Original filename | `PROFILE_KNOWLEDGE_BRIEF(1).md` |
+| Original filename | `PROFILE_KNOWLEDGE_BRIEF.md` |
 | Source type | Other AI / vendor unattributed |
 | Acquisition date | 2026-11-16 |
 | Imported source records | 14 |
@@ -273,12 +273,12 @@ Additional datasets will be incorporated progressively into the same canonical d
 
 The following materials have been identified for future comparison and integration:
 
-- `links(1).json`
-- `links(1).csv`
+- `links.json`
+- `links.csv`
 - `pravinkumar_ghodake_knowledge.db`
 - `pravinkumar_ghodake_ai_context_brief.md`
-- `ghodake_profile(1).db`
-- `Ghodake Profile Database (JSON)(1).json`
+- `ghodake_profile.db`
+- `Ghodake Profile Database (JSON).json`
 - `pravinkumar_ghodake_knowledge.json`
 - Perplexity JSON and SQL schema exports
 - Earlier ChatGPT knowledge-base packages
@@ -286,6 +286,8 @@ The following materials have been identified for future comparison and integrati
 Their reported contents and historical descriptions are not treated as verified import results until the original files have been inspected and compared.
 
 The 400-link JSON and CSV exports must be compared with the already imported master directory before any additional link records are added.
+
+The repository files `links.csv` and `links.json` are present. Their relationship to the historical files and the canonical database remains subject to record-level comparison.
 
 ### 8.2 Current coverage limitations
 
@@ -311,9 +313,9 @@ These areas are part of the planned expansion and should not be represented as f
 
 The database is accompanied by documentation that explains its purpose, scope, organization and maintenance.
 
-The current documentation includes:
+The current repository files include:
 
-| File | Purpose |
+| File or directory | Purpose |
 |---|---|
 | `README.md` | Project overview, identity, research and intellectual scope, and data stewardship |
 | `ORCID_KEYWORDS.md` | Categorized research keywords and academic indexing terms |
@@ -321,8 +323,14 @@ The current documentation includes:
 | `DATA_DICTIONARY.md` | Table and field documentation |
 | `schema.sql` | SQLite schema definition |
 | `DATABASE_BUILD_REPORT.md` | Database construction, counts, validation and limitations |
+| `PROFILE_KNOWLEDGE_BRIEF.md` | Human-readable profile overview |
+| `links.csv` | Structured link data in CSV format |
+| `links.json` | Structured link data in JSON format |
+| `SCHEMA_V1_1_MIGRATION_PLAN.md` | Plan for a proposed schema migration |
+| `migrations/` | Versioned database migration files |
+| `reconciliation/` | Reconciliation reports and documented decisions |
 
-These documentation files improve human readability and machine discovery.
+These files provide human-readable documentation and structured material for discovery and database maintenance.
 
 They are not additional imported database datasets and do not independently change the number of registered sources or records in `profile.sqlite`.
 
@@ -372,10 +380,10 @@ Documentation changes should remain aligned with the actual database and reposit
 - Registration of four source datasets.
 - Initial provenance and verification-history structure.
 - Initial database integrity and foreign-key validation, as recorded in the build documentation.
-- Updated project README.
-- Expanded research and intellectual scope.
-- Added the ORCID keyword and research index.
-- Updated the repository manifest.
+- Project README and research and intellectual scope documented.
+- ORCID keyword and research index added to the repository.
+- Profile knowledge brief added to the repository.
+- Initial manifest structure and source inventory established.
 
 ### Remaining
 
@@ -385,10 +393,10 @@ Documentation changes should remain aligned with the actual database and reposit
 - Structured education and professional appointment records.
 - Detailed authorship and conference presentation records.
 - Structured representation of independent scientific, literary and digital projects.
-- Design and testing of schema version 1.1.
+- Review and testing of the proposed schema version 1.1 migration.
 - Update of the data dictionary following schema decisions.
 - Rebuilding and validating `profile.sqlite` after approved data and schema changes.
-- Creation of the comprehensive profile knowledge brief.
+- Review and reconciliation of the existing profile knowledge brief against the canonical records.
 - Public-facing profile and project pages.
 - Metadata, crawler policy and sitemap improvements.
 - Search-engine monitoring and ongoing maintenance.
