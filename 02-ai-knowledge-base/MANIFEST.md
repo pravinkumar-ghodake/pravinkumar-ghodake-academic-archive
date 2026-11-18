@@ -8,7 +8,7 @@
 
 **Current schema:** Version 1.0
 
-**Manifest last updated:** 2026-11-17
+**Manifest last updated:** 2026-11-18
 
 ---
 
@@ -32,25 +32,30 @@ This manifest is updated whenever a source is added, an import is completed, or 
 
 | File or directory | Purpose | Current status |
 |---|---|---|
-| `README.md` | Project overview, identity, research and intellectual scope, and data stewardship | Present; updated |
-| `ORCID_KEYWORDS.md` | Categorized research keyword and academic indexing document | Prepared; mark Present after committing |
-| `profile.sqlite` | Consolidated canonical database | Present; initial populated build |
+| `README.md` | Project overview, identity, research and intellectual scope, and data stewardship | Present; overview and scope documented |
+| `ORCID_KEYWORDS.md` | Categorized research keyword and academic indexing document | Present; companion index |
+| `profile.sqlite` | Consolidated canonical database | Present; initial populated build, schema version 1.0 |
 | `schema.sql` | SQLite database schema | Present; version 1.0 |
-| `DATA_DICTIONARY.md` | Table and field documentation | Present; schema alignment to be completed |
-| `DATABASE_BUILD_REPORT.md` | Build statistics, source information and validation results | Present; update planned |
-| `MANIFEST.md` | Source, file and project provenance register | Present; updated revision |
-| `PROFILE_KNOWLEDGE_BRIEF.md` | Human-readable academic and intellectual profile | Planned |
-| `migrations/` | Versioned schema migrations | Planned |
-| `reconciliation/` | Reconciliation reports and documented decisions | Planned |
-| `exports/` | Generated CSV and JSON representations | Optional future addition |
+| `DATA_DICTIONARY.md` | Table and field documentation | Present; schema alignment review pending |
+| `DATABASE_BUILD_REPORT.md` | Build statistics, source information and validation results | Present; update planned after database review |
+| `MANIFEST.md` | Source, file and project provenance register | Present; inventory and status review in progress |
+| `PROFILE_KNOWLEDGE_BRIEF.md` | Human-readable academic and intellectual profile | Present; review and reconciliation ongoing |
+| `links.csv` | Structured link data in CSV format | Present; relationship to the canonical database pending comparison |
+| `links.json` | Structured link data in JSON format | Present; relationship to the canonical database pending comparison |
+| `SCHEMA_V1_1_MIGRATION_PLAN.md` | Plan for a proposed schema migration | Present; canonical database remains at version 1.0 |
+| `migrations/` | Versioned schema migration files | Present; migration execution status to be confirmed |
+| `reconciliation/` | Reconciliation reports and documented decisions | Present; records to be reviewed as reconciliation proceeds |
+| `exports/` | Generated CSV and JSON representations | Not present; optional future addition |
 
 The repository file inventory describes documentation and database artifacts separately from the source datasets registered inside the SQLite database.
+
+The presence of a file in the repository does not by itself establish that its contents have been imported into `profile.sqlite`.
 
 ---
 
 ## 3. Current canonical database inventory
 
-The initial populated database contains the following records.
+The initial populated database contains the following recorded inventory.
 
 | Database component | Current count |
 |---|---:|
@@ -68,7 +73,9 @@ The 420 original link entries from the master directory and supplemental list re
 
 Original source entries are retained through the source-record and provenance structure.
 
-These counts describe the current database build. They are not claimed to represent the final complete academic and intellectual profile.
+These counts describe the recorded initial database build. They are not claimed to represent the final complete academic and intellectual profile.
+
+The counts should be reconciled against `profile.sqlite` and the latest `DATABASE_BUILD_REPORT.md` after a database rebuild or additional import.
 
 Documentation changes to `README.md`, `ORCID_KEYWORDS.md` and `MANIFEST.md` do not independently change these database counts.
 
@@ -149,9 +156,11 @@ It organizes research topics, methods, experimental techniques, academic-context
 
 It is a documentation and discovery resource, not a separately imported source dataset in the current SQLite database.
 
-Consequently, its addition to the repository does not increase the registered source dataset count or import batch count.
+Consequently, its presence in the repository does not increase the registered source dataset count or import batch count.
 
-The document also distinguishes research topics from institutional names, conference names, awards, professional roles, platforms and research-output titles. Keyword inclusion alone does not establish a formal appointment, affiliation, award, publication or specific research contribution.
+The document distinguishes research topics from institutional names, conference names, awards, professional roles, platforms and research-output titles. Keyword inclusion alone does not establish a formal appointment, affiliation, award, publication or specific research contribution.
+
+The repository-level `links.csv` and `links.json` are listed in Section 2. Their relationship to the canonical database should be established by comparing their contents before treating them as database exports or additional imported datasets.
 
 ---
 
@@ -177,7 +186,7 @@ The following historical materials remain candidates for comparison and integrat
 
 Historical file descriptions are retained as provenance leads. They do not substitute for re-inspection of the original files during import.
 
-In particular, the reported 400-link JSON and CSV exports must be compared with the already imported master directory before any additional link records are added.
+The historical files named `links(1).json` and `links(1).csv` should be distinguished from the current repository files `links.json` and `links.csv`. Their contents must be compared with the master directory and the canonical database before any additional link records are added.
 
 ---
 
@@ -303,7 +312,7 @@ Previous information should remain traceable rather than being silently overwrit
 
 ## 10. Current project status
 
-**Current stage:** Initial canonical database and documentation established; documentation harmonization and historical-source reconciliation underway.
+**Current stage:** Initial canonical database and documentation established; documentation harmonisation and historical-source reconciliation underway.
 
 ### Completed
 
@@ -314,27 +323,28 @@ Previous information should remain traceable rather than being silently overwrit
 - Import of the supplied profile brief and build report.
 - Initial provenance and verification-history structure.
 - Database integrity and foreign-key validation.
-- Updated README project overview and research and intellectual scope.
-- Expanded description of literature, creative work and interdisciplinary projects in the README.
-- Preparation of the ORCID keyword and research index.
-- Updated manifest structure and repository file inventory.
+- Project overview and research and intellectual scope documented in the README.
+- Description of literature, creative work and interdisciplinary projects in the README.
+- ORCID keyword and research index added to the repository.
+- Profile knowledge brief added to the repository.
+- Initial manifest structure and source inventory established.
 
 ### Remaining
 
-- Confirm and commit `ORCID_KEYWORDS.md` if not already present.
-- Update `DATABASE_BUILD_REPORT.md` to align with the current database and repository documentation.
-- Incorporation of historical ChatGPT and Perplexity database records.
-- Reconciliation of research outputs and publication versions.
-- Population of academic qualifications and professional appointments.
-- Detailed authorship and conference presentation records.
-- Structured representation of independent projects and releases.
-- Schema migration design and testing.
-- Update of `DATA_DICTIONARY.md` following schema decisions.
-- Rebuilding and validating `profile.sqlite` after approved data and schema changes.
-- Creation of the comprehensive profile knowledge brief.
-- Public-facing profile pages and discovery improvements.
-- Metadata, crawler policy and sitemap improvements.
-- Search-engine monitoring and ongoing maintenance.
+- Reconcile the current `links.csv` and `links.json` with `profile.sqlite` and the historical link files.
+- Update `DATABASE_BUILD_REPORT.md` against the canonical database and actual repository files.
+- Incorporate historical ChatGPT and Perplexity database records after file-level comparison.
+- Reconcile research outputs and publication versions.
+- Populate academic qualifications and professional appointments from their relevant records.
+- Complete detailed authorship and conference presentation records.
+- Structure records for independent projects and releases.
+- Review and validate the proposed schema version 1.1 migration; the canonical database remains at version 1.0 until a migration is applied.
+- Update `DATA_DICTIONARY.md` following schema decisions.
+- Rebuild and validate `profile.sqlite` after approved data or schema changes.
+- Review and maintain the existing profile knowledge brief against the canonical records.
+- Improve public-facing profile pages and discovery.
+- Review metadata, crawler access and sitemap coverage.
+- Monitor search-engine discovery and indexing.
 
 ---
 
