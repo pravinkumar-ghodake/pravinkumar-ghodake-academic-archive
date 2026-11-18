@@ -134,7 +134,7 @@ The originating AI vendor is not asserted because the available source metadata 
 | Field | Value |
 |---|---|
 | Source identifier | `SRC-REPORT-001` |
-| Original filename | `BUILD_REPORT(3).md` |
+| Original filename | `BUILD_REPORT.md` |
 | Source type | Other AI / vendor unattributed |
 | Acquisition date | 2026-11-16 |
 | Imported source records | 1 |
